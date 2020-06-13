@@ -11,4 +11,10 @@ package LoanApplication;
  */
 public class LoanApplicationCntl {
     
+    
+    
+    
+    public void electronicSignature (){
+        
+    }
 }
