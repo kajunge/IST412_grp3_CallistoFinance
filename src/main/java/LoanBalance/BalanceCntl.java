@@ -11,4 +11,15 @@ package LoanBalance;
  */
 public class BalanceCntl {
     
+    
+    
+    
+    
+    public void calculateInterest(){
+        
+    }
+    public void PaymentHistory(){
+        
+    }
+    
 }

@@ -3,26 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Register;
+package CustomerData;
 
 /**
  *
  * @author cjani
  */
-public class RegisterCntl {
-    
-    public RegisterCntl(){
-        
-    }
-    
-    public void sendEmail(){
-        
-    }
-    
-    public void verifyEmail(boolean verifyLink){
-        
-        
-    }
+public class CustomerList {
     
     
     
