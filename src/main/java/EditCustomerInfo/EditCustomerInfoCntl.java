@@ -5,7 +5,7 @@
  */
 package EditCustomerInfo;
 
-import CustomerData.Customer;
+import Data.Customer;
 
 /**
  *
