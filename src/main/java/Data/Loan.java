@@ -10,5 +10,11 @@ package Data;
  * @author cjani
  */
 public class Loan {
+   /** 
+    private String loadID;
+    private String amount;
+    private String date;    //change to a proper data field
+    
+    
     
 }
