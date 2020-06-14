@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package LiveChat;
 
 import java.io.IOException;
@@ -10,7 +6,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 /**
- *
+ * This is the Live Chat client side.
  * @author Chris Lefebvre
  * 
  * @author https://www.codejava.net/java-se/networking/how-to-create-a-chat-console-application-in-java-using-socket
@@ -22,8 +18,8 @@ public class ChatClient {
  
     /**
      *Constructor for ChatClient
-     * @param hostname
-     * @param port
+     * @param hostname A String representing the client hostname.
+     * @param port An int representing the port number.
      */
     public ChatClient(String hostname, int port) {
         this.hostname = hostname;
@@ -57,7 +53,8 @@ public class ChatClient {
         this.userName = userName;
     }
     /**
-     * returns the userName
+     * A method to return the username
+     * @return returns the userName
      */
     public String getUserName() {
         return this.userName;

@@ -44,7 +44,7 @@ public class LoanList {
     
     /**
      * Deletes a loan from the loanArray
-     * @param loanID
+     * @param loanID A long representing the loan id number.
      */
     public void deleteLoan(long loanID){
         getLoanArray().remove(loanID);

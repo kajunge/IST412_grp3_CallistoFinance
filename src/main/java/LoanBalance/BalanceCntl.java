@@ -4,7 +4,7 @@ package LoanBalance;
 import java.util.Date;
 
 /**
- *
+ * This is the Loan Balance Controller Class.
  * @author cjani
  * @author kristinamantha
  */

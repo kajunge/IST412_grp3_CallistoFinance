@@ -1,15 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package EditCustomerInfo;
 
 import Data.Customer;
 
 /**
- *
+ * This is the Edit Customer Information Controller class.
  * @author Chris Lefebvre
+ * @author kristinamantha
  */
 public class EditCustomerInfoCntl {
     
