@@ -5,10 +5,37 @@
  */
 package EditCustomerInfo;
 
+import CustomerData.Customer;
+
 /**
  *
  * @author cjani
  */
 public class EditCustomerInfoCntl {
     
+    private Customer customer;
+    
+    public void updateEmail(String email){
+        
+    }
+    
+    public void updatePassword(String password){
+        
+    }
+    
+    public void updatefirstName(String firstName){
+        
+    }
+    
+    public void updateLastName(String lastName){
+        
+    }
+    
+    public void updateAddress(String address){
+        
+    }
+    
+    public void updatePhoneNumber(String phoneNumber){
+        
+    }
 }
