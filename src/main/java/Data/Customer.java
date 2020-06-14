@@ -18,14 +18,14 @@ public class Customer {
 
     /**
      * This is the constructor for the Customer class
-     * @param customerEmail
-     * @param customerPassword
-     * @param id
-     * @param firstName
-     * @param lastName
-     * @param address
-     * @param phoneNumber
-     * @param loanID 
+     * @param customerEmail - a String representing the email in a customer profile
+     * @param customerPassword - a String representing the password in a customer profile
+     * @param id - a long representing the customer id in a customer profile
+     * @param firstName - a String representing the customer's first name in the customer profile
+     * @param lastName - a String representing the customer's last name in the customer profile
+     * @param address - a String representing the customer's address in the customer profile
+     * @param phoneNumber - a String representing the customer's phone number in the customer profile
+     * @param loanID  - a String representing the customer's loan id in the customer profile
      */
     private Customer(String customerEmail, String customerPassword, long id,
             String firstName, String lastName, String address, String phoneNumber,
