@@ -1,20 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package LoanApplication;
+
+import java.security.PublicKey;
 
 /**
  *
  * @author cjani
+ * @author kristinamantha
  */
 public class LoanApplicationCntl {
     
-    
-    
-    
-    public void electronicSignature (){
+    /**
+     * Initial LoanApplicationCntl constructor.
+     */
+    public LoanApplicationCntl(){
         
+    }
+    
+    /**
+     * A method to initialize the signature object, preparing it to verify a signature.
+     * @param publicKey A PublicKey for thee users electronic signature.
+     */
+    public final void electronicSignature(PublicKey publicKey){
+        
+       
     }
 }

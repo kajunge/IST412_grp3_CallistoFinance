@@ -8,7 +8,7 @@ import java.io.IOException;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * This is the Login GUI.
  * @author kristinamantha
  */
 public class LoginUI extends javax.swing.JFrame {
@@ -251,10 +251,18 @@ public class LoginUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * This will get the contents of the username text field.
+     * @param evt 
+     */
     private void usernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameTextFieldActionPerformed
 
+    /**
+     * This method will change the username textfield to empty when clicked on.
+     * @param evt 
+     */
     private void usernameTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTextFieldFocusGained
         if (usernameTextField.getText().trim().toLowerCase().equals("enter your username")) {
             usernameTextField.setText("");
@@ -263,9 +271,13 @@ public class LoginUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_usernameTextFieldFocusGained
 
+    /**
+     * A method that if text field is equal to username or empty, set the "enter your username" 
+     * in the field on focus lost event text.
+     * @param evt 
+     */
     private void usernameTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTextFieldFocusLost
-        //if text field is equal to username or empty, set the "username" text
-        //in the field on focus lost event
+      
         if (usernameTextField.getText().trim().equals("")
                 || usernameTextField.getText().trim().toLowerCase().equals("enter your username")) {
             usernameTextField.setText("enter your username");
@@ -274,12 +286,20 @@ public class LoginUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_usernameTextFieldFocusLost
 
+    /**
+     * 
+     * @param evt 
+     */
     private void passwordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordTextFieldActionPerformed
 
+    /**
+     * A method to get the password text field contents.
+     * @param evt 
+     */
     private void passwordTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordTextFieldFocusGained
-        //get password text
+     
         String pass = String.valueOf(passwordTextField.getPassword());
 
         if (pass.trim().toLowerCase().equals("password")) {
@@ -289,8 +309,12 @@ public class LoginUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_passwordTextFieldFocusGained
 
+    /**
+     * A method to get password text.
+     * @param evt 
+     */
     private void passwordTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordTextFieldFocusLost
-        //get password text
+      
         String pass = String.valueOf(passwordTextField.getPassword());
 
         if (pass.trim().equals("")
@@ -301,6 +325,10 @@ public class LoginUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_passwordTextFieldFocusLost
 
+    /**
+     * A method to launch the Customer Details GUI if username/password match.
+     * @param evt 
+     */
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         String cust = usernameTextField.getText().trim();
         String pass = passwordTextField.getText();
@@ -314,20 +342,36 @@ public class LoginUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_loginButtonActionPerformed
 
+    /**
+     * A method to launch the Registration GUI.
+     * @param evt 
+     */
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
         new RegisterUI().setVisible(true);
         dispose();
     }//GEN-LAST:event_registerButtonActionPerformed
 
+    /**
+     * A method to exit the program.
+     * @param evt 
+     */
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitButtonActionPerformed
     private int xMouse, yMouse;
+    /**
+     * A method that gets the X and Y location of the mouse click on jLabel1.
+     * @param evt An event that gets the X and Y location of the mouse click on jLabel1.
+     */
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_jLabel1MouseClicked
 
+    /**
+     * A method that moves the application to the X and Y location of mouse drag.
+     * @param evt 
+     */
     private void jLabel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();

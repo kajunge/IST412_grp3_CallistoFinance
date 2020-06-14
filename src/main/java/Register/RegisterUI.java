@@ -2,7 +2,7 @@
 package Register;
 
 /**
- *
+ * This is the Customer Registration GUI.
  * @author kristinamantha
  */
 public class RegisterUI extends javax.swing.JFrame {
@@ -126,16 +126,28 @@ public class RegisterUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * This method exits the program.
+     * @param evt An event which exits the program.
+     */
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitButtonActionPerformed
 
+    
     private int xMouse, yMouse;
+    /**
+     * A method that gets the X and Y location of the mouse click on jLabel1.
+     * @param evt An event that gets the X and Y location of the mouse click on jLabel1.
+     */
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_jLabel1MouseClicked
-
+    /**
+     * A method that moves the application to the X and Y location of mouse drag.
+     * @param evt 
+     */
     private void jLabel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
