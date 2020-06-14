@@ -4,9 +4,11 @@ package EditCustomerInfo;
 import Data.Customer;
 
 /**
- * This is the Edit Customer Information Controller class.
+ * This is the Edit Customer Information Controller class. It has methods for 
+ * updating the personal information of a customer.
  * @author Chris Lefebvre
  * @author kristinamantha
+ * @author Scott Crowthers
  */
 public class EditCustomerInfoCntl {
     

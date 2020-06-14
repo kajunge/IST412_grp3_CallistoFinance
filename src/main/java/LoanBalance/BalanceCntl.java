@@ -4,7 +4,8 @@ package LoanBalance;
 import java.util.Date;
 
 /**
- * This is the Loan Balance Controller Class.
+ * This is the Loan Balance Controller Class. This provides methods to display payment 
+ * and balance information about a loan.
  * @author cjani
  * @author kristinamantha
  */
