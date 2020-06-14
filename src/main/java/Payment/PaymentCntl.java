@@ -8,6 +8,7 @@ import java.util.Date;
  * loan.
  * @author cjani
  * @author kristinamantha
+ * @author scott
  */
 public class PaymentCntl {
     
