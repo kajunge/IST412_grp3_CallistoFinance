@@ -3,7 +3,7 @@ package Data;
 
 /**
  *
- * @author cjani
+ * @author Chris Lefebvre
  * @author kristinamantha
  */
 public class Loan {

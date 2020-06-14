@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author cjani
+ * @author Chris Lefebvre
  */
 public class LoanList {
     

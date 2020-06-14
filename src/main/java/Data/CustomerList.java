@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author cjani
+ * @author Chris Lefebvre
  * @author kristinamaantha
  */
 public class CustomerList {

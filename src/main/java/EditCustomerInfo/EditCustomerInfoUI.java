@@ -7,7 +7,7 @@ package EditCustomerInfo;
 
 /**
  *
- * @author cjani
+ * @author Chris Lefebvre
  */
 public class EditCustomerInfoUI {
     
