@@ -7,7 +7,7 @@ package LiveChat;
 
 /**
  *
- * @author cjani
+ * @author Chris Lefebvre
  */
 public class LiveChatUI {
     

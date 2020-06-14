@@ -3,25 +3,32 @@ package Data;
 
 /**
  *
- * @author cjani
+ * @author Chris Lefebvre
  * @author kristinamantha
  */
 public class Loan {
 
     private long loanID;
-    private long amount;
-    private String date;    //change to a proper data field
+    private long customerID;
+    private long amountTotal;
+    private long singlePayment;
+    private String date;    //change to a proper date field once implementation is started
     
     /**
      * The loan constructor
-     * @param loanID
-     * @param amount
-     * @param date 
+     * @param loanID - a long representing the id in a loan profile
+     * @param customerID - a long representing the customer id in a loan profile
+     * @param amountTotal - a long representing the amount remaining in the current loan
+     * @param singlePayment - a long representing the amount of a single payment in the current loan
+     * @param date - the date that the loan is started/payment is made
      */
-    private Loan(long loanID, long amount, String date){
-    this.amount = amount;
-    this.date = date;
+    private Loan(long loanID, long customerID, long amountTotal, long singlePayment, String date){
     this.loanID = loanID;
+    this.customerID = customerID;
+    this.amountTotal = amountTotal;
+    this.singlePayment = singlePayment;
+    this.date = date;
+    
 }
 
     /**
@@ -39,23 +46,54 @@ public class Loan {
     public void setLoanID(long loanID) {
         this.loanID = loanID;
     }
+    
+    /**
+     * returns the customer id
+     * @return the customerID
+     */
+    public long getCustomerID() {
+        return customerID;
+    }
 
     /**
-     * Returns the amount of the customer loan
+     * sets the customer id
+     * @param customerID the customerID to set
+     */
+    public void setCustomerID(long customerID) {
+        this.customerID = customerID;
+    }
+    /**
+     * Returns the total amount of the customer loan
      * @return A long representing the loan amount
      */
-    public long getAmount() {
-        return amount;
+    public long getAmountTotal() {
+        return amountTotal;
     }
 
     /**
-     * Sets the loan amount
+     * Sets the total loan amount
      * @param amount the amount to set
      */
-    public void setAmount(long amount) {
-        this.amount = amount;
+    public void setAmountTotal(long amountTotal) {
+        this.amountTotal = amountTotal;
     }
 
+    /**
+     * returns the value of a single payment
+     * @return the singlePayment
+     */
+    public long getSinglePayment() {
+        return singlePayment;
+    }
+
+    /**
+     * sets the value of a single payment
+     * @param singlePayment the singlePayment to set
+     */
+    public void setSinglePayment(long singlePayment) {
+        this.singlePayment = singlePayment;
+    }
+    
     /**
      * Returns the date
      * @return A String representing the date
@@ -71,6 +109,10 @@ public class Loan {
     public void setDate(String date) {
         this.date = date;
     }
+
+   
+
+    
 
     
 }

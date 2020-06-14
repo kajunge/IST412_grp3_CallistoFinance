@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package EditCustomerInfo;
+package LiveChat;
 
 /**
  *
- * @author Chris Lefebvre
+ * @author cjani
  */
-public class EditCustomerInfoUI {
+public class ServerSide {
     
 }
