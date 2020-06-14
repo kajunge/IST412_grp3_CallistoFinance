@@ -8,7 +8,8 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 /**
- * This is the Loan List class.
+ * This is the Loan List class. It has an ArrayList of all active loans
+ * and methods to manipulate this ArrayList.
  * @author Chris Lefebvre
  */
 public class LoanList {

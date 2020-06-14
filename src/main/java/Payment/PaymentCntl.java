@@ -4,9 +4,11 @@ package Payment;
 import java.util.Date;
 
 /**
- * This is the Payment Controller class
+ * This is the Payment Controller class. It handles payments being made on a 
+ * loan.
  * @author cjani
  * @author kristinamantha
+ * @author scott
  */
 public class PaymentCntl {
     

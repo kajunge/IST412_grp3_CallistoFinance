@@ -1,7 +1,8 @@
 package Data;
 
 /**
- * This is the Customer class.
+ * This is the Customer class. It provides fields to store personal information
+ * about the customer as well as getters/setters for these fields.
  * @author Chris Lefebvre
  * @author kristinamantha
  */

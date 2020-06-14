@@ -2,7 +2,8 @@
 package Data;
 
 /**
- * This is the Loan details class.
+ * This is the Loan details class. It has fields containing information
+ * about the loan and getters/setters for these fields.
  * @author Chris Lefebvre
  * @author kristinamantha
  */

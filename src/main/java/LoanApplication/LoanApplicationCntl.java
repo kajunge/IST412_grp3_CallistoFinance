@@ -4,7 +4,8 @@ package LoanApplication;
 import java.security.PublicKey;
 
 /**
- * This is the Loan Application Controller.
+ * This is the Loan Application Controller. It is used to handle
+ * new loan applications and electronic signatures.
  * @author cjani
  * @author kristinamantha
  */

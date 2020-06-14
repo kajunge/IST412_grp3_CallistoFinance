@@ -8,7 +8,8 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 /**
- * This is the Customer List class.
+ * This is the Customer List class. It contains an ArrayList of all Callisto customers
+ * and methods to manipulate this ArrayList.
  * @author Chris Lefebvre
  * @author kristinamaantha
  */

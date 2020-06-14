@@ -2,10 +2,10 @@
 package Register;
 
 /**
- *
+ * This is the Register Controller class. It handles registering new users 
+ * to mFinance and provides username and password validity checks.
  * @author cjani
  * @author kristinamantha
- * This is the Register Controller class
  */
 public class RegisterCntl {
     /**

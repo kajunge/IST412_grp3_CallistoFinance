@@ -6,7 +6,8 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 /**
- * This is the Live Chat client side.
+ * This is the Live Chat client side. It will allow a client to connect to 
+ * the server and chat with a live representative.
  * @author Chris Lefebvre
  * 
  * @author https://www.codejava.net/java-se/networking/how-to-create-a-chat-console-application-in-java-using-socket
