@@ -2,7 +2,7 @@
 package Data;
 
 /**
- *
+ * This is the Loan details class.
  * @author Chris Lefebvre
  * @author kristinamantha
  */

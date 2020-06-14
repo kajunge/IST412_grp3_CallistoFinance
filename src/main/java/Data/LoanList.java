@@ -4,7 +4,7 @@ package Data;
 import java.util.ArrayList;
 
 /**
- *
+ * This is the Loan List class.
  * @author Chris Lefebvre
  */
 public class LoanList {

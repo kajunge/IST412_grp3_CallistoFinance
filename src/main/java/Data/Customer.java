@@ -1,7 +1,7 @@
 package Data;
 
 /**
- *
+ * This is the Customer class.
  * @author Chris Lefebvre
  * @author kristinamantha
  */

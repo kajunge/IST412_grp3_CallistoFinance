@@ -4,7 +4,7 @@ package LoanApplication;
 import java.security.PublicKey;
 
 /**
- *
+ * This is the Loan Application Controller.
  * @author cjani
  * @author kristinamantha
  */

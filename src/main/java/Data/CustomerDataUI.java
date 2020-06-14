@@ -2,7 +2,7 @@
 package Data;
 
 /**
- *
+ *  This is the Customer Data / Details GUI.
  * @author kristinamantha
  */
 public class CustomerDataUI extends javax.swing.JFrame {

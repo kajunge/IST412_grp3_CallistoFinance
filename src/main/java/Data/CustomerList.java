@@ -6,7 +6,7 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 /**
- *
+ * This is the Customer List class.
  * @author Chris Lefebvre
  * @author kristinamaantha
  */
