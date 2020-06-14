@@ -2,7 +2,9 @@
 package Data;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 /**
@@ -14,7 +16,7 @@ public class CustomerList {
     
     private ArrayList<Customer> customerArray;
     
-//    private String customerFile = "src/SerFiles/Customer.ser";
+    private String customerFile = "src/SerFiles/Customer.ser";
     
     /**
      *Constructor for the CustomerList array
@@ -61,26 +63,54 @@ public class CustomerList {
         getCustomerArray().remove(customerID);
     }
     
-//    /**
-//     *
-//     */
-//    public void readCustomerFile(){
-//        FileInputStream fis = null;
-//        ObjectInputStream in = null;
-//
-//        try {
-//            fis = new FileInputStream(customerFile);
-//            in = new ObjectInputStream(fis);
-//            setCustomerArray((ArrayList<Customer>) in.readObject());          //needs a serialVersionUID, will reaserch this
-//            in.close();
-//
-//            if (!customerArray.isEmpty()) {
-//                //System.out.println("There are Parents on the list");
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
+    /**
+     *Reads the (persistent) customerFile
+     */
+    public void readCustomerFile(){
+        FileInputStream fis = null;
+        ObjectInputStream in = null;
+
+        try {
+            fis = new FileInputStream(customerFile);
+            in = new ObjectInputStream(fis);
+            setCustomerArray((ArrayList<Customer>) in.readObject());          //needs a serialVersionUID, will reaserch this
+            in.close();
+
+            if (!customerArray.isEmpty()) {
+                //System.out.println("There are Parents on the list");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    /**
+     * writes the current customer array to the customer file (persistent)
+     */
+    
+    public void writeCustomerFile() {
+        FileOutputStream fos = null;
+        ObjectOutputStream out = null;
+
+        try {
+            fos = new FileOutputStream(customerFile);
+            out = new ObjectOutputStream(fos);
+            out.writeObject(getCustomerArray());
+            out.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * prints the customer file (primarily for debugging
+     */
+    public void printCustomerFile() {
+        System.out.println("The Customer List has these Customers");
+        for (int i = 0; i < getCustomerArray().size(); i++) {
+            Customer currentCustomer = (Customer) getCustomerArray().get(i);
+            System.out.println(currentCustomer.toString());
+        }
+    }
 
     //==========================================================================
     //Getter and Setters

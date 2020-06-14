@@ -1,6 +1,10 @@
 
 package Data;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 /**
@@ -11,6 +15,7 @@ public class LoanList {
     
     private ArrayList<Loan> loanArray;
     
+    private String loanFile = "src/SerFiles/Loan.ser";
     /**
      *Constructor for LoanList
      */
@@ -49,7 +54,58 @@ public class LoanList {
     public void deleteLoan(long loanID){
         getLoanArray().remove(loanID);
     }
+    
+    /**
+     *Reads the (persistent) loan File
+     */
+    public void readCustomerFile(){
+        FileInputStream fis = null;
+        ObjectInputStream in = null;
 
+        try {
+            fis = new FileInputStream(loanFile);
+            in = new ObjectInputStream(fis);
+            setLoanArray((ArrayList<Loan>) in.readObject());          //needs a serialVersionUID, will reaserch this
+            in.close();
+
+            if (!loanArray.isEmpty()) {
+                //System.out.println("There are Parents on the list");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    /**
+     * writes the current loan array to the loan file (persistent)
+     */
+    
+    public void writeLoanFile() {
+        FileOutputStream fos = null;
+        ObjectOutputStream out = null;
+
+        try {
+            fos = new FileOutputStream(loanFile);
+            out = new ObjectOutputStream(fos);
+            out.writeObject(getLoanArray());
+            out.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * prints the loan file (primarily for debugging
+     */
+    public void printLoanFile() {
+        System.out.println("The Loan List has these Loans");
+        for (int i = 0; i < getLoanArray().size(); i++) {
+            Loan currentLoan = (Loan) getLoanArray().get(i);
+            System.out.println(currentLoan.toString());
+        }
+    }
+    //==========================================================================
+    //Getter and Setters
+    //==========================================================================
     /**
      * @return the loanArray
      */
