@@ -4,7 +4,7 @@ package LiveChat;
 /**
  * This is the Server.
  * @author cjani
- * @auther kristinamantha
+ * @author kristinamantha
  */
 public class ServerSide {
     
