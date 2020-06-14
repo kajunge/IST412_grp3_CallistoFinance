@@ -72,7 +72,6 @@ public class Loan {
 
     /**
      * Sets the total loan amount
-     * @param amount the amount to set
      * @param amountTotal A long representing the total amount.
      */
     public void setAmountTotal(long amountTotal) {
