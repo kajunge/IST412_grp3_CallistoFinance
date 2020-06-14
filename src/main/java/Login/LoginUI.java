@@ -1,12 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Login;
 
 import Data.CustomerDataUI;
+import Register.RegisterUI;
 import java.awt.Color;
+import java.awt.event.WindowEvent;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 
@@ -22,7 +19,7 @@ public class LoginUI extends javax.swing.JFrame {
     public LoginUI() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
+
     }
 
     /**
@@ -307,18 +304,19 @@ public class LoginUI extends javax.swing.JFrame {
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         String cust = usernameTextField.getText().trim();
         String pass = passwordTextField.getText();
-        
-       
-        if( cust.equalsIgnoreCase("Admin")
-                && pass.equals("Administrator")){
+
+        if (cust.equalsIgnoreCase("Admin")
+                && pass.equals("Administrator")) {
             new CustomerDataUI().setVisible(true);
+            dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Invalid Username or Password", "Login Error", 2);
         }
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
-        // TODO add your handling code here:
+        new RegisterUI().setVisible(true);
+        dispose();
     }//GEN-LAST:event_registerButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
@@ -333,7 +331,7 @@ public class LoginUI extends javax.swing.JFrame {
     private void jLabel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
-        setLocation(x-xMouse,y-yMouse);
+        setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_jLabel1MouseDragged
 
     /**

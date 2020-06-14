@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Data;
 
 import java.io.FileInputStream;
@@ -12,6 +8,7 @@ import java.util.ArrayList;
 /**
  *
  * @author cjani
+ * @author kristinamaantha
  */
 public class CustomerList {
     
@@ -55,13 +52,15 @@ public class CustomerList {
     //Getter and Setters
     //==========================================================================
     /**
-     * @return the customerArray
+     * Returns an ArrayList of customers
+     * @return An ArrayList representing the customers
      */
     public ArrayList<Customer> getCustomerArray() {
         return customerArray;
     }
 
     /**
+     * Sets the CustomerArray
      * @param customerArray the customerArray to set
      */
     public void setCustomerArray(ArrayList<Customer> customerArray) {
