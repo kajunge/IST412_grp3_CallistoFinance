@@ -5,7 +5,10 @@
  */
 package Login;
 
+import Data.CustomerDataUI;
 import java.awt.Color;
+import java.io.IOException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,6 +22,7 @@ public class LoginUI extends javax.swing.JFrame {
     public LoginUI() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -55,6 +59,16 @@ public class LoginUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Papyrus", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Welcome to Callisto Finance");
+        jLabel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jLabel1MouseDragged(evt);
+            }
+        });
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -115,6 +129,7 @@ public class LoginUI extends javax.swing.JFrame {
 
         loginButton.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         loginButton.setText("Login");
+        loginButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         loginButton.setPreferredSize(new java.awt.Dimension(74, 27));
         loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,6 +139,7 @@ public class LoginUI extends javax.swing.JFrame {
 
         registerButton.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         registerButton.setText("Register");
+        registerButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         registerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registerButtonActionPerformed(evt);
@@ -156,6 +172,7 @@ public class LoginUI extends javax.swing.JFrame {
 
         exitButton.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         exitButton.setText("Exit");
+        exitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         exitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitButtonActionPerformed(evt);
@@ -288,7 +305,16 @@ public class LoginUI extends javax.swing.JFrame {
     }//GEN-LAST:event_passwordTextFieldFocusLost
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        // TODO add your handling code here:
+        String cust = usernameTextField.getText().trim();
+        String pass = passwordTextField.getText();
+        
+       
+        if( cust.equalsIgnoreCase("Admin")
+                && pass.equals("Administrator")){
+            new CustomerDataUI().setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(null, "Invalid Username or Password", "Login Error", 2);
+        }
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
@@ -298,6 +324,17 @@ public class LoginUI extends javax.swing.JFrame {
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitButtonActionPerformed
+    private int xMouse, yMouse;
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        setLocation(x-xMouse,y-yMouse);
+    }//GEN-LAST:event_jLabel1MouseDragged
 
     /**
      * @param args the command line arguments

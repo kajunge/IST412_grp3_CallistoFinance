@@ -10,11 +10,16 @@ package Data;
  * @author cjani
  */
 public class Loan {
-   /** 
-    private String loadID;
+
+    private String loanID;
     private String amount;
     private String date;    //change to a proper data field
     
-    
+    private Loan(String loanID, String amount, String date){
+    this.amount = amount;
+    this.date = date;
+    this.loanID = loanID;
+}
+
     
 }
