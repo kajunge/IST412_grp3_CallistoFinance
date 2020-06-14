@@ -4,10 +4,9 @@ package Payment;
 import java.util.Date;
 
 /**
- *
+ * This is the Payment Controller class
  * @author cjani
  * @author kristinamantha
- * This is the Payment Controller class
  */
 public class PaymentCntl {
     
