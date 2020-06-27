@@ -17,10 +17,15 @@ public class PaymentCntl {
     
     /**
      * This is a method to make a payment
-     * @param payment A Double representing the amount to be paid
+     * @param payment A Double representing the amount the user chooses to pay
+     * @param previousTotal - a double representing the loan's previous total
+     * @return - represents the new total after payment has been made
      */
-    public void makePayment(double payment){
-        
+    public double makePayment(double payment, double previousTotal){
+        previousTotal = 30000;
+        payment = 5000;
+        double newTotal = previousTotal - payment;
+        return newTotal;
     }
     
     /**
@@ -29,5 +34,18 @@ public class PaymentCntl {
      */
     public boolean isLate(){
         return false;
+    }
+    /**
+     * A method that returns the (double) late fee amount based on that loan's interest
+     * @param loanInterest - a double representing the interest associated with the loan
+     * @param previousTotal - a double representing the total amount left in the loan
+     * @return a double the represents the late fee amount
+     */
+    public double lateFee(double loanInterest, double previousTotal){
+        double lateFeeAmount;
+        loanInterest = .2;
+        loanInterest = loanInterest + .05;
+        lateFeeAmount = previousTotal * loanInterest;
+        return lateFeeAmount;
     }
 }

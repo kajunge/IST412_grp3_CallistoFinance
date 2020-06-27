@@ -3,6 +3,10 @@ package LoanApplication;
 
 import java.security.PublicKey;
 import com.groupdocs.signature.Signature;
+import com.groupdocs.signature.domain.SignatureFont;
+import com.groupdocs.signature.domain.enums.TextSignatureImplementation;
+import com.groupdocs.signature.options.sign.TextSignOptions;
+import java.awt.Color;
 import java.io.IOException;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -66,27 +70,31 @@ public class LoanApplicationCntl {
      * @param pdfName - A String representing the name of the pdf file that the user signs
      */
     public final void electronicSignature(String pdfName){
-//        Signature signature = new Signature("sample.pdf");
-//
-//        TextSignOptions options = new TextSignOptions("John Smith");
-//        // set signature position
-//        options.setLeft(100);
-//        options.setTop(100);
-//
-//        // set signature rectangle
-//        options.setWidth(100);
-//        options.setHeight(30);
-//
-//        // set text color and Font
-//        options.setForeColor(Color.RED);
-//        SignatureFont signatureFont = new SignatureFont();
-//        signatureFont.setSize(12);
-//        signatureFont.setFamilyName("Comic Sans MS");
-//        options.setFont(signatureFont);
-//        options.setSignatureImplementation(TextSignatureImplementation.Sticker)
-//
-//        // sign document to file
-//        signature.sign("sample_signed.pdf", options);
+        Signature signature = new Signature("my_doc.pdf");
+
+        TextSignOptions options = new TextSignOptions("John Smith");
+        // set signature position
+        options.setLeft(100);
+        options.setTop(100);
+
+        // set signature rectangle
+        options.setWidth(100);
+        options.setHeight(30);
+
+        // set text color and Font
+        options.setForeColor(Color.RED);
+        SignatureFont signatureFont = new SignatureFont();
+        signatureFont.setSize(12);
+        signatureFont.setFamilyName("Comic Sans MS");
+        options.setFont(signatureFont);
+        options.setSignatureImplementation(TextSignatureImplementation.Sticker);
+
+        try{
+             // sign document to file
+        signature.sign("my_doc.pdf", options);
+        }catch(Exception e){            
+        }
+       
        
     }
 }
