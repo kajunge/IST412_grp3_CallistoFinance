@@ -2,7 +2,7 @@
 package LoanBalance;
 
 import java.util.Date;
-
+import Data.Customer;
 /**
  * This is the Loan Balance Controller Class. This provides methods to display payment 
  * and balance information about a loan.
@@ -10,6 +10,12 @@ import java.util.Date;
  * @author kristinamantha
  */
 public class BalanceCntl {
+    
+     private Customer customer;
+     
+    public BalanceCntl(Customer customer){
+        this.customer = customer;
+    }
     
     /**
      * A method to calculate compound interest
@@ -29,9 +35,12 @@ public class BalanceCntl {
      * A method to show customer payment history
      * @param payment A double showing the payment.
      * @param date A Date showing when the payment was made.
+     * @return returns a double representing thh payment
      */
-    public void PaymentHistory(double payment, Date date){
-        
+    public String PaymentHistory(double payment, Date date){
+        String payment_information;
+        payment_information = "Payment: " + payment + ", Date: " + date;
+        return payment_information;
     }
     
 }

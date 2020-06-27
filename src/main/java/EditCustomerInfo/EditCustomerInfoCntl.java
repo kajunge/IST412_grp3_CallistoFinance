@@ -17,8 +17,8 @@ public class EditCustomerInfoCntl {
     /**
      * Constructor for EditCustomerInfoCntl
      */
-    public EditCustomerInfoCntl(){
-        
+    public EditCustomerInfoCntl(Customer customer){
+        this.customer = customer;
     }
     
     /**
@@ -26,7 +26,7 @@ public class EditCustomerInfoCntl {
      * @param email - a string representing the email in a customer profile
      */
     public void updateEmail(String email){
-        
+        customer.setEmail(email);
     }
     
     /**
@@ -34,7 +34,7 @@ public class EditCustomerInfoCntl {
      * @param password - a String representing the password in a customer profile
      */
     public void updatePassword(String password){
-        
+        customer.setPassword(password);
     }
     
     /**
@@ -42,7 +42,7 @@ public class EditCustomerInfoCntl {
      * @param firstName - a String representing the customer's first name in the customer
      */
     public void updatefirstName(String firstName){
-        
+        customer.setFirstName(firstName);
     }
     
     /**
@@ -50,7 +50,7 @@ public class EditCustomerInfoCntl {
      * @param lastName - a String representing the customer's last name in the customer profile
      */
     public void updateLastName(String lastName){
-        
+        customer.setLastName(lastName);
     }
     
     /**
@@ -58,7 +58,7 @@ public class EditCustomerInfoCntl {
      * @param address - a String representing the customer's address in the customer profile
      */
     public void updateAddress(String address){
-        
+        customer.setAddress(address);
     }
     
     /**
@@ -66,6 +66,6 @@ public class EditCustomerInfoCntl {
      * @param phoneNumber - a String representing the customer's phone number in the customer profile
      */
     public void updatePhoneNumber(String phoneNumber){
-        
+        customer.setPhoneNumber(phoneNumber);
     }
 }
