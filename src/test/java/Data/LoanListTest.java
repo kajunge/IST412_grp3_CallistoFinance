@@ -89,10 +89,10 @@ public class LoanListTest {
      * Test of readCustomerFile method, of class LoanList.
      */
     @Test
-    public void testReadCustomerFile() {
-        System.out.println("readCustomerFile");
+    public void testReadLoanFile() {
+        System.out.println("readLoanFile");
         LoanList instance = new LoanList();
-        instance.readCustomerFile();
+        instance.readLoanFile();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

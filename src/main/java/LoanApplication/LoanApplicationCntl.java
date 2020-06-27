@@ -3,17 +3,22 @@ package LoanApplication;
 
 import java.security.PublicKey;
 import com.groupdocs.signature.Signature;
+import java.io.IOException;
+
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
 
 
 /**
  * This is the Loan Application Controller. It is used to handle
  * new loan applications and electronic signatures.
- * @author cjani
+ * @author Chirs Lefebvre
  * @author kristinamantha
  * 
- * 
- * @api - https://products.groupdocs.com/signature/java
- * @api download/pom code - https://downloads.groupdocs.com/signature/java
+ * @apiPdf - https://pdfbox.apache.org/download.cgi#20x
+ * @apiPdf tutorial - https://www.tutorialspoint.com/pdfbox/pdfbox_creating_a_pdf_document.htm
+ * @apiEsign - https://products.groupdocs.com/signature/java
+ * @apiEsign download/pom code - https://downloads.groupdocs.com/signature/java
  */
 public class LoanApplicationCntl {
     
@@ -30,9 +35,28 @@ public class LoanApplicationCntl {
      * @param lastName - a String representing the user's Last name
      * @param loanAmount - a double representing the loan amount
      * @param interest - a double representing the loan interest
+     * @return - returns the pdf document created
      */
-    public void pdfCreator(long id, String firstName, String lastName, double loanAmount, double interest){
+    public PDDocument pdfCreator(long id, String firstName, String lastName, double loanAmount, double interest){
         
+        //Creating the PDF document object
+        PDDocument document = new PDDocument();
+         
+        try{                   
+            PDPage my_page = new PDPage();
+            document.addPage(my_page);            
+            
+            //Saving the document
+            document.save("src/main/resources/OutputFiles/my_doc.pdf");
+            System.out.println("PDF created");
+            
+            //Closing the document
+            document.close();
+        }catch(IOException e){            
+        } 
+        
+        electronicSignature("my_doc.pdf");
+        return document;        
     }
     
     /**

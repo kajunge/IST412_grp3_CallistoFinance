@@ -57,7 +57,7 @@ public class RegisterCntlTest {
         System.out.println("verifyEmail");
         boolean verifyLink = false;
         RegisterCntl instance = new RegisterCntl();
-        instance.verifyEmail(verifyLink);
+        instance.verifyEmail(userEmail);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
