@@ -48,4 +48,16 @@ public class PaymentCntl {
         lateFeeAmount = previousTotal * loanInterest;
         return lateFeeAmount;
     }
+    /**
+     * A method that returns the current amount due for that pay period
+     * @param loanInterest - a double representing the loan's associated interest rate
+     * @param previousTotal - a double representing the loan's current total
+     * @return - a double representing the current amount base on the interest rate and current total
+     */
+    public double amountDue(double loanInterest, double previousTotal){
+        loanInterest = .15;
+        previousTotal = 30000;
+        double currentAmountDue = loanInterest * previousTotal;
+        return currentAmountDue;
+    }
 }
