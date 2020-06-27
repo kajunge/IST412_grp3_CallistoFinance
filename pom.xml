@@ -11,6 +11,13 @@
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
     <name>IST412_Callisto_Customer</name>
+    <repositories>        
+    <repository>
+	<id>GroupDocsJavaAPI</id>
+	<name>GroupDocs Java API</name>
+	<url>http://repository.groupdocs.com/repo/</url>
+    </repository>
+    </repositories>
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -35,6 +42,11 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
             <version>4.11</version>
+        </dependency>
+        <dependency>
+        <groupId>com.groupdocs</groupId>
+        <artifactId>groupdocs-signature</artifactId>
+        <version>20.5</version> 
         </dependency>
     </dependencies>
 </project>
