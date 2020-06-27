@@ -1,31 +1,67 @@
 
 package Register;
 
+import Data.Customer;
+import java.util.ArrayList;
+
 /**
  * This is the Register Controller class. It handles registering new users 
  * to mFinance and provides username and password validity checks.
- * @author cjani
+ * @author Chris Lefebvre
  * @author kristinamantha
  */
 public class RegisterCntl {
     /**
      * The is the initial constructor for the RegisterCntl
      */
+    
+    ArrayList<Customer> customerArray;
+            
     public RegisterCntl(){
         
     }
     /**
-     * A void method to send email
+     * This method generates a unique key for the email verification link
+     * @return 
      */
-    public void sendEmail(){
+    public String generateKey(){
+        String key = "X3rt725cp9S2X";
+        return key;
+    }
+    /**
+     * A void method to send email
+     * @Param a String representing the user Email
+     */
+    public void sendEmail(String userEmail){
+        String key = generateKey();
+        
         
     }
     /**
-     * 
-     * @param verifyLink This is a boolean parameter to verify the user's email
+     * A method to verify if email is already used
+     * @param userEmail A String representing the user Email
+     * @return This returns the validity of the email
      */
-    public void verifyEmail(boolean verifyLink){
-        
+    public boolean verifyEmail(String userEmail){
+        boolean value = false;
+//        for(int i = 0; i < customerArray.size(); i++){
+//            if(customerArray.get(i).getEmail() == userEmail){
+//                value = false;
+//            }
+//            else{
+//                value = true;
+//            }
+//        }
+        return value;
+    }
+    
+    /**
+     * A method to verify email meets criteria
+     * @param email A String representing the user email
+     * @return This returns the validity of the email
+     */
+    public boolean isValidEmail(String email){
+        return false;
     }
     /**
      * A method to verify password
