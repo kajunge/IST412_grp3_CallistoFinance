@@ -28,7 +28,7 @@ public class Customer {
      * @param phoneNumber - a String representing the customer's phone number in the customer profile
      * @param loanID  - a String representing the customer's loan id in the customer profile
      */
-    private Customer(String customerEmail, String customerPassword, long id,
+    protected Customer(String customerEmail, String customerPassword, long id,
             String firstName, String lastName, String address, String phoneNumber,
             long loanID) {
         this.email = customerEmail;

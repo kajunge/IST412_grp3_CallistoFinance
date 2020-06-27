@@ -23,7 +23,7 @@ public class Loan {
      * @param singlePayment - a long representing the amount of a single payment in the current loan
      * @param date - the date that the loan is started/payment is made
      */
-    private Loan(long loanID, long customerID, long amountTotal, long singlePayment, String date){
+    protected Loan(long loanID, long customerID, long amountTotal, long singlePayment, String date){
     this.loanID = loanID;
     this.customerID = customerID;
     this.amountTotal = amountTotal;

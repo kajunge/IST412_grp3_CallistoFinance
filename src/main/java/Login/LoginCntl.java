@@ -4,7 +4,7 @@ package Login;
 /**
  * This is the Loan Controller Class. It contains methods that allow a user
  * to login to the Callisto mFinance app.
- * @author cjani
+ * @author Chris Lefebvre
  * @author kristinamantha
  */
 public class LoginCntl {

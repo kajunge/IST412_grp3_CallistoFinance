@@ -21,7 +21,7 @@ public class LoanList {
      *Constructor for LoanList
      */
     public LoanList(){
-        
+        loanArray = new ArrayList<Loan>();
     }
     
     /**
@@ -33,7 +33,11 @@ public class LoanList {
      * @param date - the date the loan was created or a payment made
      */
     public void addLoan(long loanID, long customerID, long amountTotal, long singlePayment, String date){
+        Loan L1 = new Loan(1, 1, 20000, 0, "27-6-2020");
+        loanArray.add(L1);
         
+        this.writeLoanFile();
+        this.readLoanFile();
     }
     
     /**
@@ -45,7 +49,25 @@ public class LoanList {
      * @param date - the date the loan was created or a payment made
      */
     public void editLoan(long loanID, long customerID, long amountTotal, long singlePayment, String date){
-        
+        for(int i = 0; i < loanArray.size(); i++){
+            if(loanArray.get(i).getLoanID() == 1){
+                loanArray.get(i).setCustomerID(1);
+                loanArray.get(i).setAmountTotal(45000);
+                loanArray.get(i).setSinglePayment(0);
+                loanArray.get(i).setDate("15-8-2021");
+            }
+//            if(loanArray.get(i).getLoanID() == loanID){
+//                loanArray.get(i).setCustomerID(customerID);
+//                loanArray.get(i).setAmountTotal(amountTotal);
+//                loanArray.get(i).setSinglePayment(singlePayment);
+//                loanArray.get(i).setDate(date);
+//            }
+            else{
+                
+            }
+        }
+        this.writeLoanFile();
+        this.readLoanFile();
     }
     
     /**
@@ -59,7 +81,7 @@ public class LoanList {
     /**
      *Reads the (persistent) loan File
      */
-    public void readCustomerFile(){
+    public void readLoanFile(){
         FileInputStream fis = null;
         ObjectInputStream in = null;
 

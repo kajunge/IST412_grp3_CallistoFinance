@@ -23,7 +23,7 @@ public class CustomerList {
      *Constructor for the CustomerList array
      */
     public CustomerList(){
-        
+        customerArray = new ArrayList<Customer>();
     }
     
     /**
@@ -38,7 +38,11 @@ public class CustomerList {
      * @param loanID - a String representing the customer's loan id in the customer profile
      */
     public void addCustomer(String email, String password, long customerId, String firstName, String lastName, String address, String phoneNumber, long loanID){
+        Customer c1 = new Customer ("IST412Team3@gmail.com", "password", 1, "Chris", "Lefebvre", "123 Main Street", "123-456-7889", 1);
+        customerArray.add(c1);
         
+        this.writeCustomerFile();
+        this.readCustomerFile();
     }
 
      /**
@@ -53,7 +57,34 @@ public class CustomerList {
      * @param loanID - a String representing the customer's loan id in the customer profile
      */
     public void editCustomer(String email, String password, long customerId, String firstName, String lastName, String address, String phoneNumber, long loanID){
-        
+        for(int i = 0; i < customerArray.size(); i++){
+            if(customerArray.get(i).getCustomerId() == 1){
+                customerArray.get(i).setEmail("IST412NotTeam3@Gmail.com");
+                customerArray.get(i).setPassword("NotPassword");
+                customerArray.get(i).setFirstName("Kristina");
+                customerArray.get(i).setLastName("Mantha");
+                customerArray.get(i).setAddress("987 Second St");
+                customerArray.get(i).setPhoneNumber("987-654-3210");
+                customerArray.get(i).setLoanID(0);
+            }
+            else{
+                //edit fail message
+            }
+//            if(customerArray.get(i).getCustomerId() == customerId){
+//                customerArray.get(i).setEmail(email);
+//                customerArray.get(i).setPassword(password);
+//                customerArray.get(i).setFirstName(firstName);
+//                customerArray.get(i).setLastName(lastName);
+//                customerArray.get(i).setAddress(address);
+//                customerArray.get(i).setPhoneNumber(phoneNumber);
+//                customerArray.get(i).setLoanID(loanID);
+//            }
+//            else{
+//                //edit fail message
+//            }
+        }
+        this.writeCustomerFile();
+        this.readCustomerFile();
     }
 
     /**
