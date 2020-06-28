@@ -25,6 +25,9 @@ public class ChatClient {
     public ChatClient(String hostname, int port) {
         this.hostname = hostname;
         this.port = port;
+        
+        hostname = "temp";
+        port = 4040;
     }
     
     /**
