@@ -10,5 +10,9 @@ package TestHarness;
  * @author cjani
  */
 public class RegisterTest {
+   
+    public RegisterTest(){
+        
+    }
     
 }
