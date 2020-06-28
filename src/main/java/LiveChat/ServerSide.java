@@ -9,4 +9,8 @@ package LiveChat;
  */
 public class ServerSide {
     
+    public ServerSide(){
+        
+      
+    }
 }

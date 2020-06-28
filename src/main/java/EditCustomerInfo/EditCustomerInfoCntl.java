@@ -81,9 +81,7 @@ public class EditCustomerInfoCntl {
     /**
      * @return the customer
      */
-    public Customer getCustomer() {
-        return customer;
-    }
+
 
     /**
      * @param customer the customer to set

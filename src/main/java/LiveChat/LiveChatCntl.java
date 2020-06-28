@@ -31,6 +31,7 @@ public class LiveChatCntl {
 //        this.type = type;
 //    }
 
+
     public String getContent() {
         return content;
     }
