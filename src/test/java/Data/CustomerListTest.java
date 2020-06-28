@@ -5,6 +5,8 @@
  */
 package Data;
 
+
+
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -14,16 +16,19 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * @author Chris Lefebvre
  * @author kristinamantha
  */
 public class CustomerListTest {
+    
+    //private ArrayList<Customer> customerArray;
     
     public CustomerListTest() {
     }
     
     @BeforeClass
     public static void setUpClass() {
+        //customerArray = new ArrayList<Customer>();
     }
     
     @AfterClass
@@ -44,17 +49,17 @@ public class CustomerListTest {
     @Test
     public void testAddCustomer() {
         System.out.println("addCustomer");
-        String email = "";
-        String password = "";
-        long customerId = 0L;
-        String firstName = "";
-        String lastName = "";
-        String address = "";
-        String phoneNumber = "";
-        long loanID = 0L;
+        String email = "IST412Team3@gmail.com";
+        String password = "Password";
+        long customerId = 1L;
+        String firstName = "Chris";
+        String lastName = "Lefebvre";
+        String address = "123 Main St";
+        String phoneNumber = "123-456-7890";
+        long loanID = 1L;
         CustomerList instance = new CustomerList();
         instance.addCustomer(email, password, customerId, firstName, lastName, address, phoneNumber, loanID);
-        // TODO review the generated test code and remove the default call to fail.
+// TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
@@ -64,14 +69,14 @@ public class CustomerListTest {
     @Test
     public void testEditCustomer() {
         System.out.println("editCustomer");
-        String email = "";
-        String password = "";
-        long customerId = 0L;
-        String firstName = "";
-        String lastName = "";
-        String address = "";
-        String phoneNumber = "";
-        long loanID = 0L;
+        String email = "NotIST412Team3@gmail.com";
+        String password = "NotPassword";
+        long customerId = 2L;
+        String firstName = "Kristina";
+        String lastName = "Mantha";
+        String address = "987 Second St";
+        String phoneNumber = "098-765-4321";
+        long loanID = 2L;
         CustomerList instance = new CustomerList();
         instance.editCustomer(email, password, customerId, firstName, lastName, address, phoneNumber, loanID);
         // TODO review the generated test code and remove the default call to fail.
