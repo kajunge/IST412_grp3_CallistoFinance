@@ -52,23 +52,23 @@ public class LoanApplicationCntlTest {
         double interest = 0.0;
         LoanApplicationCntl instance = new LoanApplicationCntl();
         
-        //PDDocument expResult = new PDDocument();
-        String expResult = "";
-//        try{                   
-//            PDPage my_page = new PDPage();
-//            expResult.addPage(my_page);            
-//            
-//            //Saving the document
-//            expResult.save("src/main/resources/OutputFilesTest/my_doc.pdf");
-//            System.out.println("PDF created");
-//            
-//            //Closing the document
-//            expResult.close();
-//        }catch(IOException e){            
-//        }         
+        PDDocument expResult = new PDDocument();
+       // String expResult = "";
+        try{                   
+            PDPage my_page = new PDPage();
+            expResult.addPage(my_page);            
+            
+            //Saving the document
+            expResult.save("src/main/resources/OutputFilesTest/my_doc.pdf");
+            System.out.println("PDF created");
+            
+            //Closing the document
+            expResult.close();
+        }catch(IOException e){            
+        }         
         
         //PDDocument result = instance.pdfCreator(id, firstName, lastName, loanAmount, interest);
-        String result = instance.pdfCreator(id, firstName, lastName, loanAmount, interest);
+        PDDocument result = instance.pdfCreator(id, firstName, lastName, loanAmount, interest);
         assertEquals(expResult, result);
         System.out.println("Testing Passed testPdfCreator()");
         // TODO review the generated test code and remove the default call to fail.

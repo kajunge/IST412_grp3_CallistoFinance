@@ -11,7 +11,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * @author Chris Lefebvre
  * @author kristinamantha
  */
 public class LiveChatCntlTest {
@@ -27,34 +27,34 @@ public class LiveChatCntlTest {
     public static void tearDownClass() {
     }
 
-    /**
-     * Test of getType method, of class LiveChatCntl.
-     */
-    @Test
-    public void testGetType() {
-        //System.out.println("getType");
-        LiveChatCntl instance = new LiveChatCntl();
-        LiveChatCntl.MessageType expResult = null;
-        LiveChatCntl.MessageType result = instance.getType();
-        assertEquals(expResult, result);
-        System.out.println("Testing passed testGetType()" + result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setType method, of class LiveChatCntl.
-     */
-    @Test
-    public void testSetType() {
-        //System.out.println("setType");
-        LiveChatCntl.MessageType type = null;
-        LiveChatCntl instance = new LiveChatCntl();
-        instance.setType(type);
-        System.out.println("Testing passed testSetTpye()");
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
+//    /**
+//     * Test of getType method, of class LiveChatCntl.
+//     */
+//    @Test
+//    public void testGetType() {
+//        //System.out.println("getType");
+//        LiveChatCntl instance = new LiveChatCntl();
+//        LiveChatCntl.MessageType expResult= null;
+//        LiveChatCntl.MessageType result = instance.getType();
+//        assertEquals(expResult, result);
+//        System.out.println("Testing passed testGetType()" + result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        //fail("The test case is a prototype.");
+//    }
+//
+//    /**
+//     * Test of setType method, of class LiveChatCntl.
+//     */
+//    @Test
+//    public void testSetType() {
+//        //System.out.println("setType");
+//        LiveChatCntl.MessageType type = null;
+//        LiveChatCntl instance = new LiveChatCntl();
+//        instance.setType(type);
+//        System.out.println("Testing passed testSetTpye()");
+//        // TODO review the generated test code and remove the default call to fail.
+//        //fail("The test case is a prototype.");
+//    }
 
     /**
      * Test of getContent method, of class LiveChatCntl.
@@ -77,7 +77,7 @@ public class LiveChatCntlTest {
     @Test
     public void testSetContent() {
         //System.out.println("setContent");
-        String content = "";
+        String content = "temp content";
         LiveChatCntl instance = new LiveChatCntl();
         instance.setContent(content);
         System.out.println("Testing passed testSetContent()");
@@ -106,7 +106,7 @@ public class LiveChatCntlTest {
     @Test
     public void testSetSender() {
         //System.out.println("setSender");
-        String sender = "";
+        String sender = "IST412Team3";
         LiveChatCntl instance = new LiveChatCntl();
         instance.setSender(sender);
         System.out.println("Testing passed testSetSender()");
