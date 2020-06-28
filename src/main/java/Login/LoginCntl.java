@@ -21,7 +21,8 @@ public class LoginCntl {
      * @return A boolean return depending on whether username is valid.
      */
     private boolean isValidUsername(String username){
-        return false;
+        // TODO: check to make sure username is not taken
+        return username.length() >= 3 && !(username.contains(" "));
     }
     
     /**
@@ -30,6 +31,7 @@ public class LoginCntl {
      * @return This returns the validity of the password
      */
     public boolean isValidPassword(String password){
-        return false;
+        // TODO: add requirment of 1 uppercase and 1 number
+        return password.length() >= 8;
     }
 }
