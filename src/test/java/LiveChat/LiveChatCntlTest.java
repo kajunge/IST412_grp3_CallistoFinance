@@ -5,9 +5,7 @@
  */
 package LiveChat;
 
-import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -28,17 +26,84 @@ public class LiveChatCntlTest {
     @AfterClass
     public static void tearDownClass() {
     }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+
+    /**
+     * Test of getType method, of class LiveChatCntl.
+     */
+    @Test
+    public void testGetType() {
+        System.out.println("getType");
+        LiveChatCntl instance = new LiveChatCntl();
+        LiveChatCntl.MessageType expResult = null;
+        LiveChatCntl.MessageType result = instance.getType();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
 
+    /**
+     * Test of setType method, of class LiveChatCntl.
+     */
     @Test
-    public void testSomeMethod() {
+    public void testSetType() {
+        System.out.println("setType");
+        LiveChatCntl.MessageType type = null;
+        LiveChatCntl instance = new LiveChatCntl();
+        instance.setType(type);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getContent method, of class LiveChatCntl.
+     */
+    @Test
+    public void testGetContent() {
+        System.out.println("getContent");
+        LiveChatCntl instance = new LiveChatCntl();
+        String expResult = "";
+        String result = instance.getContent();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of setContent method, of class LiveChatCntl.
+     */
+    @Test
+    public void testSetContent() {
+        System.out.println("setContent");
+        String content = "";
+        LiveChatCntl instance = new LiveChatCntl();
+        instance.setContent(content);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getSender method, of class LiveChatCntl.
+     */
+    @Test
+    public void testGetSender() {
+        System.out.println("getSender");
+        LiveChatCntl instance = new LiveChatCntl();
+        String expResult = "";
+        String result = instance.getSender();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of setSender method, of class LiveChatCntl.
+     */
+    @Test
+    public void testSetSender() {
+        System.out.println("setSender");
+        String sender = "";
+        LiveChatCntl instance = new LiveChatCntl();
+        instance.setSender(sender);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

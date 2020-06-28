@@ -6,9 +6,7 @@
 package Data;
 
 import java.util.ArrayList;
-import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -28,14 +26,6 @@ public class LoanListTest {
     
     @AfterClass
     public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
     }
 
     /**
@@ -86,7 +76,7 @@ public class LoanListTest {
     }
 
     /**
-     * Test of readCustomerFile method, of class LoanList.
+     * Test of readLoanFile method, of class LoanList.
      */
     @Test
     public void testReadLoanFile() {

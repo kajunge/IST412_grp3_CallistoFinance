@@ -5,9 +5,7 @@
  */
 package EditCustomerInfo;
 
-import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -28,14 +26,6 @@ public class EditCustomerInfoCntlTest {
     @AfterClass
     public static void tearDownClass() {
     }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
 
     /**
      * Test of updateEmail method, of class EditCustomerInfoCntl.
@@ -44,7 +34,7 @@ public class EditCustomerInfoCntlTest {
     public void testUpdateEmail() {
         System.out.println("updateEmail");
         String email = "";
-        EditCustomerInfoCntl instance = new EditCustomerInfoCntl();
+        EditCustomerInfoCntl instance = null;
         instance.updateEmail(email);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -57,7 +47,7 @@ public class EditCustomerInfoCntlTest {
     public void testUpdatePassword() {
         System.out.println("updatePassword");
         String password = "";
-        EditCustomerInfoCntl instance = new EditCustomerInfoCntl();
+        EditCustomerInfoCntl instance = null;
         instance.updatePassword(password);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -70,7 +60,7 @@ public class EditCustomerInfoCntlTest {
     public void testUpdatefirstName() {
         System.out.println("updatefirstName");
         String firstName = "";
-        EditCustomerInfoCntl instance = new EditCustomerInfoCntl();
+        EditCustomerInfoCntl instance = null;
         instance.updatefirstName(firstName);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -83,7 +73,7 @@ public class EditCustomerInfoCntlTest {
     public void testUpdateLastName() {
         System.out.println("updateLastName");
         String lastName = "";
-        EditCustomerInfoCntl instance = new EditCustomerInfoCntl();
+        EditCustomerInfoCntl instance = null;
         instance.updateLastName(lastName);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -96,7 +86,7 @@ public class EditCustomerInfoCntlTest {
     public void testUpdateAddress() {
         System.out.println("updateAddress");
         String address = "";
-        EditCustomerInfoCntl instance = new EditCustomerInfoCntl();
+        EditCustomerInfoCntl instance = null;
         instance.updateAddress(address);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -109,7 +99,7 @@ public class EditCustomerInfoCntlTest {
     public void testUpdatePhoneNumber() {
         System.out.println("updatePhoneNumber");
         String phoneNumber = "";
-        EditCustomerInfoCntl instance = new EditCustomerInfoCntl();
+        EditCustomerInfoCntl instance = null;
         instance.updatePhoneNumber(phoneNumber);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");

@@ -5,9 +5,7 @@
  */
 package Payment;
 
-import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -28,14 +26,6 @@ public class PaymentCntlTest {
     @AfterClass
     public static void tearDownClass() {
     }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
 
     /**
      * Test of makePayment method, of class PaymentCntl.
@@ -44,8 +34,11 @@ public class PaymentCntlTest {
     public void testMakePayment() {
         System.out.println("makePayment");
         double payment = 0.0;
+        double previousTotal = 0.0;
         PaymentCntl instance = new PaymentCntl();
-        instance.makePayment(payment);
+        double expResult = 0.0;
+        double result = instance.makePayment(payment, previousTotal);
+        assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -60,6 +53,38 @@ public class PaymentCntlTest {
         boolean expResult = false;
         boolean result = instance.isLate();
         assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of lateFee method, of class PaymentCntl.
+     */
+    @Test
+    public void testLateFee() {
+        System.out.println("lateFee");
+        double loanInterest = 0.0;
+        double previousTotal = 0.0;
+        PaymentCntl instance = new PaymentCntl();
+        double expResult = 0.0;
+        double result = instance.lateFee(loanInterest, previousTotal);
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of amountDue method, of class PaymentCntl.
+     */
+    @Test
+    public void testAmountDue() {
+        System.out.println("amountDue");
+        double loanInterest = 0.0;
+        double previousTotal = 0.0;
+        PaymentCntl instance = new PaymentCntl();
+        double expResult = 0.0;
+        double result = instance.amountDue(loanInterest, previousTotal);
+        assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
