@@ -32,11 +32,12 @@ public class CustomerDataUITest {
      */
     @Test
     public void testMain() {
-        System.out.println("main");
+        //System.out.println("main");
         String[] args = null;
         CustomerDataUI.main(args);
+        System.out.println("Testing Passed testMain()");
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }

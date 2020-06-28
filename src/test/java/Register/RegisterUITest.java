@@ -35,8 +35,9 @@ public class RegisterUITest {
         System.out.println("main");
         String[] args = null;
         RegisterUI.main(args);
+        System.out.println("Testing passed testMain()");
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }

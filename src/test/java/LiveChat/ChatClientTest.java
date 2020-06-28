@@ -11,7 +11,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * @author Chris Lefebvre
  * @author kristinamantha
  */
 public class ChatClientTest {
@@ -32,11 +32,12 @@ public class ChatClientTest {
      */
     @Test
     public void testExecute() {
-        System.out.println("execute");
+        //System.out.println("execute");
         ChatClient instance = null;
         instance.execute();
+        System.out.println("Testing passed testExecute()");
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -45,11 +46,12 @@ public class ChatClientTest {
     @Test
     public void testSetUserName() {
         System.out.println("setUserName");
-        String userName = "";
-        ChatClient instance = null;
+        String userName = "IST412Team3";
+        ChatClient instance = new ChatClient("temp", 4040);
         instance.setUserName(userName);
+        
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**

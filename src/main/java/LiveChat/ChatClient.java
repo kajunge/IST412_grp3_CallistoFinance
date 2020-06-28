@@ -51,7 +51,7 @@ public class ChatClient {
      * @param userName the userName to set
      */
     public void setUserName(String userName) {
-        this.userName = userName;
+        this.userName = userName;    
     }
     /**
      * A method to return the username
