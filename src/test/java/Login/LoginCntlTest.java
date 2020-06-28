@@ -22,6 +22,9 @@ public class LoginCntlTest {
     
     @BeforeClass
     public static void setUpClass() {
+        System.out.println("\n*********************************");
+        System.out.println("****   Testing LoginCntlTest  ****");
+        System.out.println("*********************************");
     }
     
     @AfterClass
@@ -33,7 +36,6 @@ public class LoginCntlTest {
      */
     @Test
     public void testIsValidPassword() {
-        System.out.println("isValidPassword");
         String[] passwords = {"", " ", "pass"};
         LoginCntl instance = new LoginCntl();
         boolean expResult = false;
@@ -44,14 +46,13 @@ public class LoginCntlTest {
             assertEquals(expResult, result);
         }
         result = instance.isValidPassword("password");
-        System.out.println("password: ");
         assertEquals(true, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testIsValidPassword()");
+        System.out.println("*********************************");
     }
     
     public void testIsValidUsername(){
-        System.out.println("isValidUsername");
         String[] usernames = {"", " ", "me"};
         LoginCntl instance = new LoginCntl();
         boolean expResult = false;
@@ -62,10 +63,10 @@ public class LoginCntlTest {
             assertEquals(expResult, result);
         }
         result = instance.isValidPassword("user");
-        System.out.println("user: ");
         assertEquals(true, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testIsValidUsername()");
+        System.out.println("*********************************");
     }
     
 }

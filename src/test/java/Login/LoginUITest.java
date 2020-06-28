@@ -21,6 +21,9 @@ public class LoginUITest {
     
     @BeforeClass
     public static void setUpClass() {
+        System.out.println("\n*********************************");
+        System.out.println("****   Testing LoginUITest  ****");
+        System.out.println("*********************************");
     }
     
     @AfterClass
@@ -32,12 +35,11 @@ public class LoginUITest {
      */
     @Test
     public void testMain() {
-        //System.out.println("main");
         String[] args = null;
         LoginUI.main(args);
-        System.out.println("Testing passed testMain()");
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed on testMain()");
+        System.out.println("*********************************");
     }
     
 }

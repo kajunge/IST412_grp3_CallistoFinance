@@ -23,6 +23,9 @@ public class BalanceCntlTest {
 
     @BeforeClass
     public static void setUpClass() {
+        System.out.println("\n*********************************");
+        System.out.println("****   Testing BalanceUITest  ****");
+        System.out.println("*********************************");
     }
 
     @AfterClass
@@ -34,7 +37,6 @@ public class BalanceCntlTest {
      */
     @Test
     public void testCalculateInterest() {
-     //   System.out.println("calculateInterest");
         int p = 2000;
         int t = 5;
         double r = 0.08;
@@ -43,9 +45,9 @@ public class BalanceCntlTest {
         double expResult = 979.6914166032102;
         double result = instance.calculateInterest(2000, 5, 0.08, 12);
         assertEquals(expResult, result, 0.0);
-        System.out.println("Test passed testCalculateInterest() " + result);
-        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Test Passed for testCalculateInterest() " + result);
+        System.out.println("*********************************");
     }
 
     /**
@@ -54,14 +56,6 @@ public class BalanceCntlTest {
     @Test
     public void testPaymentHistory() {
         
-        // Just adding a comment so I can do another push to GitHub
-        
-        
-        //System.out.println("PaymentHistory");
-        
-        //Date date = "28-6-2020";
-        //String expResult = "Payment: 100.00, Date: 28-6-2020";
-        
         double payment = 100.00;
         Date date = new Date();
         BalanceCntl instance = new BalanceCntl();
@@ -69,9 +63,9 @@ public class BalanceCntlTest {
      
         String result = instance.PaymentHistory(payment, date);
         assertEquals(expResult, result);
-        System.out.println("Test passed testPaymentHistory() " + result);
-        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Test Passed for testPaymentHistory() " + result);
+        System.out.println("*********************************");
     }
 
 }

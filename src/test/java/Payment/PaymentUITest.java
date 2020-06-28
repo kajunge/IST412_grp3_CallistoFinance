@@ -21,6 +21,9 @@ public class PaymentUITest {
     
     @BeforeClass
     public static void setUpClass() {
+        System.out.println("\n*********************************");
+        System.out.println("****   Testing PaymentUITest  ****");
+        System.out.println("*********************************");
     }
     
     @AfterClass
@@ -29,8 +32,9 @@ public class PaymentUITest {
 
     @Test
     public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing for the PaymentUI");
+        System.out.println("*********************************");
     }
     
 }
