@@ -14,11 +14,16 @@ public class EditCustomerInfoCntl {
     
     private Customer customer;
     
+    public EditCustomerInfoCntl(){
+        
+    }
     /**
      * Constructor for EditCustomerInfoCntl
+     * @param customer
      */
     public EditCustomerInfoCntl(Customer customer){
         this.customer = customer;
+        
     }
     
     /**
@@ -26,7 +31,7 @@ public class EditCustomerInfoCntl {
      * @param email - a string representing the email in a customer profile
      */
     public void updateEmail(String email){
-        customer.setEmail(email);
+        getCustomer().setEmail(email);
     }
     
     /**
@@ -34,7 +39,7 @@ public class EditCustomerInfoCntl {
      * @param password - a String representing the password in a customer profile
      */
     public void updatePassword(String password){
-        customer.setPassword(password);
+        getCustomer().setPassword(password);
     }
     
     /**
@@ -42,7 +47,7 @@ public class EditCustomerInfoCntl {
      * @param firstName - a String representing the customer's first name in the customer
      */
     public void updatefirstName(String firstName){
-        customer.setFirstName(firstName);
+        getCustomer().setFirstName(firstName);
     }
     
     /**
@@ -50,7 +55,7 @@ public class EditCustomerInfoCntl {
      * @param lastName - a String representing the customer's last name in the customer profile
      */
     public void updateLastName(String lastName){
-        customer.setLastName(lastName);
+        getCustomer().setLastName(lastName);
     }
     
     /**
@@ -58,7 +63,7 @@ public class EditCustomerInfoCntl {
      * @param address - a String representing the customer's address in the customer profile
      */
     public void updateAddress(String address){
-        customer.setAddress(address);
+        getCustomer().setAddress(address);
     }
     
     /**
@@ -66,6 +71,20 @@ public class EditCustomerInfoCntl {
      * @param phoneNumber - a String representing the customer's phone number in the customer profile
      */
     public void updatePhoneNumber(String phoneNumber){
-        customer.setPhoneNumber(phoneNumber);
+        getCustomer().setPhoneNumber(phoneNumber);
+    }
+
+    /**
+     * @return the customer
+     */
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    /**
+     * @param customer the customer to set
+     */
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }

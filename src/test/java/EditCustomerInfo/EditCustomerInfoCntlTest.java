@@ -5,6 +5,9 @@
  */
 package EditCustomerInfo;
 
+import Data.Customer;
+import Data.CustomerList;
+import java.util.ArrayList;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -15,16 +18,22 @@ import static org.junit.Assert.*;
  * @author kristinamantha
  */
 public class EditCustomerInfoCntlTest {
-    
+
+    EditCustomerInfoCntl editCustomerInfoCntlInstance;
+    Customer customerInstance;
+
     public EditCustomerInfoCntlTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
+        System.out.println("* EditCustomerInfoCntlTest: Before method setUpClass()");
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
+        System.out.println("* EditCustomerInfoCntlTest: After method tearDownClass()");
+
     }
 
     /**
@@ -32,12 +41,20 @@ public class EditCustomerInfoCntlTest {
      */
     @Test
     public void testUpdateEmail() {
-        System.out.println("updateEmail");
-        String email = "";
-        EditCustomerInfoCntl instance = null;
-        instance.updateEmail(email);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      /*  
+        editCustomerInfoCntlInstance = new EditCustomerInfoCntl();
+        
+        customerInstance = new Customer("kam6564@psu.edu", "password", 2, "Kristina", "Mantha", "123 Main Street", "123-456-7880", 2);
+        
+        String email = "kam6564@gmail.com";
+        String newEmail = "kristina@gmail.com";
+        editCustomerInfoCntlInstance.getCustomer().setEmail(email);
+       // editCustomerInfoCntlInstance.updateEmail(newEmail);
+        //  EditCustomerInfoCntl instance = null;
+        //  instance.updateEmail(email);
+        //editCustomerInfoCntlInstance = null;
+
+        // fail("The test case is a prototype.");*/
     }
 
     /**
@@ -50,7 +67,7 @@ public class EditCustomerInfoCntlTest {
         EditCustomerInfoCntl instance = null;
         instance.updatePassword(password);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // fail("The test case is a prototype.");
     }
 
     /**
@@ -63,7 +80,7 @@ public class EditCustomerInfoCntlTest {
         EditCustomerInfoCntl instance = null;
         instance.updatefirstName(firstName);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // fail("The test case is a prototype.");
     }
 
     /**
@@ -76,7 +93,7 @@ public class EditCustomerInfoCntlTest {
         EditCustomerInfoCntl instance = null;
         instance.updateLastName(lastName);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // fail("The test case is a prototype.");
     }
 
     /**
@@ -89,7 +106,7 @@ public class EditCustomerInfoCntlTest {
         EditCustomerInfoCntl instance = null;
         instance.updateAddress(address);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // fail("The test case is a prototype.");
     }
 
     /**
@@ -102,7 +119,34 @@ public class EditCustomerInfoCntlTest {
         EditCustomerInfoCntl instance = null;
         instance.updatePhoneNumber(phoneNumber);
         // TODO review the generated test code and remove the default call to fail.
+        // fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getCustomer method, of class EditCustomerInfoCntl.
+     */
+    @Test
+    public void testGetCustomer() {
+        System.out.println("getCustomer");
+        EditCustomerInfoCntl instance = new EditCustomerInfoCntl();
+        Customer expResult = null;
+        Customer result = instance.getCustomer();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-    
+
+    /**
+     * Test of setCustomer method, of class EditCustomerInfoCntl.
+     */
+    @Test
+    public void testSetCustomer() {
+        System.out.println("setCustomer");
+        Customer customer = null;
+        EditCustomerInfoCntl instance = new EditCustomerInfoCntl();
+        instance.setCustomer(customer);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
 }

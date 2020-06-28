@@ -13,6 +13,7 @@ import static org.junit.Assert.*;
 /**
  *
  * @author kristinamantha
+ * @author Chris LeFebvre
  */
 public class PaymentCntlTest {
     
