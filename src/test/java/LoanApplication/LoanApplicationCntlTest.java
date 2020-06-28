@@ -5,10 +5,8 @@
  */
 package LoanApplication;
 
-import java.security.PublicKey;
-import org.junit.After;
+import org.apache.pdfbox.pdmodel.PDDocument;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -29,13 +27,24 @@ public class LoanApplicationCntlTest {
     @AfterClass
     public static void tearDownClass() {
     }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+
+    /**
+     * Test of pdfCreator method, of class LoanApplicationCntl.
+     */
+    @Test
+    public void testPdfCreator() {
+        System.out.println("pdfCreator");
+        long id = 0L;
+        String firstName = "";
+        String lastName = "";
+        double loanAmount = 0.0;
+        double interest = 0.0;
+        LoanApplicationCntl instance = new LoanApplicationCntl();
+        PDDocument expResult = null;
+        PDDocument result = instance.pdfCreator(id, firstName, lastName, loanAmount, interest);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -44,9 +53,9 @@ public class LoanApplicationCntlTest {
     @Test
     public void testElectronicSignature() {
         System.out.println("electronicSignature");
-        PublicKey publicKey = null;
+        String pdfName = "";
         LoanApplicationCntl instance = new LoanApplicationCntl();
-        instance.electronicSignature(publicKey);
+        instance.electronicSignature(pdfName);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

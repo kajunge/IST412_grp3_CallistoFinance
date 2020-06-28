@@ -5,9 +5,7 @@
  */
 package Register;
 
-import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -28,13 +26,19 @@ public class RegisterCntlTest {
     @AfterClass
     public static void tearDownClass() {
     }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+
+    /**
+     * Test of generateKey method, of class RegisterCntl.
+     */
+    @Test
+    public void testGenerateKey() {
+        System.out.println("generateKey");
+        RegisterCntl instance = new RegisterCntl();
+        String expResult = "";
+        String result = instance.generateKey();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -43,8 +47,9 @@ public class RegisterCntlTest {
     @Test
     public void testSendEmail() {
         System.out.println("sendEmail");
+        String userEmail = "";
         RegisterCntl instance = new RegisterCntl();
-        instance.sendEmail();
+        instance.sendEmail(userEmail);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -55,9 +60,26 @@ public class RegisterCntlTest {
     @Test
     public void testVerifyEmail() {
         System.out.println("verifyEmail");
-        boolean verifyLink = false;
+        String userEmail = "";
         RegisterCntl instance = new RegisterCntl();
-        instance.verifyEmail(userEmail);
+        boolean expResult = false;
+        boolean result = instance.verifyEmail(userEmail);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of isValidEmail method, of class RegisterCntl.
+     */
+    @Test
+    public void testIsValidEmail() {
+        System.out.println("isValidEmail");
+        String email = "";
+        RegisterCntl instance = new RegisterCntl();
+        boolean expResult = false;
+        boolean result = instance.isValidEmail(email);
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
