@@ -21,6 +21,10 @@ public class EditCustomerInfoCntl {
         this.customer = customer;
     }
     
+    public Customer getCustomer(){
+        return customer;
+    }
+    
     /**
      *updates the email in a user profile
      * @param email - a string representing the email in a customer profile

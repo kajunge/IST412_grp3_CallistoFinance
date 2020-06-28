@@ -5,6 +5,7 @@
  */
 package EditCustomerInfo;
 
+import Data.Customer;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -13,6 +14,7 @@ import static org.junit.Assert.*;
 /**
  *
  * @author kristinamantha
+ * @author Scott Crowthers
  */
 public class EditCustomerInfoCntlTest {
     
@@ -33,11 +35,12 @@ public class EditCustomerInfoCntlTest {
     @Test
     public void testUpdateEmail() {
         System.out.println("updateEmail");
-        String email = "";
-        EditCustomerInfoCntl instance = null;
+        String email = "email@email.com";
+        EditCustomerInfoCntl instance = new EditCustomerInfoCntl( new Customer("", "", 0, "", "", "", "", 0));
         instance.updateEmail(email);
+        assertEquals(email, instance.getCustomer().getEmail());
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -46,11 +49,12 @@ public class EditCustomerInfoCntlTest {
     @Test
     public void testUpdatePassword() {
         System.out.println("updatePassword");
-        String password = "";
-        EditCustomerInfoCntl instance = null;
+        String password = "password";
+        EditCustomerInfoCntl instance = new EditCustomerInfoCntl( new Customer("", "", 0, "", "", "", "", 0));
         instance.updatePassword(password);
+        assertEquals(password, instance.getCustomer().getPassword());
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -59,11 +63,12 @@ public class EditCustomerInfoCntlTest {
     @Test
     public void testUpdatefirstName() {
         System.out.println("updatefirstName");
-        String firstName = "";
-        EditCustomerInfoCntl instance = null;
+        String firstName = "fName";
+        EditCustomerInfoCntl instance = new EditCustomerInfoCntl( new Customer("", "", 0, "", "", "", "", 0));
         instance.updatefirstName(firstName);
+        assertEquals(firstName, instance.getCustomer().getFirstName());
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -72,11 +77,12 @@ public class EditCustomerInfoCntlTest {
     @Test
     public void testUpdateLastName() {
         System.out.println("updateLastName");
-        String lastName = "";
-        EditCustomerInfoCntl instance = null;
+        String lastName = "lName";
+        EditCustomerInfoCntl instance = new EditCustomerInfoCntl( new Customer("", "", 0, "", "", "", "", 0));
         instance.updateLastName(lastName);
+        assertEquals(lastName, instance.getCustomer().getLastName());
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -85,11 +91,12 @@ public class EditCustomerInfoCntlTest {
     @Test
     public void testUpdateAddress() {
         System.out.println("updateAddress");
-        String address = "";
-        EditCustomerInfoCntl instance = null;
+        String address = "123 Main St.";
+        EditCustomerInfoCntl instance = new EditCustomerInfoCntl( new Customer("", "", 0, "", "", "", "", 0));
         instance.updateAddress(address);
+        assertEquals(address, instance.getCustomer().getAddress());
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -98,11 +105,12 @@ public class EditCustomerInfoCntlTest {
     @Test
     public void testUpdatePhoneNumber() {
         System.out.println("updatePhoneNumber");
-        String phoneNumber = "";
-        EditCustomerInfoCntl instance = null;
+        String phoneNumber = "123-456-7890";
+        EditCustomerInfoCntl instance = new EditCustomerInfoCntl( new Customer("", "", 0, "", "", "", "", 0));
         instance.updatePhoneNumber(phoneNumber);
+        assertEquals(phoneNumber, instance.getCustomer().getPhoneNumber());
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }
