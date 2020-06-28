@@ -14,13 +14,17 @@ import org.junit.runners.Suite;
  * @author kristinamantha
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({Data.DataSuite.class,  Register.RegisterSuite.class,  Login.LoginSuite.class,
+@Suite.SuiteClasses({Register.RegisterSuite.class, Login.LoginSuite.class, Data.DataSuite.class,
     LoanApplication.LoanApplicationSuite.class, LoanBalance.LoanBalanceSuite.class, 
     Payment.PaymentSuite.class, EditCustomerInfo.EditCustomerInfoSuite.class,LiveChat.LiveChatSuite.class})
 public class TestHarness {
 
     @BeforeClass
     public static void setUpClass() throws Exception {
+        System.out.println("Running modules in the following order for testing"
+                + " purposes: Register -> Login -> Data -> Loan Application "
+                + "Loan Balance -> Payment -> Edit Customer Information ->"
+                + " LiveChat.");
     }
 
     @AfterClass
