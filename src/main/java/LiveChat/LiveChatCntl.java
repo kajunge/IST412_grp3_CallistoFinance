@@ -14,9 +14,9 @@ public class LiveChatCntl {
     private String content;
     private String sender;
 
-    public LiveChatCntl() {
-        content = "temp content";
-        sender = "IST412Team3";
+    public LiveChatCntl(String content, String sender) {
+        this.content = content;
+        this.sender = sender;
     }
     //FIX_ME: not relevant to expected tutorial
 //    public enum MessageType {

@@ -62,7 +62,7 @@ public class LiveChatCntlTest {
     @Test
     public void testGetContent() {
         //System.out.println("getContent");
-        LiveChatCntl instance = new LiveChatCntl();
+        LiveChatCntl instance = new LiveChatCntl("temp content", "IST412Team3");
         String expResult = "temp content";
         String result = instance.getContent();
         assertEquals(expResult, result);
@@ -78,7 +78,7 @@ public class LiveChatCntlTest {
     public void testSetContent() {
         //System.out.println("setContent");
         String content = "temp content";
-        LiveChatCntl instance = new LiveChatCntl();
+        LiveChatCntl instance = new LiveChatCntl("temp content", "IST412Team3");
         instance.setContent(content);
         System.out.println("Testing passed testSetContent()");
         // TODO review the generated test code and remove the default call to fail.
@@ -91,7 +91,7 @@ public class LiveChatCntlTest {
     @Test
     public void testGetSender() {
         //System.out.println("getSender");
-        LiveChatCntl instance = new LiveChatCntl();
+        LiveChatCntl instance = new LiveChatCntl("temp content", "IST412Team3");
         String expResult = "IST412Team3";
         String result = instance.getSender();
         assertEquals(expResult, result);
@@ -107,7 +107,7 @@ public class LiveChatCntlTest {
     public void testSetSender() {
         //System.out.println("setSender");
         String sender = "IST412Team3";
-        LiveChatCntl instance = new LiveChatCntl();
+        LiveChatCntl instance = new LiveChatCntl("temp content", "IST412Team3");
         instance.setSender(sender);
         System.out.println("Testing passed testSetSender()");
         // TODO review the generated test code and remove the default call to fail.
