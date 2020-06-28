@@ -17,6 +17,9 @@ import static org.junit.Assert.*;
 public class EditCustomerInfoUITest {
     
     public EditCustomerInfoUITest() {
+        System.out.println("\n*********************************");
+        System.out.println("****   Testing EditCustomerInfoCntlTest  ****");
+        System.out.println("*********************************");
     }
     
     @BeforeClass
@@ -29,8 +32,9 @@ public class EditCustomerInfoUITest {
 
     @Test
     public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("\n*********************************");
+        System.out.println("Testing Passed on testSomeMethod()");
+        System.out.println("*********************************");
     }
     
 }

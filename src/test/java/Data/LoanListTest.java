@@ -22,6 +22,9 @@ public class LoanListTest {
     
     @BeforeClass
     public static void setUpClass() {
+        System.out.println("\n*********************************");
+        System.out.println("****   Testing LoanListTest  ****");
+        System.out.println("*********************************");
     }
     
     @AfterClass
@@ -33,7 +36,6 @@ public class LoanListTest {
      */
     @Test
     public void testAddLoan() {
-        //System.out.println("addLoan");
         long loanID = 0L;
         long customerID = 0L;
         long amountTotal = 0L;
@@ -41,9 +43,9 @@ public class LoanListTest {
         String date = "";
         LoanList instance = new LoanList();
         instance.addLoan(2L, 2L, 30000L, 2000L, "28-6-2020");
-        System.out.println("Testing passed testAddLoan()");
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("\n*********************************");       
+        System.out.println("Testing Passed for testAddLoan()");
+        System.out.println("\n*********************************");
     }
 
     /**
@@ -51,7 +53,6 @@ public class LoanListTest {
      */
     @Test
     public void testEditLoan() {
-        //System.out.println("editLoan");
         long loanID = 0L;
         long customerID = 0L;
         long amountTotal = 0L;
@@ -59,9 +60,9 @@ public class LoanListTest {
         String date = "";
         LoanList instance = new LoanList();
         instance.editLoan(2L, 2L, 30000L, 2000L, "28-6-2020");
-        System.out.println("Testing passed testEditLoan()");
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("\n*********************************");
+        System.out.println("Testing Passed for testEditLoan()");
+        System.out.println("\n*********************************");
     }
 
     /**
@@ -69,13 +70,12 @@ public class LoanListTest {
      */
     @Test
     public void testDeleteLoan() {
-        //System.out.println("deleteLoan");
         long loanID = 0L;
         LoanList instance = new LoanList();
         instance.deleteLoan(loanID);
-        System.out.println("Testing passed testDeleteLoan");
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("\n*********************************");
+        System.out.println("Testing Passed for testDeleteLoan()");
+        System.out.println("\n*********************************");
     }
 
     /**
@@ -83,12 +83,11 @@ public class LoanListTest {
      */
     @Test
     public void testReadLoanFile() {
-        //System.out.println("readLoanFile");
         LoanList instance = new LoanList();
         instance.readLoanFile();
-        System.out.println("Testing passed testReadLoanFile()");
-// TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("\n*********************************");
+        System.out.println("Testing Passed for testReadLoanFile()");
+        System.out.println("\n*********************************");
     }
 
     /**
@@ -96,12 +95,11 @@ public class LoanListTest {
      */
     @Test
     public void testWriteLoanFile() {
-        //System.out.println("writeLoanFile");
         LoanList instance = new LoanList();
         instance.writeLoanFile();
-        System.out.println("Testing passed testWriteLoanFile()");
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("\n*********************************");
+        System.out.println("Testing Passed testWriteLoanFile()");
+        System.out.println("\n*********************************");
     }
 
     /**
@@ -109,12 +107,11 @@ public class LoanListTest {
      */
     @Test
     public void testPrintLoanFile() {
-        //System.out.println("printLoanFile");
         LoanList instance = new LoanList();
         instance.printLoanFile();
-        System.out.println("Testing passed testPrintLoanFile()");
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("\n*********************************");
+        System.out.println("Testing Passed for testPrintLoanFile()");
+        System.out.println("\n*********************************");
     }
 
     /**
@@ -122,15 +119,14 @@ public class LoanListTest {
      */
     @Test
     public void testGetLoanArray() {
-        //System.out.println("getLoanArray");
         LoanList instance = new LoanList();
         instance.addLoan(2L, 2L, 30000L, 2000L, "28-6-2020");
         ArrayList<Loan> expResult = instance.getLoanArray();
         ArrayList<Loan> result = instance.getLoanArray();
         assertEquals(expResult, result);
-        System.out.println("Testing passed testGetLoanArray()" + result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("\n*********************************");
+        System.out.println("Testing Passed for testGetLoanArray()");
+        System.out.println("\n*********************************");
     }
 
     /**
@@ -138,13 +134,12 @@ public class LoanListTest {
      */
     @Test
     public void testSetLoanArray() {
-        //System.out.println("setLoanArray");
         ArrayList<Loan> loanArray = null;
         LoanList instance = new LoanList();
         instance.setLoanArray(loanArray);
-        System.out.println("Testing passed testSetLoanArray()");
-        // TODO review the generated test code and remove the default call to fail.
-       // fail("The test case is a prototype.");
+        System.out.println("\n*********************************");
+        System.out.println("Testing Passed for testSetLoanArray()");
+        System.out.println("\n*********************************");
     }
     
 }

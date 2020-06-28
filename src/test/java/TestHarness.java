@@ -15,7 +15,7 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({Payment.PaymentSuite.class, LiveChat.LiveChatSuite.class, LoanBalance.LoanBalanceSuite.class, EditCustomerInfo.EditCustomerInfoSuite.class, LoanApplication.LoanApplicationSuite.class, Register.RegisterSuite.class, Data.DataSuite.class, Login.LoginSuite.class})
-public class RootSuite {
+public class TestHarness {
 
     @BeforeClass
     public static void setUpClass() throws Exception {
