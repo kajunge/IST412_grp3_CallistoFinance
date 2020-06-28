@@ -141,12 +141,13 @@ public class EditCustomerInfoCntlTest {
     @Test
     public void testGetCustomer() {
         System.out.println("getCustomer");
-        EditCustomerInfoCntl instance = new EditCustomerInfoCntl();
-        Customer expResult = null;
+        Customer customer = new Customer("email@email.com", "password", 1234567890, "John", "Doe", "123 Main St.", "123-456-7890", 987654321);
+        EditCustomerInfoCntl instance = new EditCustomerInfoCntl(customer);
+        Customer expResult = customer;
         Customer result = instance.getCustomer();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // fail("The test case is a prototype.");
 
     }
 
@@ -156,11 +157,14 @@ public class EditCustomerInfoCntlTest {
     @Test
     public void testSetCustomer() {
         System.out.println("setCustomer");
-        Customer customer = null;
+        Customer customer = new Customer("email@email.com", "password", 1234567890, "John", "Doe", "123 Main St.", "123-456-7890", 987654321);
         EditCustomerInfoCntl instance = new EditCustomerInfoCntl();
+        Customer expResult = customer;
         instance.setCustomer(customer);
+        Customer result = instance.getCustomer();
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // fail("The test case is a prototype.");
     }
 
 }
