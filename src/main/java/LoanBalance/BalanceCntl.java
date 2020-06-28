@@ -35,7 +35,7 @@ public class BalanceCntl {
      * A method to show customer payment history
      * @param payment A double showing the payment.
      * @param date A Date showing when the payment was made.
-     * @return returns a double representing thh payment
+     * @return returns a double representing the payment
      */
     public String PaymentHistory(double payment, Date date){
         String payment_information;
