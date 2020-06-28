@@ -1,13 +1,15 @@
 
 package Data;
 
+import java.io.Serializable;
+
 /**
  * This is the Loan details class. It has fields containing information
  * about the loan and getters/setters for these fields.
  * @author Chris Lefebvre
  * @author kristinamantha
  */
-public class Loan {
+public class Loan implements Serializable{
 
     private long loanID;
     private long customerID;

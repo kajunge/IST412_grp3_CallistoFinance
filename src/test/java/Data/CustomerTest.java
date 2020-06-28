@@ -5,6 +5,7 @@
  */
 package Data;
 
+import java.io.Serializable;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -14,7 +15,7 @@ import static org.junit.Assert.*;
  *
  * @author kristinamantha
  */
-public class CustomerTest {
+public class CustomerTest implements Serializable{
     
     public CustomerTest() {
     }

@@ -68,6 +68,7 @@ public class CustomerListTest {
         CustomerList instance = new CustomerList();
         instance.editCustomer("kam6564@psu.edu", "password", 2, "Kristina New", "Mantha", "123 Main Street", "123-456-7880", 2);
         System.out.println("Testing passed testEditCustomer()");
+        System.out.println("");
        // fail("The test case is a prototype.");
     }
 

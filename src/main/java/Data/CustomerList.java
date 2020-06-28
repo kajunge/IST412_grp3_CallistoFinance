@@ -17,7 +17,7 @@ public class CustomerList {
     
     private ArrayList<Customer> customerArray;
     
-    private String customerFile = "src/SerFiles/Customer.ser";
+    private String customerFile = "src/main/resources/SerFiles/Customer.ser";
     
     /**
      *Constructor for the CustomerList array
