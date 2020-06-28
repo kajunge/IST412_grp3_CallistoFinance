@@ -45,7 +45,7 @@ public class ChatClientTest {
      */
     @Test
     public void testSetUserName() {
-        System.out.println("setUserName");
+        //System.out.println("setUserName");
         String userName = "IST412Team3";
         ChatClient instance = new ChatClient("temp", 4040);
         instance.setUserName(userName);
@@ -60,9 +60,9 @@ public class ChatClientTest {
      */
     @Test
     public void testGetUserName() {
-        System.out.println("getUserName");
+        //System.out.println("getUserName");
         ChatClient instance = new ChatClient("temp", 4040);
-        String expResult = "";
+        String expResult = "IST412Team3";
         String result = instance.getUserName();
         assertEquals(expResult, result);
         System.out.println("Testing passed testGetUserName() " + result);
