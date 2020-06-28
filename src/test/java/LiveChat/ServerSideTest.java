@@ -29,7 +29,9 @@ public class ServerSideTest {
 
     @Test
     public void testSomeMethod() {
-
+        System.out.println("*********************************");
+        System.out.println("Testing passed: testSomeMethod()");
+        System.out.println("*********************************");
     }
     
 }

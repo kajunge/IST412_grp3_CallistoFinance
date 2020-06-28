@@ -117,8 +117,7 @@ public class EditCustomerInfoCntlTest {
         EditCustomerInfoCntl instance = new EditCustomerInfoCntl( new Customer("", "", 0, "", "", "", "", 0));
         instance.updateAddress(address);
         assertEquals(address, instance.getCustomer().getAddress());
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -131,8 +130,7 @@ public class EditCustomerInfoCntlTest {
         EditCustomerInfoCntl instance = new EditCustomerInfoCntl( new Customer("", "", 0, "", "", "", "", 0));
         instance.updatePhoneNumber(phoneNumber);
         assertEquals(phoneNumber, instance.getCustomer().getPhoneNumber());
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -146,8 +144,6 @@ public class EditCustomerInfoCntlTest {
         Customer expResult = customer;
         Customer result = instance.getCustomer();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
 
     }
 
@@ -163,8 +159,7 @@ public class EditCustomerInfoCntlTest {
         instance.setCustomer(customer);
         Customer result = instance.getCustomer();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
+        
     }
 
 }

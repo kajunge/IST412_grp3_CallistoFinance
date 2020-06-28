@@ -18,11 +18,14 @@ import static org.junit.Assert.*;
 public class CustomerTest implements Serializable{
     
     public CustomerTest() {
+        
     }
     
     @BeforeClass
     public static void setUpClass() {
-        
+        System.out.println("\n*********************************");
+        System.out.println("****   Testing CustomerTest  ****");
+        System.out.println("*********************************");
     }
     
     @AfterClass
@@ -42,8 +45,9 @@ public class CustomerTest implements Serializable{
         String expResult = "kam6564@psu.edu";
         String result = instance.getEmail();
         assertEquals(expResult, result);
-        
-       // fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testGetEmail()" + result);
+        System.out.println("*********************************");
     }
 
     /**
@@ -51,13 +55,12 @@ public class CustomerTest implements Serializable{
      */
     @Test
     public void testSetEmail() {
-        System.out.println("setEmail");
         String email = "kam6564@psu.edu";
         Customer instance = new Customer("kam6564@psu.edu", "password", 2, "Kristina", "Mantha", "123 Main Street", "123-456-7889", 2);
-        System.out.println("Testing: this is the testSetEmail " + email);
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testSetEmail() " + email);
+        System.out.println("*********************************");
         instance.setEmail(email);
-        
-       // fail("The test case is a prototype.");
     }
 
     /**
@@ -65,13 +68,13 @@ public class CustomerTest implements Serializable{
      */
     @Test
     public void testGetPassword() {
-        System.out.println("getPassword");
         Customer instance = new Customer("kam6564@psu.edu", "password", 2, "Kristina", "Mantha", "123 Main Street", "123-456-7889", 2);
         String expResult = "password";
         String result = instance.getPassword();
         assertEquals(expResult, result);
-        System.out.println("Testing: this is the testGetPassword" + result);
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testGetPassword() " + result);
+        System.out.println("*********************************");
     }
 
     /**
@@ -79,12 +82,12 @@ public class CustomerTest implements Serializable{
      */
     @Test
     public void testSetPassword() {
-        System.out.println("setPassword");
         String password = "";
         Customer instance = new Customer("kam6564@psu.edu", "password", 2, "Kristina", "Mantha", "123 Main Street", "123-456-7889", 2);
         instance.setPassword(password);
-        System.out.println("Testing: this is the testSetPassword");
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testSetPassword()" + password);
+        System.out.println("*********************************");
     }
 
     /**
@@ -92,13 +95,13 @@ public class CustomerTest implements Serializable{
      */
     @Test
     public void testGetCustomerId() {
-        System.out.println("getCustomerId");
         Customer instance = new Customer("kam6564@psu.edu", "password", 2, "Kristina", "Mantha", "123 Main Street", "123-456-7889", 2);
         long expResult = 2;
         long result = instance.getCustomerId();
         assertEquals(expResult, result);
-        System.out.println("Testing: this is the testGetCustomerID");
-       // fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testGetCustomerID()" + result);
+        System.out.println("*********************************");
     }
 
     /**
@@ -106,12 +109,12 @@ public class CustomerTest implements Serializable{
      */
     @Test
     public void testSetCustomerId() {
-        System.out.println("setCustomerId");
         long customerId = 0L;
         Customer instance = new Customer("kam6564@psu.edu", "password", 2, "Kristina", "Mantha", "123 Main Street", "123-456-7889", 2);
         instance.setCustomerId(customerId);
-        System.out.println("Testing: this is the testSet");
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testSetCustomerId()" + customerId);
+        System.out.println("*********************************");
     }
 
     /**
@@ -119,13 +122,13 @@ public class CustomerTest implements Serializable{
      */
     @Test
     public void testGetFirstName() {
-        System.out.println("getFirstName");
         Customer instance = new Customer("kam6564@psu.edu", "password", 2, "Kristina", "Mantha", "123 Main Street", "123-456-7889", 2);
         String expResult = "Kristina";
         String result = instance.getFirstName();
         assertEquals(expResult, result);
-        System.out.println("Testing: this is the testGetFirstName");
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testGetFirstName()" + result);
+        System.out.println("*********************************");
     }
 
     /**
@@ -133,12 +136,12 @@ public class CustomerTest implements Serializable{
      */
     @Test
     public void testSetFirstName() {
-        System.out.println("setFirstName");
         String firstName = "";
         Customer instance = new Customer("kam6564@psu.edu", "password", 2, "Kristina", "Mantha", "123 Main Street", "123-456-7889", 2);
         instance.setFirstName(firstName);
-        System.out.println("Testing: this is the testSetFirstName");
-       // fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testSetFirstName()" + firstName);
+        System.out.println("*********************************");
     }
 
     /**
@@ -146,13 +149,13 @@ public class CustomerTest implements Serializable{
      */
     @Test
     public void testGetLastName() {
-        System.out.println("getLastName");
         Customer instance = new Customer("kam6564@psu.edu", "password", 2, "Kristina", "Mantha", "123 Main Street", "123-456-7889", 2);
         String expResult = "Mantha";
         String result = instance.getLastName();
         assertEquals(expResult, result);
-        System.out.println("Testing: this is the testGetLastName");
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testGetLastName()" + result);
+        System.out.println("*********************************");
     }
 
     /**
@@ -160,12 +163,12 @@ public class CustomerTest implements Serializable{
      */
     @Test
     public void testSetLastName() {
-        System.out.println("setLastName");
         String lastName = "";
         Customer instance = new Customer("kam6564@psu.edu", "password", 2, "Kristina", "Mantha", "123 Main Street", "123-456-7889", 2);
         instance.setLastName(lastName);
-        System.out.println("Testing: this is the testSetLastName");
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testSetLastName()" + lastName);
+        System.out.println("*********************************");
     }
 
     /**
@@ -173,13 +176,13 @@ public class CustomerTest implements Serializable{
      */
     @Test
     public void testGetAddress() {
-        System.out.println("getAddress");
         Customer instance = new Customer("kam6564@psu.edu", "password", 2, "Kristina", "Mantha", "123 Main Street", "123-456-7889", 2);
         String expResult = "123 Main Street";
         String result = instance.getAddress();
         assertEquals(expResult, result);
-        System.out.println("Testing: this is the testGetAddress");
-       // fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testGetAddress()" + result);
+        System.out.println("*********************************");
     }
 
     /**
@@ -187,12 +190,11 @@ public class CustomerTest implements Serializable{
      */
     @Test
     public void testSetAddress() {
-        System.out.println("setAddress");
         String address = "";
         Customer instance = new Customer("kam6564@psu.edu", "password", 2, "Kristina", "Mantha", "123 Main Street", "123-456-7889", 2);
         instance.setAddress(address);
-        System.out.println("Testing: this is the testSetAddress");
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testSetAddress()" + address);
     }
 
     /**
@@ -200,13 +202,12 @@ public class CustomerTest implements Serializable{
      */
     @Test
     public void testGetPhoneNumber() {
-        System.out.println("getPhoneNumber");
         Customer instance = new Customer("kam6564@psu.edu", "password", 2, "Kristina", "Mantha", "123 Main Street", "123-456-7889", 2);
         String expResult = "123-456-7889";
         String result = instance.getPhoneNumber();
         assertEquals(expResult, result);
-        System.out.println("Testing: this is the testGetPhoneNumber");
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testGetPhoneNumber()" + result);
     }
 
     /**
@@ -214,12 +215,12 @@ public class CustomerTest implements Serializable{
      */
     @Test
     public void testSetPhoneNumber() {
-        System.out.println("setPhoneNumber");
         String phoneNumber = "";
         Customer instance = new Customer("kam6564@psu.edu", "password", 2, "Kristina", "Mantha", "123 Main Street", "123-456-7889", 2);
         instance.setPhoneNumber(phoneNumber);
-        System.out.println("Testing: this is the testSetPhoneNumber");
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testSetPhoneNumber()" + phoneNumber);
+        System.out.println("*********************************");
     }
 
     /**
@@ -227,13 +228,13 @@ public class CustomerTest implements Serializable{
      */
     @Test
     public void testGetLoanID() {
-        System.out.println("getLoanID");
         Customer instance = new Customer("kam6564@psu.edu", "password", 2, "Kristina", "Mantha", "123 Main Street", "123-456-7889", 2);
         long expResult = 2;
         long result = instance.getLoanID();
         assertEquals(expResult, result);
-        System.out.println("Testing: this is the testGetLoanID");
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testGetLoanID()" + result);
+        System.out.println("*********************************");
     }
 
     /**
@@ -241,12 +242,12 @@ public class CustomerTest implements Serializable{
      */
     @Test
     public void testSetLoanID() {
-        System.out.println("setLoanID");
         long loanID = 0L;
         Customer instance = new Customer("kam6564@psu.edu", "password", 2, "Kristina", "Mantha", "123 Main Street", "123-456-7889", 2);
         instance.setLoanID(loanID);
-        System.out.println("Testing: this is the testSetLoanID");
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testSetLoanID()" + loanID);
+        System.out.println("*********************************");
     }
     
 }

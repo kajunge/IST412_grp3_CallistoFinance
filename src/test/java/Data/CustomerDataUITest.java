@@ -17,10 +17,14 @@ import static org.junit.Assert.*;
 public class CustomerDataUITest {
     
     public CustomerDataUITest() {
+        
     }
     
     @BeforeClass
     public static void setUpClass() {
+        System.out.println("\n*********************************");
+        System.out.println("****   Testing CustomerDataUITest  ****");
+        System.out.println("*********************************");
     }
     
     @AfterClass
@@ -35,7 +39,9 @@ public class CustomerDataUITest {
         //System.out.println("main");
         String[] args = null;
         CustomerDataUI.main(args);
-        System.out.println("Testing Passed testMain()");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testMain()");
+        System.out.println("*********************************");
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
