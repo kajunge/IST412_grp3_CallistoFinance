@@ -5,6 +5,8 @@
  */
 package Data;
 
+
+
 import java.util.ArrayList;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -12,16 +14,18 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * @author Chris Lefebvre
  * @author kristinamantha
  */
 public class CustomerListTest {
+    
     
     public CustomerListTest() {
     }
     
     @BeforeClass
     public static void setUpClass() {
+      
     }
     
     @AfterClass
@@ -33,20 +37,18 @@ public class CustomerListTest {
      */
     @Test
     public void testAddCustomer() {
-        System.out.println("addCustomer");
+     //   System.out.println("addCustomer");
         String email = "";
         String password = "";
-        long customerId = 0L;
+        long customerId = 1L;
         String firstName = "";
         String lastName = "";
         String address = "";
         String phoneNumber = "";
-        long loanID = 0L;
+        long loanID = 1L;
         CustomerList instance = new CustomerList();
-        instance.addCustomer(email, password, customerId, firstName, lastName, address, phoneNumber, loanID);
-
-        System.out.println("This is the CustomerListTest");
-          // fail("The test case is a prototype.");
+        instance.addCustomer("kam6564@psu.edu", "password", 2, "Kristina ", "Mantha", "123 Main Street", "123-456-7880", 2);
+        System.out.println("Testing passed testAddCustomer()");
     }
 
     /**
@@ -54,18 +56,18 @@ public class CustomerListTest {
      */
     @Test
     public void testEditCustomer() {
-        System.out.println("editCustomer");
+    //    System.out.println("addCustomer");
         String email = "";
         String password = "";
-        long customerId = 0L;
+        long customerId = 1L;
         String firstName = "";
         String lastName = "";
         String address = "";
         String phoneNumber = "";
-        long loanID = 0L;
+        long loanID = 1L;
         CustomerList instance = new CustomerList();
-        instance.editCustomer(email, password, customerId, firstName, lastName, address, phoneNumber, loanID);
-        System.out.println("This the the testEditCustomer");
+        instance.editCustomer("kam6564@psu.edu", "password", 2, "Kristina New", "Mantha", "123 Main Street", "123-456-7880", 2);
+        System.out.println("Testing passed testEditCustomer()");
        // fail("The test case is a prototype.");
     }
 
@@ -74,11 +76,11 @@ public class CustomerListTest {
      */
     @Test
     public void testDeleteCustomer() {
-        System.out.println("deleteCustomer");
+    //    System.out.println("deleteCustomer");
         long customerID = 0L;
         CustomerList instance = new CustomerList();
         instance.deleteCustomer(customerID);
-        System.out.println("this is the testDeleteCustomer");
+        System.out.println("Testing passed testDeleteCustomer()");
         // fail("The test case is a prototype.");
     }
 
@@ -87,10 +89,10 @@ public class CustomerListTest {
      */
     @Test
     public void testReadCustomerFile() {
-        System.out.println("readCustomerFile");
+    //    System.out.println("readCustomerFile");
         CustomerList instance = new CustomerList();
         instance.readCustomerFile();
-        System.out.println("this is the testReadCustomerFile");
+        System.out.println("Testing passed testReadCustomerFile()");
         //  fail("The test case is a prototype.");
     }
 
@@ -99,10 +101,10 @@ public class CustomerListTest {
      */
     @Test
     public void testWriteCustomerFile() {
-        System.out.println("writeCustomerFile");
+    //    System.out.println("writeCustomerFile");
         CustomerList instance = new CustomerList();
         instance.writeCustomerFile();
-        System.out.println("this is the testWriteCustomerFile");
+        System.out.println("Testing passed testWriteCustomerFile()");
 
         //fail("The test case is a prototype.");
     }
@@ -112,10 +114,10 @@ public class CustomerListTest {
      */
     @Test
     public void testPrintCustomerFile() {
-        System.out.println("printCustomerFile");
+    //    System.out.println("printCustomerFile");
         CustomerList instance = new CustomerList();
         instance.printCustomerFile();
-        System.out.println("this is the testPrintCustomerFile");
+        System.out.println("Testing passed testPrintCustomerFile()");
         //fail("The test case is a prototype.");
     }
 
@@ -124,14 +126,14 @@ public class CustomerListTest {
      */
     @Test
     public void testGetCustomerArray() {
-        System.out.println("getCustomerArray");
+    //    System.out.println("getCustomerArray");
     
         CustomerList instance = new CustomerList();
         instance.addCustomer("kam6564@psu.edu", "password", 2, "Kristina", "Mantha", "123 Main Street", "123-456-7880", 2);
         ArrayList<Customer> expResult = instance.getCustomerArray();
         ArrayList<Customer> result = instance.getCustomerArray();
         assertEquals(expResult, result);
-        System.out.println("this is the testGetCustomerArray");
+        System.out.println("Testing passed testGetCustomerArray()" + result);
         //fail("The test case is a prototype.");
     }
 
@@ -140,11 +142,11 @@ public class CustomerListTest {
      */
     @Test
     public void testSetCustomerArray() {
-        System.out.println("setCustomerArray");
+    //    System.out.println("setCustomerArray");
         ArrayList<Customer> customerArray = null;
         CustomerList instance = new CustomerList();
         instance.setCustomerArray(customerArray);
-        System.out.println("this is the testSetCustomerArray");
+        System.out.println("Testing passed testSetCustomerArray()");
        // fail("The test case is a prototype.");
     }
     
