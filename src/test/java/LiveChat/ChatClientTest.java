@@ -33,7 +33,7 @@ public class ChatClientTest {
     @Test
     public void testExecute() {
         //System.out.println("execute");
-        ChatClient instance = null;
+        ChatClient instance = new ChatClient("temp", 4040);
         instance.execute();
         System.out.println("Testing passed testExecute()");
         // TODO review the generated test code and remove the default call to fail.
@@ -49,6 +49,7 @@ public class ChatClientTest {
         String userName = "IST412Team3";
         ChatClient instance = new ChatClient("temp", 4040);
         instance.setUserName(userName);
+        System.out.println("Testing passed testSetUserName()");
         
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -60,12 +61,13 @@ public class ChatClientTest {
     @Test
     public void testGetUserName() {
         System.out.println("getUserName");
-        ChatClient instance = null;
+        ChatClient instance = new ChatClient("temp", 4040);
         String expResult = "";
         String result = instance.getUserName();
         assertEquals(expResult, result);
+        System.out.println("Testing passed testGetUserName() " + result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }
