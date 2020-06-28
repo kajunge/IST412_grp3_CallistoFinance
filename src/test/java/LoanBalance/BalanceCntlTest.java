@@ -41,7 +41,7 @@ public class BalanceCntlTest {
         int n = 12;
         BalanceCntl instance = new BalanceCntl();
         double expResult = 979.6914166032102;
-        double result = instance.calculateInterest(p, t, r, n);
+        double result = instance.calculateInterest(2000, 5, 0.08, 12);
         assertEquals(expResult, result, 0.0);
         System.out.println("Test passed testCalculateInterest() " + result);
         // TODO review the generated test code and remove the default call to fail.
@@ -58,7 +58,7 @@ public class BalanceCntlTest {
         Date date = "28-6-2020";
         BalanceCntl instance = new BalanceCntl();
         String expResult = "Payment: 100.00, Date: 28-6-2020";
-        String result = instance.PaymentHistory(payment, date);
+        String result = instance.PaymentHistory(100.00, "28-6-2020");
         assertEquals(expResult, result);
         System.out.println("Test passed testPaymentHistory() " + result);
         // TODO review the generated test code and remove the default call to fail.
