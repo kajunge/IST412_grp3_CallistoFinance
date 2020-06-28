@@ -17,6 +17,9 @@ import static org.junit.Assert.*;
 public class ServerSideTest {
     
     public ServerSideTest() {
+        System.out.println("\n*********************************");
+        System.out.println("****   Testing ServerSideTest  ****");
+        System.out.println("*********************************");
     }
     
     @BeforeClass
@@ -30,7 +33,7 @@ public class ServerSideTest {
     @Test
     public void testSomeMethod() {
         System.out.println("*********************************");
-        System.out.println("Testing passed: testSomeMethod()");
+        System.out.println("Testing Passed for testSomeMethod()");
         System.out.println("*********************************");
     }
     
