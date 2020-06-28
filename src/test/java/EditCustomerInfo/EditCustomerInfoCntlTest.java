@@ -28,12 +28,13 @@ public class EditCustomerInfoCntlTest {
 
     @BeforeClass
     public static void setUpClass() {
-        System.out.println("* EditCustomerInfoCntlTest: Before method setUpClass()");
+        System.out.println("\n*********************************");
+        System.out.println("****   Testing EditCustomerInfoCntlTest  ****");
+        System.out.println("*********************************");
     }
 
     @AfterClass
     public static void tearDownClass() {
-        System.out.println("* EditCustomerInfoCntlTest: After method tearDownClass()");
 
     }
 
@@ -42,11 +43,13 @@ public class EditCustomerInfoCntlTest {
      */
     @Test
     public void testUpdateEmail() {
-        System.out.println("updateEmail");
         String email = "email@email.com";
         EditCustomerInfoCntl instance = new EditCustomerInfoCntl( new Customer("", "", 0, "", "", "", "", 0));
         instance.updateEmail(email);
         assertEquals(email, instance.getCustomer().getEmail());
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testUpdateEmail()");
+        System.out.println("*********************************");
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
       /*  
@@ -70,13 +73,13 @@ public class EditCustomerInfoCntlTest {
      */
     @Test
     public void testUpdatePassword() {
-        System.out.println("updatePassword");
         String password = "password";
         EditCustomerInfoCntl instance = new EditCustomerInfoCntl( new Customer("", "", 0, "", "", "", "", 0));
         instance.updatePassword(password);
         assertEquals(password, instance.getCustomer().getPassword());
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testUpdatePassword()");
+        System.out.println("*********************************");
     }
 
     /**
@@ -84,13 +87,13 @@ public class EditCustomerInfoCntlTest {
      */
     @Test
     public void testUpdatefirstName() {
-        System.out.println("updatefirstName");
         String firstName = "fName";
         EditCustomerInfoCntl instance = new EditCustomerInfoCntl( new Customer("", "", 0, "", "", "", "", 0));
         instance.updatefirstName(firstName);
         assertEquals(firstName, instance.getCustomer().getFirstName());
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testUpdatefirstName()");
+        System.out.println("*********************************");
     }
 
     /**
@@ -98,13 +101,13 @@ public class EditCustomerInfoCntlTest {
      */
     @Test
     public void testUpdateLastName() {
-        System.out.println("updateLastName");
         String lastName = "lName";
         EditCustomerInfoCntl instance = new EditCustomerInfoCntl( new Customer("", "", 0, "", "", "", "", 0));
         instance.updateLastName(lastName);
         assertEquals(lastName, instance.getCustomer().getLastName());
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testUpdateLastName");
+        System.out.println("*********************************");
     }
 
     /**
@@ -112,12 +115,13 @@ public class EditCustomerInfoCntlTest {
      */
     @Test
     public void testUpdateAddress() {
-        System.out.println("updateAddress");
         String address = "123 Main St.";
         EditCustomerInfoCntl instance = new EditCustomerInfoCntl( new Customer("", "", 0, "", "", "", "", 0));
         instance.updateAddress(address);
         assertEquals(address, instance.getCustomer().getAddress());
-        
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testUpdateAddress() ");
+        System.out.println("*********************************");
     }
 
     /**
@@ -125,12 +129,13 @@ public class EditCustomerInfoCntlTest {
      */
     @Test
     public void testUpdatePhoneNumber() {
-        System.out.println("updatePhoneNumber");
         String phoneNumber = "123-456-7890";
         EditCustomerInfoCntl instance = new EditCustomerInfoCntl( new Customer("", "", 0, "", "", "", "", 0));
         instance.updatePhoneNumber(phoneNumber);
         assertEquals(phoneNumber, instance.getCustomer().getPhoneNumber());
-        
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testUpdatePhoneNumber()");
+        System.out.println("*********************************");
     }
 
     /**
@@ -138,13 +143,14 @@ public class EditCustomerInfoCntlTest {
      */
     @Test
     public void testGetCustomer() {
-        System.out.println("getCustomer");
         Customer customer = new Customer("email@email.com", "password", 1234567890, "John", "Doe", "123 Main St.", "123-456-7890", 987654321);
         EditCustomerInfoCntl instance = new EditCustomerInfoCntl(customer);
         Customer expResult = customer;
         Customer result = instance.getCustomer();
         assertEquals(expResult, result);
-
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testGetCustomer()");
+        System.out.println("*********************************");
     }
 
     /**
@@ -152,14 +158,15 @@ public class EditCustomerInfoCntlTest {
      */
     @Test
     public void testSetCustomer() {
-        System.out.println("setCustomer");
         Customer customer = new Customer("email@email.com", "password", 1234567890, "John", "Doe", "123 Main St.", "123-456-7890", 987654321);
         EditCustomerInfoCntl instance = new EditCustomerInfoCntl();
         Customer expResult = customer;
         instance.setCustomer(customer);
         Customer result = instance.getCustomer();
         assertEquals(expResult, result);
-        
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testSetCustomer()");
+        System.out.println("*********************************");
     }
 
 }
