@@ -14,7 +14,9 @@ import org.junit.runners.Suite;
  * @author kristinamantha
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({Payment.PaymentSuite.class, LiveChat.LiveChatSuite.class, LoanBalance.LoanBalanceSuite.class, EditCustomerInfo.EditCustomerInfoSuite.class, LoanApplication.LoanApplicationSuite.class, Register.RegisterSuite.class, Data.DataSuite.class, Login.LoginSuite.class})
+@Suite.SuiteClasses({Data.DataSuite.class,  Register.RegisterSuite.class,  Login.LoginSuite.class,
+    LoanApplication.LoanApplicationSuite.class, LoanBalance.LoanBalanceSuite.class, 
+    Payment.PaymentSuite.class, EditCustomerInfo.EditCustomerInfoSuite.class,LiveChat.LiveChatSuite.class})
 public class TestHarness {
 
     @BeforeClass
