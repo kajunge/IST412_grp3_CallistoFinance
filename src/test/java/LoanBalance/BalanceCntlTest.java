@@ -34,12 +34,12 @@ public class BalanceCntlTest {
     @Test
     public void testCalculateInterest() {
         System.out.println("calculateInterest");
-        int p = 2;
-        int t = 3;
-        double r = 0.8;
-        int n = 12;
+        int p = 1;
+        int t = 1;
+        double r = 0.0;
+        int n = 1;
         BalanceCntl instance = new BalanceCntl();
-        double expResult = p * Math.pow(1 + (r/n), n * t);
+        double expResult = 0.0;
         double result = instance.calculateInterest(p, t, r, n);
         assertEquals(expResult, result, 0.0);
         System.out.println("Test passed testCalculateInterest() " + result);
