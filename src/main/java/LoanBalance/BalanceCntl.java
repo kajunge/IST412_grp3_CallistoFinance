@@ -18,6 +18,12 @@ public class BalanceCntl {
         this.customer = customer;
     }
 
+    BalanceCntl() {
+
+    }
+
+
+
     /**
      * A method to calculate compound interest
      * @param p An int representing the principle amount.
