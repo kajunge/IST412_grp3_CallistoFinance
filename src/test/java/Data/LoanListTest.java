@@ -12,7 +12,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * @author Chris Lefebvre
  * @author kristinamantha
  */
 public class LoanListTest {

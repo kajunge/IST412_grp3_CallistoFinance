@@ -14,7 +14,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * @author Chris Lefebvre
  * @author kristinamantha
  * @author Scott Crowthers
  */
