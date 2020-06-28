@@ -60,7 +60,7 @@ public class LoanApplicationCntl {
         }catch(IOException e){            
         } 
         
-        electronicSignature("my_doc.pdf");
+        //electronicSignature("my_doc.pdf");
         return document;    
 
     }
@@ -72,7 +72,7 @@ public class LoanApplicationCntl {
      * @param pdfName - A String representing the name of the pdf file that the user signs
      */
     public final void electronicSignature(String pdfName){
-        Signature signature = new Signature("my_doc.pdf");
+        Signature signature = new Signature("src/main/resources/OutputFiles/my_doc.pdf");
 
         TextSignOptions options = new TextSignOptions("John Smith");
         // set signature position
