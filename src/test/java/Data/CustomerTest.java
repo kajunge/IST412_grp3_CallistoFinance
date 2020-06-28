@@ -12,7 +12,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * @Author Chris Lefebvre
  * @author kristinamantha
  */
 public class CustomerTest implements Serializable{
@@ -54,7 +54,7 @@ public class CustomerTest implements Serializable{
         System.out.println("setEmail");
         String email = "kam6564@psu.edu";
         Customer instance = new Customer("kam6564@psu.edu", "password", 2, "Kristina", "Mantha", "123 Main Street", "123-456-7889", 2);
-        System.out.println("Testing: this is the testSetEmail" + email);
+        System.out.println("Testing: this is the testSetEmail " + email);
         instance.setEmail(email);
         
        // fail("The test case is a prototype.");

@@ -5,8 +5,6 @@
  */
 package Data;
 
-
-
 import java.util.ArrayList;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -68,7 +66,7 @@ public class CustomerListTest {
         CustomerList instance = new CustomerList();
         instance.editCustomer("kam6564@psu.edu", "password", 2, "Kristina New", "Mantha", "123 Main Street", "123-456-7880", 2);
         System.out.println("Testing passed testEditCustomer()");
-        System.out.println("");
+        //System.out.println("");
        // fail("The test case is a prototype.");
     }
 
@@ -134,7 +132,7 @@ public class CustomerListTest {
         ArrayList<Customer> expResult = instance.getCustomerArray();
         ArrayList<Customer> result = instance.getCustomerArray();
         assertEquals(expResult, result);
-        System.out.println("Testing passed testGetCustomerArray()" + result);
+        System.out.println("Testing passed testGetCustomerArray()" + result.toString());
         //fail("The test case is a prototype.");
     }
 

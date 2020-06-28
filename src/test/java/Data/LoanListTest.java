@@ -33,16 +33,17 @@ public class LoanListTest {
      */
     @Test
     public void testAddLoan() {
-        System.out.println("addLoan");
+        //System.out.println("addLoan");
         long loanID = 0L;
         long customerID = 0L;
         long amountTotal = 0L;
         long singlePayment = 0L;
         String date = "";
         LoanList instance = new LoanList();
-        instance.addLoan(loanID, customerID, amountTotal, singlePayment, date);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        instance.addLoan(2L, 2L, 30000L, 2000L, "28-6-2020");
+        System.out.println("Testing passed testAddLoan()");
+// TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -118,11 +119,13 @@ public class LoanListTest {
     public void testGetLoanArray() {
         System.out.println("getLoanArray");
         LoanList instance = new LoanList();
-        ArrayList<Loan> expResult = null;
+        instance.addLoan(2L, 2L, 30000L, 2000L, "28-6-2020");
+        ArrayList<Loan> expResult = instance.getLoanArray();
         ArrayList<Loan> result = instance.getLoanArray();
         assertEquals(expResult, result);
+        System.out.println("Testing passed testGetLoanArray()" + result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**

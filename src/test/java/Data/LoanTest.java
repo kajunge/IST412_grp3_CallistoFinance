@@ -12,7 +12,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * @Author Chris Lefebvre
  * @author kristinamantha
  */
 public class LoanTest implements Serializable{
@@ -33,13 +33,14 @@ public class LoanTest implements Serializable{
      */
     @Test
     public void testGetLoanID() {
+        System.out.println("* LoanTest: testGetLoanID()");
         System.out.println("getLoanID");
-        Loan instance = null;
-        long expResult = 0L;
+        Loan instance = new Loan(2L, 2L, 30000L, 2000L, "28-6-2020");
+        long expResult = 2L;
         long result = instance.getLoanID();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -48,11 +49,12 @@ public class LoanTest implements Serializable{
     @Test
     public void testSetLoanID() {
         System.out.println("setLoanID");
-        long loanID = 0L;
-        Loan instance = null;
+        long loanID = 2L;
+        Loan instance = new Loan(2L, 2L, 30000L, 2000L, "28-6-2020");
+        System.out.println("Testing: this is teh testSetLoanID " + loanID);
         instance.setLoanID(loanID);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -61,12 +63,13 @@ public class LoanTest implements Serializable{
     @Test
     public void testGetCustomerID() {
         System.out.println("getCustomerID");
-        Loan instance = null;
-        long expResult = 0L;
+        Loan instance = new Loan(2L, 2L, 30000L, 2000L, "28-6-2020");
+        long expResult = 2L;
         long result = instance.getCustomerID();
         assertEquals(expResult, result);
+        System.out.println("Testing: this is the testGetCustomerID " + result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -76,10 +79,11 @@ public class LoanTest implements Serializable{
     public void testSetCustomerID() {
         System.out.println("setCustomerID");
         long customerID = 0L;
-        Loan instance = null;
+        Loan instance = new Loan(2L, 2L, 30000L, 2000L, "28-6-2020");
         instance.setCustomerID(customerID);
+        System.out.println("Testing: this is the testSetCustomerID");
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -88,12 +92,13 @@ public class LoanTest implements Serializable{
     @Test
     public void testGetAmountTotal() {
         System.out.println("getAmountTotal");
-        Loan instance = null;
-        long expResult = 0L;
+        Loan instance = new Loan(2L, 2L, 30000L, 2000L, "28-6-2020");
+        long expResult = 30000L;
         long result = instance.getAmountTotal();
         assertEquals(expResult, result);
+        System.out.println("Testing: this is the testGetAmountTotal " + result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -103,10 +108,11 @@ public class LoanTest implements Serializable{
     public void testSetAmountTotal() {
         System.out.println("setAmountTotal");
         long amountTotal = 0L;
-        Loan instance = null;
+        Loan instance = new Loan(2L, 2L, 30000L, 2000L, "28-6-2020");
         instance.setAmountTotal(amountTotal);
+        System.out.println("Testing: this is the testSetAmountTotal()");
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -115,12 +121,13 @@ public class LoanTest implements Serializable{
     @Test
     public void testGetSinglePayment() {
         System.out.println("getSinglePayment");
-        Loan instance = null;
-        long expResult = 0L;
+        Loan instance = new Loan(2L, 2L, 30000L, 2000L, "28-6-2020");
+        long expResult = 2000L;
         long result = instance.getSinglePayment();
         assertEquals(expResult, result);
+        System.out.println("Testing: this is the testGetSinglePayment() " + result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -130,10 +137,11 @@ public class LoanTest implements Serializable{
     public void testSetSinglePayment() {
         System.out.println("setSinglePayment");
         long singlePayment = 0L;
-        Loan instance = null;
+        Loan instance = new Loan(2L, 2L, 30000L, 2000L, "28-6-2020");
         instance.setSinglePayment(singlePayment);
+        System.out.println("Testing: this is the testSetSinglePayment() ");
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -142,12 +150,13 @@ public class LoanTest implements Serializable{
     @Test
     public void testGetDate() {
         System.out.println("getDate");
-        Loan instance = null;
-        String expResult = "";
+        Loan instance = new Loan(2L, 2L, 30000L, 2000L, "28-6-2020");
+        String expResult = "28-6-2020";
         String result = instance.getDate();
         assertEquals(expResult, result);
+        System.out.println("Testing: this is the testGetDate() " + result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -157,10 +166,11 @@ public class LoanTest implements Serializable{
     public void testSetDate() {
         System.out.println("setDate");
         String date = "";
-        Loan instance = null;
+        Loan instance = new Loan(2L, 2L, 30000L, 2000L, "28-6-2020");
         instance.setDate(date);
+        System.out.println("Testing: this is the testSetDate() ");
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }
