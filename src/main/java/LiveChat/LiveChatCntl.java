@@ -9,14 +9,16 @@ package LiveChat;
  * @author kristinamantha
  */
 public class LiveChatCntl {
-
-    public LiveChatCntl() {
-        
-    }
+    
     private MessageType type;
     private String content;
     private String sender;
 
+    public LiveChatCntl() {
+        content = "temp content";
+        sender = "IST412Team3";
+    }
+    
     public enum MessageType {
         CHAT, JOIN, LEAVE
     }
