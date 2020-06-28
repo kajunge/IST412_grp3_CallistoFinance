@@ -23,7 +23,7 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 
 /**
- *
+ * @author Chris Lefebvre
  * @author kristinamantha
  */
 public class LoanApplicationCntlTest {
@@ -44,7 +44,7 @@ public class LoanApplicationCntlTest {
      */
     @Test
     public void testPdfCreator() {
-        System.out.println("pdfCreator");
+        //System.out.println("pdfCreator");
         long id = 0L;
         String firstName = "";
         String lastName = "";
@@ -52,22 +52,23 @@ public class LoanApplicationCntlTest {
         double interest = 0.0;
         LoanApplicationCntl instance = new LoanApplicationCntl();
         
-        PDDocument expResult = new PDDocument();
-        try{                   
-            PDPage my_page = new PDPage();
-            expResult.addPage(my_page);            
-            
-            //Saving the document
-            expResult.save("src/main/resources/OutputFilesTest/my_doc.pdf");
-            System.out.println("PDF created");
-            
-            //Closing the document
-            expResult.close();
-        }catch(IOException e){            
-        } 
-        testElectronicSignature();
+        //PDDocument expResult = new PDDocument();
+        String expResult = "";
+//        try{                   
+//            PDPage my_page = new PDPage();
+//            expResult.addPage(my_page);            
+//            
+//            //Saving the document
+//            expResult.save("src/main/resources/OutputFilesTest/my_doc.pdf");
+//            System.out.println("PDF created");
+//            
+//            //Closing the document
+//            expResult.close();
+//        }catch(IOException e){            
+//        }         
         
-        PDDocument result = instance.pdfCreator(id, firstName, lastName, loanAmount, interest);
+        //PDDocument result = instance.pdfCreator(id, firstName, lastName, loanAmount, interest);
+        String result = instance.pdfCreator(id, firstName, lastName, loanAmount, interest);
         assertEquals(expResult, result);
         System.out.println("Testing Passed testPdfCreator()");
         // TODO review the generated test code and remove the default call to fail.
@@ -79,8 +80,8 @@ public class LoanApplicationCntlTest {
      */
     @Test
     public void testElectronicSignature() {
-        System.out.println("electronicSignature");
-        String pdfName = "";
+        //System.out.println("electronicSignature");
+        String pdfName = "my_doc.pdf";
         LoanApplicationCntl instance = new LoanApplicationCntl();
         instance.electronicSignature(pdfName);
         System.out.println("Testing Passed testElectronicSignatre()");

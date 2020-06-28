@@ -41,7 +41,8 @@ public class LoanApplicationCntl {
      * @param interest - a double representing the loan interest
      * @return - returns the pdf document created
      */
-    public PDDocument pdfCreator(long id, String firstName, String lastName, double loanAmount, double interest){
+    //change to PDDocument
+    public String pdfCreator(long id, String firstName, String lastName, double loanAmount, double interest){
         
         //Creating the PDF document object
         PDDocument document = new PDDocument();
@@ -60,7 +61,8 @@ public class LoanApplicationCntl {
         } 
         
         electronicSignature("my_doc.pdf");
-        return document;        
+        //return document;    
+        return "";
     }
     
     /**
