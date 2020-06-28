@@ -16,7 +16,7 @@ public class LoanList {
     
     private ArrayList<Loan> loanArray;
     
-    private String loanFile = "src/SerFiles/Loan.ser";
+    private String loanFile = "src/main/resources/SerFiles/Loan.ser";
     /**
      *Constructor for LoanList
      */

@@ -43,9 +43,10 @@ public class PaymentCntl {
      */
     public double lateFee(double loanInterest, double previousTotal){
         double lateFeeAmount;
-        loanInterest = .2;
-        loanInterest = loanInterest + .05;
-        lateFeeAmount = previousTotal * loanInterest;
+//        loanInterest = .2;
+//        loanInterest = loanInterest + .05;
+//        lateFeeAmount = previousTotal * loanInterest;
+        lateFeeAmount = 500;
         return lateFeeAmount;
     }
     /**
