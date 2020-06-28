@@ -14,16 +14,17 @@ import static org.junit.Assert.*;
 /**
  *
  * @author kristinamantha
+ * @author gkhalil
  */
 public class BalanceCntlTest {
-    
+
     public BalanceCntlTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
@@ -34,12 +35,12 @@ public class BalanceCntlTest {
     @Test
     public void testCalculateInterest() {
         System.out.println("calculateInterest");
-        int p = 1;
-        int t = 1;
-        double r = 0.0;
-        int n = 1;
+        int p = 2000;
+        int t = 5;
+        double r = 0.08;
+        int n = 12;
         BalanceCntl instance = new BalanceCntl();
-        double expResult = 0.0;
+        double expResult = 979.6914166032102;
         double result = instance.calculateInterest(p, t, r, n);
         assertEquals(expResult, result, 0.0);
         System.out.println("Test passed testCalculateInterest() " + result);
@@ -53,15 +54,15 @@ public class BalanceCntlTest {
     @Test
     public void testPaymentHistory() {
         System.out.println("PaymentHistory");
-        double payment = 0.0;
-        Date date = "01-01-2020";
+        double payment = 100.00;
+        Date date = "28-6-2020";
         BalanceCntl instance = new BalanceCntl();
-        String expResult = "Payment: 0.0, Date: 01-01-2020";
+        String expResult = "Payment: 100.00, Date: 28-6-2020";
         String result = instance.PaymentHistory(payment, date);
         assertEquals(expResult, result);
         System.out.println("Test passed testPaymentHistory() " + result);
         // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
     }
-    
+
 }
