@@ -34,16 +34,17 @@ public class BalanceCntlTest {
     @Test
     public void testCalculateInterest() {
         System.out.println("calculateInterest");
-        int p = 0;
-        int t = 0;
+        int p = 1;
+        int t = 1;
         double r = 0.0;
-        int n = 0;
-        BalanceCntl instance = null;
+        int n = 1;
+        BalanceCntl instance = new BalanceCntl();
         double expResult = 0.0;
         double result = instance.calculateInterest(p, t, r, n);
         assertEquals(expResult, result, 0.0);
+        System.out.println("Test passed testCalculateInterest() " + result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+//        fail("The test case is a prototype.");
     }
 
     /**
@@ -53,13 +54,14 @@ public class BalanceCntlTest {
     public void testPaymentHistory() {
         System.out.println("PaymentHistory");
         double payment = 0.0;
-        Date date = null;
-        BalanceCntl instance = null;
-        String expResult = "";
+        Date date = "01-01-2020";
+        BalanceCntl instance = new BalanceCntl();
+        String expResult = "Payment: 0.0, Date: 01-01-2020";
         String result = instance.PaymentHistory(payment, date);
         assertEquals(expResult, result);
+        System.out.println("Test passed testPaymentHistory() " + result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+//        fail("The test case is a prototype.");
     }
     
 }
