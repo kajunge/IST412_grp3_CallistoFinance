@@ -6,6 +6,7 @@ package Login;
  * to login to the Callisto mFinance app.
  * @author Chris Lefebvre
  * @author kristinamantha
+ * @author Scott Crowthers
  */
 public class LoginCntl {
     

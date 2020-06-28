@@ -7,6 +7,7 @@ import java.io.Serializable;
  * about the customer as well as getters/setters for these fields.
  * @author Chris Lefebvre
  * @author kristinamantha
+ * @author Scott Crowthers
  */
 public class Customer implements Serializable{
 
@@ -30,7 +31,7 @@ public class Customer implements Serializable{
      * @param phoneNumber - a String representing the customer's phone number in the customer profile
      * @param loanID  - a String representing the customer's loan id in the customer profile
      */
-    protected Customer(String customerEmail, String customerPassword, long id,
+    public Customer(String customerEmail, String customerPassword, long id,
             String firstName, String lastName, String address, String phoneNumber,
             long loanID) {
         this.email = customerEmail;
