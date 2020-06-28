@@ -34,7 +34,7 @@ public class BalanceCntlTest {
      */
     @Test
     public void testCalculateInterest() {
-        System.out.println("calculateInterest");
+     //   System.out.println("calculateInterest");
         int p = 2000;
         int t = 5;
         double r = 0.08;
@@ -53,12 +53,21 @@ public class BalanceCntlTest {
      */
     @Test
     public void testPaymentHistory() {
-        System.out.println("PaymentHistory");
+        
+        // Just adding a comment so I can do another push to GitHub
+        
+        
+        //System.out.println("PaymentHistory");
+        
+        //Date date = "28-6-2020";
+        //String expResult = "Payment: 100.00, Date: 28-6-2020";
+        
         double payment = 100.00;
-        Date date = "28-6-2020";
+        Date date = new Date();
         BalanceCntl instance = new BalanceCntl();
-        String expResult = "Payment: 100.00, Date: 28-6-2020";
-        String result = instance.PaymentHistory(100.00, "28-6-2020");
+        String expResult = "Payment: " + payment + ", Date: " + date;
+     
+        String result = instance.PaymentHistory(payment, date);
         assertEquals(expResult, result);
         System.out.println("Test passed testPaymentHistory() " + result);
         // TODO review the generated test code and remove the default call to fail.

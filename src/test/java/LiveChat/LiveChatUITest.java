@@ -29,8 +29,9 @@ public class LiveChatUITest {
 
     @Test
     public void testSomeMethod() {
+        System.out.println("this is just a test of the UI");
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }

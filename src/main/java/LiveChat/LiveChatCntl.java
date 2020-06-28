@@ -10,26 +10,27 @@ package LiveChat;
  */
 public class LiveChatCntl {
     
-    private MessageType type;
+//    private MessageType type;
     private String content;
     private String sender;
 
-    public LiveChatCntl() {
-        content = "temp content";
-        sender = "IST412Team3";
+    public LiveChatCntl(String content, String sender) {
+        this.content = content;
+        this.sender = sender;
     }
-    
-    public enum MessageType {
-        CHAT, JOIN, LEAVE
-    }
+    //FIX_ME: not relevant to expected tutorial
+//    public enum MessageType {
+//        CHAT, JOIN, LEAVE
+//    }
+//
+//    public MessageType getType() {
+//        return type;
+//    }
+//
+//    public void setType(MessageType type) {
+//        this.type = type;
+//    }
 
-    public MessageType getType() {
-        return type;
-    }
-
-    public void setType(MessageType type) {
-        this.type = type;
-    }
 
     public String getContent() {
         return content;
