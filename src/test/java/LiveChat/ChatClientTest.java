@@ -21,6 +21,9 @@ public class ChatClientTest {
     
     @BeforeClass
     public static void setUpClass() {
+        System.out.println("\n*********************************");
+        System.out.println("****   Testing ChatClientTest  ****");
+        System.out.println("*********************************");
     }
     
     @AfterClass
@@ -32,12 +35,11 @@ public class ChatClientTest {
      */
     @Test
     public void testExecute() {
-        //System.out.println("execute");
         ChatClient instance = new ChatClient("temp", 4040);
         instance.execute();
-        System.out.println("Testing passed testExecute()");
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testExecute()");
+        System.out.println("*********************************");
     }
 
     /**
@@ -45,14 +47,12 @@ public class ChatClientTest {
      */
     @Test
     public void testSetUserName() {
-        //System.out.println("setUserName");
         String userName = "IST412Team3";
         ChatClient instance = new ChatClient("temp", 4040);
         instance.setUserName(userName);
-        System.out.println("Testing passed testSetUserName()");
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testSetUserName()" + userName);
+        System.out.println("*********************************");
     }
 
     /**
@@ -60,15 +60,13 @@ public class ChatClientTest {
      */
     @Test
     public void testGetUserName() {
-        //System.out.println("getUserName");
-    //    ChatClient instance = new ChatClient("temp", 4040);
+
         String expResult = "IST412Team3";
-       // String testInstance = "testclient";
        
         assertEquals(expResult, expResult);
-        System.out.println("Testing passed testGetUserName() " + expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testGetUserName() " + expResult);
+        System.out.println("*********************************");
     }
     
 }

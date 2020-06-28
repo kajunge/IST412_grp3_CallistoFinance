@@ -21,6 +21,9 @@ public class LiveChatUITest {
     
     @BeforeClass
     public static void setUpClass() {
+        System.out.println("\n*********************************");
+        System.out.println("****   Testing LiveChatUITest  ****");
+        System.out.println("*********************************");
     }
     
     @AfterClass
@@ -29,9 +32,9 @@ public class LiveChatUITest {
 
     @Test
     public void testSomeMethod() {
+        System.out.println("*********************************");
         System.out.println("this is just a test of the UI");
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
     }
     
 }

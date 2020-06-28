@@ -33,6 +33,9 @@ public class LoanApplicationCntlTest {
     
     @BeforeClass
     public static void setUpClass() {
+        System.out.println("\n*********************************");
+        System.out.println("****   Testing LoanApplicationCntlTest  ****");
+        System.out.println("*********************************");
     }
     
     @AfterClass
@@ -44,7 +47,6 @@ public class LoanApplicationCntlTest {
      */
     @Test
     public void testPdfCreator() {
-        //System.out.println("pdfCreator");
         long id = 0L;
         String firstName = "";
         String lastName = "";
@@ -70,9 +72,9 @@ public class LoanApplicationCntlTest {
         //PDDocument result = instance.pdfCreator(id, firstName, lastName, loanAmount, interest);
         PDDocument result = instance.pdfCreator(id, firstName, lastName, loanAmount, interest);
         assertEquals(expResult.getDocumentId(), result.getDocumentId());
-        System.out.println("Testing Passed testPdfCreator()");
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testPdfCreator()");
+        System.out.println("*********************************");
     }
 
     /**
@@ -84,9 +86,9 @@ public class LoanApplicationCntlTest {
         String pdfName = "src/main/resources/OutputFilesTest/my_doc.pdf";
         LoanApplicationCntl instance = new LoanApplicationCntl();
         instance.electronicSignature(pdfName);
-        System.out.println("Testing Passed testElectronicSignatre()");
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testElectronicSignatre()");
+        System.out.println("*********************************");
     }
     
 }
