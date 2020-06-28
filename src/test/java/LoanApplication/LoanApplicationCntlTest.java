@@ -11,6 +11,17 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import java.security.PublicKey;
+import com.groupdocs.signature.Signature;
+import com.groupdocs.signature.domain.SignatureFont;
+import com.groupdocs.signature.domain.enums.TextSignatureImplementation;
+import com.groupdocs.signature.options.sign.TextSignOptions;
+import java.awt.Color;
+import java.io.IOException;
+
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+
 /**
  *
  * @author kristinamantha
@@ -40,11 +51,27 @@ public class LoanApplicationCntlTest {
         double loanAmount = 0.0;
         double interest = 0.0;
         LoanApplicationCntl instance = new LoanApplicationCntl();
-        PDDocument expResult = null;
+        
+        PDDocument expResult = new PDDocument();
+        try{                   
+            PDPage my_page = new PDPage();
+            expResult.addPage(my_page);            
+            
+            //Saving the document
+            expResult.save("src/main/resources/OutputFilesTest/my_doc.pdf");
+            System.out.println("PDF created");
+            
+            //Closing the document
+            expResult.close();
+        }catch(IOException e){            
+        } 
+        testElectronicSignature();
+        
         PDDocument result = instance.pdfCreator(id, firstName, lastName, loanAmount, interest);
         assertEquals(expResult, result);
+        System.out.println("Testing Passed testPdfCreator()");
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -56,8 +83,9 @@ public class LoanApplicationCntlTest {
         String pdfName = "";
         LoanApplicationCntl instance = new LoanApplicationCntl();
         instance.electronicSignature(pdfName);
+        System.out.println("Testing Passed testElectronicSignatre()");
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }
