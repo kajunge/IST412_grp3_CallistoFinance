@@ -29,8 +29,7 @@ public class ServerSideTest {
 
     @Test
     public void testSomeMethod() {
-        System.out.println("this is just a test of the server side");
-        //fail("The test case is a prototype.");
+
     }
     
 }
