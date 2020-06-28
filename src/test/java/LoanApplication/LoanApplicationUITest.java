@@ -21,6 +21,9 @@ public class LoanApplicationUITest {
     
     @BeforeClass
     public static void setUpClass() {
+        System.out.println("\n*********************************");
+        System.out.println("****   Testing LoanApplicationUITest  ****");
+        System.out.println("*********************************");
     }
     
     @AfterClass
@@ -29,8 +32,9 @@ public class LoanApplicationUITest {
 
     @Test
     public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing for the Loan Application UI");
+        System.out.println("*********************************");
     }
     
 }
