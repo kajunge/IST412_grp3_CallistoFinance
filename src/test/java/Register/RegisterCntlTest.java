@@ -21,6 +21,9 @@ public class RegisterCntlTest {
     
     @BeforeClass
     public static void setUpClass() {
+        System.out.println("\n*********************************");
+        System.out.println("****   Testing RegisterCntlTest  ****");
+        System.out.println("*********************************");
     }
     
     @AfterClass
@@ -32,14 +35,13 @@ public class RegisterCntlTest {
      */
     @Test
     public void testGenerateKey() {
-        //System.out.println("generateKey");
         RegisterCntl instance = new RegisterCntl();
         String expResult = "X3rt725cp9S2X";
         String result = instance.generateKey();
         assertEquals(expResult, result);
-        System.out.println("Testing passed testGenerateKey() " + result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testGenerateKey() " + result);
+        System.out.println("*********************************");
     }
 
     /**
@@ -47,13 +49,12 @@ public class RegisterCntlTest {
      */
     @Test
     public void testSendEmail() {
-        //System.out.println("sendEmail");
         String userEmail = "IST412Team3@gmail.com";
         RegisterCntl instance = new RegisterCntl();
         instance.sendEmail(userEmail);
-        System.out.println("Testing passed testSendEmail");
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testSendEmail()");
+        System.out.println("*********************************");
     }
 
     /**
@@ -61,15 +62,14 @@ public class RegisterCntlTest {
      */
     @Test
     public void testVerifyEmail() {
-        //System.out.println("verifyEmail");
         String userEmail = "";
         RegisterCntl instance = new RegisterCntl();
         boolean expResult = false;
         boolean result = instance.verifyEmail(userEmail);
         assertEquals(expResult, result);
-        System.out.println("Testing passed testVerifyEmail " + result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testVerifyEmail() " + result);
+        System.out.println("*********************************");
     }
 
     /**
@@ -77,15 +77,14 @@ public class RegisterCntlTest {
      */
     @Test
     public void testIsValidEmail() {
-        //System.out.println("isValidEmail");
         String email = "";
         RegisterCntl instance = new RegisterCntl();
         boolean expResult = false;
         boolean result = instance.isValidEmail(email);
         assertEquals(expResult, result);
-        System.out.println("Testing passed testIsValidEmail() " + result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testIsValidEmail() " + result);
+        System.out.println("*********************************");
     }
 
     /**
@@ -93,15 +92,14 @@ public class RegisterCntlTest {
      */
     @Test
     public void testIsValidPassword() {
-        //System.out.println("isValidPassword");
         String password = "";
         RegisterCntl instance = new RegisterCntl();
         boolean expResult = false;
         boolean result = instance.isValidPassword(password);
         assertEquals(expResult, result);
-        System.out.println("Testing passed testIsValidPassword() " + result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testIsValidPassword() " + result);
+        System.out.println("*********************************");
     }
 
     /**
@@ -109,15 +107,14 @@ public class RegisterCntlTest {
      */
     @Test
     public void testIsValidUsername() {
-        //System.out.println("isValidUsername");
         String username = "";
         RegisterCntl instance = new RegisterCntl();
         boolean expResult = false;
         boolean result = instance.isValidUsername(username);
         assertEquals(expResult, result);
-        System.out.println("Testing passed testIsValidUsername() " + result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing Passed for testIsValidUsername() " + result);
+        System.out.println("*********************************");
     }
     
 }

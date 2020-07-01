@@ -21,6 +21,9 @@ public class BalanceUITest {
     
     @BeforeClass
     public static void setUpClass() {
+        System.out.println("\n*********************************");
+        System.out.println("****   Testing BalanceUITest  ****");
+        System.out.println("*********************************");
     }
     
     @AfterClass
@@ -29,8 +32,9 @@ public class BalanceUITest {
 
     @Test
     public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("*********************************");
+        System.out.println("Testing for Balance UI");
+        System.out.println("*********************************");
     }
     
 }
