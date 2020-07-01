@@ -32,7 +32,7 @@ public class PaymentCntl {
      * A method that returns true/false depending on whether payment is late.
      * @return A boolean state representing late payment.
      */
-    public boolean isLate(){
+    public boolean isLate(Date dueDate, Date currentDate){
         return false;
     }
     /**

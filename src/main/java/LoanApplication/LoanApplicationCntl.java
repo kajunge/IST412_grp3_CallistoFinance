@@ -26,6 +26,8 @@ import org.apache.pdfbox.pdmodel.PDPage;
  */
 public class LoanApplicationCntl {
     
+   
+    
     /**
      * Initial LoanApplicationCntl constructor.
      */
@@ -37,12 +39,12 @@ public class LoanApplicationCntl {
      * @param id - represents the user id
      * @param firstName - a String representing the user's first name
      * @param lastName - a String representing the user's Last name
-     * @param loanAmount - a double representing the loan amount
+     * @param loanAmount - a long representing the loan amount
      * @param interest - a double representing the loan interest
      * @return - returns the pdf document created
      */
     //change to PDDocument
-    public PDDocument pdfCreator(long id, String firstName, String lastName, double loanAmount, double interest){
+    public PDDocument pdfCreator(long id, String firstName, String lastName, long loanAmount, double interest){
         
         //Creating the PDF document object
         PDDocument document = new PDDocument();
@@ -52,15 +54,19 @@ public class LoanApplicationCntl {
             document.addPage(my_page);            
             
             //Saving the document
-            document.save("src/main/resources/OutputFiles/my_doc.pdf");
+            String pdfName = (String.valueOf(id) + lastName + firstName + ".pdf");
+            electronicSignature(pdfName);
+            
+            document.save("src/main/resources/OutputFiles/" + pdfName);
             System.out.println("PDF created");
+            
             
             //Closing the document
             document.close();
         }catch(IOException e){            
         } 
         
-        //electronicSignature("my_doc.pdf");
+        
         return document;    
 
     }
@@ -72,7 +78,7 @@ public class LoanApplicationCntl {
      * @param pdfName - A String representing the name of the pdf file that the user signs
      */
     public final void electronicSignature(String pdfName){
-        Signature signature = new Signature("src/main/resources/OutputFiles/my_doc.pdf");
+        Signature signature = new Signature("src/main/resources/OutputFiles/" + pdfName);
 
         TextSignOptions options = new TextSignOptions("John Smith");
         // set signature position

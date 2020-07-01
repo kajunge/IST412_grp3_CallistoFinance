@@ -15,7 +15,11 @@ public class RegisterCntl {
      * The is the initial constructor for the RegisterCntl
      */
 
-    ArrayList<Customer> customerArray;
+    protected ArrayList<Customer> customerArray;
+    
+    protected String userEmail;
+    protected String password;
+    protected String key;
 
     public RegisterCntl(){
 
@@ -71,12 +75,20 @@ public class RegisterCntl {
     public boolean isValidPassword(String password){
         return false;
     }
+//    /**
+//     * A method to verify username
+//     * @param username A String representing the username
+//     * @return Returns the validity of the username
+//     */
+//    public boolean isValidUsername(String username){
+//        return false;
+//    }
     /**
-     * A method to verify username
-     * @param username A String representing the username
-     * @return Returns the validity of the username
+     * A method that once all checks have been made, creates a instance of the customer with the inputted email and password
+     * @param userEmail a String representing the customer email
+     * @param password a String representing the customer password
      */
-    public boolean isValidUsername(String username){
-        return false;
+    public void createAccount(String userEmail, String password){
+        
     }
 }

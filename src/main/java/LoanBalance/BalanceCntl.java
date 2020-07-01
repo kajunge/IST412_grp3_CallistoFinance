@@ -26,15 +26,15 @@ public class BalanceCntl {
 
     /**
      * A method to calculate compound interest
-     * @param p An int representing the principle amount.
-     * @param t An int representing the amount of time money is borrowed for.
-     * @param r A double representing the annual interest rate.
-     * @param n An in representing the number of times that interest is compounded per unit t.
+     * @param principleAmount An double representing the principle amount.
+     * @param loanLength An double representing the amount of time money is borrowed for.
+     * @param annualRate A double representing the annual interest rate.
+     * @param compoudNum An double representing the number of times that interest is compounded per unit loanLength.
      * @return Returns a double representing the compounded interest over time.
      */
-    public double calculateInterest(int p, int t, double r, int n){
-        double amount = p * Math.pow(1 + (r/n), n * t);
-        double cinterest = amount - p;
+    public double calculateInterest(double principleAmount, double loanLength, double annualRate, double compoudNum){
+        double amount = principleAmount * Math.pow(1 + (annualRate/compoudNum), compoudNum * loanLength);
+        double cinterest = amount - principleAmount;
         return cinterest;
     }
 
@@ -44,7 +44,7 @@ public class BalanceCntl {
      * @param date A Date showing when the payment was made.
      * @return returns a double representing the payment
      */
-    public String PaymentHistory(double payment, Date date){
+    public String paymentHistory(double payment, Date date){
         String payment_information;
         payment_information = "Payment: " + payment + ", Date: " + date;
         return payment_information;

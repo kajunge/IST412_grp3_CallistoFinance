@@ -17,22 +17,40 @@ public class LoginCntl {
         
     }
     /**
-     * A method to verify username
-     * @param username A String representing customer's username
+     * A method to verify if the inputted email is associated with a user account
+     * @param userEmail A String representing customer's inputted username
      * @return A boolean return depending on whether username is valid.
      */
-    private boolean isValidUsername(String username){
-        // TODO: check to make sure username is not taken
-        return username.length() >= 3 && !(username.contains(" "));
+    private boolean isValidEmail(String userEmail){
+        // TODO: check to make sure username is not taken - incorrect location, this should check if email is associated with a user
+        //return userEmail.length() >= 3 && !(userEmail.contains(" "));
+        return false;
     }
     
+//    /**
+//     * A method to verify password
+//     * @param password A String representing the user password
+//     * @return This returns the validity of the password
+//     */
+//    public boolean isValidPassword(String password){
+//        // TODO: checks if password is the correct password associated with the given email
+//        return password.length() >= 8;
+//    }
     /**
-     * A method to verify password
-     * @param password A String representing the user password
-     * @return This returns the validity of the password
+     * A method to verify email and password
+     * @param userEmail A String representing customer's email
+     * @param password A String representing the customers password
+     * @return A boolean return depending on whether combination of user name and password are correct
      */
-    public boolean isValidPassword(String password){
-        // TODO: add requirment of 1 uppercase and 1 number
-        return password.length() >= 8;
+    public boolean authenticator(String userEmail, String password){
+        
+        return false;
+    }
+    
+    public void forgottenPassword(String userEmail){
+        
+    }
+    public void forgottenEmail(String securityQuestionResponse, int ssNum){
+        
     }
 }
