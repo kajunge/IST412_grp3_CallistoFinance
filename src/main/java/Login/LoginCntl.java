@@ -9,7 +9,7 @@ package Login;
  * @author Scott Crowthers
  */
 public class LoginCntl {
-    
+
     /**
      * This is the initial constructor
      */
