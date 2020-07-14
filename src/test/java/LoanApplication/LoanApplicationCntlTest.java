@@ -21,6 +21,8 @@ import java.io.IOException;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
+import org.junit.After;
+import org.junit.Before;
 
 /**
  * @author Chris Lefebvre
@@ -42,6 +44,14 @@ public class LoanApplicationCntlTest {
     public static void tearDownClass() {
     }
 
+    @Before
+    public void setUp() throws Exception {
+    }
+
+    @After
+    public void tearDown() throws Exception {
+    }
+
     /**
      * Test of pdfCreator method, of class LoanApplicationCntl.
      */
@@ -50,7 +60,7 @@ public class LoanApplicationCntlTest {
         long id = 0L;
         String firstName = "";
         String lastName = "";
-        double loanAmount = 0.0;
+        long loanAmount = 0;
         double interest = 0.0;
         LoanApplicationCntl instance = new LoanApplicationCntl();
         

@@ -6,10 +6,12 @@
 package LoanBalance;
 
 import java.util.Date;
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 /**
  *
@@ -30,6 +32,14 @@ public class BalanceCntlTest {
 
     @AfterClass
     public static void tearDownClass() {
+    }
+
+    @Before
+    public void setUp() throws Exception {
+    }
+
+    @After
+    public void tearDown() throws Exception {
     }
 
     /**
@@ -61,11 +71,27 @@ public class BalanceCntlTest {
         BalanceCntl instance = new BalanceCntl();
         String expResult = "Payment: " + payment + ", Date: " + date;
      
-        String result = instance.PaymentHistory(payment, date);
+        String result = instance.paymentHistory(payment, date);
         assertEquals(expResult, result);
         System.out.println("*********************************");
         System.out.println("Test Passed for testPaymentHistory() " + result);
         System.out.println("*********************************");
+    }
+
+    /**
+     * Test of calculateNextDue method, of class BalanceCntl.
+     */
+    @Test
+    public void testCalculateNextDue() {
+        System.out.println("calculateNextDue");
+        double currentAmount = 0.0;
+        double currentInterest = 0.0;
+        BalanceCntl instance = new BalanceCntl();
+        double expResult = 0.0;
+        double result = instance.calculateNextDue(currentAmount, currentInterest);
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
 
 }

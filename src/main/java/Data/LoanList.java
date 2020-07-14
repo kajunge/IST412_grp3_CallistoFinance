@@ -33,8 +33,12 @@ public class LoanList {
      * @param date - the date the loan was created or a payment made
      */
     public void addLoan(long loanID, long customerID,long princiaplAmount, 
-            long currentTotal, long loanLength, double annualRate, long compoundNum, long singlePayment, String date){
+            long currentTotal, long loanLength, double annualRate, 
+            long compoundNum, long singlePayment, String date){
         Loan L1 = new Loan(1, 1, 20000,20000, 36, 0.05, 1, 0, "27-6-2020");
+//        Loan L1 = new Loan(loanID, customerID, princiaplAmount,currentTotal, 
+//                loanLength, annualRate, compoundNum, singlePayment, date);
+        
         loanArray.add(L1);
         
         this.writeLoanFile();
@@ -49,7 +53,9 @@ public class LoanList {
      * @param singlePayment - a long representing the amount payed in a single transaction
      * @param date - the date the loan was created or a payment made
      */
-    public void editLoan(long loanID, long customerID, long amountTotal, long singlePayment, String date){
+    public void editLoan(long loanID, long customerID,long princiaplAmount, 
+            long currentTotal, long loanLength, double annualRate, 
+            long compoundNum, long singlePayment, String date){
         for(int i = 0; i < loanArray.size(); i++){
             if(loanArray.get(i).getLoanID() == 1){
                 loanArray.get(i).setCustomerID(1);

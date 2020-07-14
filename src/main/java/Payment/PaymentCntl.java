@@ -1,6 +1,8 @@
 
 package Payment;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -33,7 +35,21 @@ public class PaymentCntl {
      * @return A boolean state representing late payment.
      */
     public boolean isLate(Date dueDate, Date currentDate){
-        return false;
+        boolean value = false;
+        if (dueDate.after(currentDate)) {
+            System.out.println("Payment is not late");
+            value = true;
+        } else if (dueDate.before(currentDate)) {
+            System.out.println("Payment is Late");
+            value = false;
+        } else if (dueDate.equals(currentDate)) {
+            System.out.println("Payment is not late");
+            value = true;
+        } else {
+            System.out.println("How to get here?");
+        }       
+        
+        return value;
     }
     /**
      * A method that returns the (double) late fee amount based on that loan's interest

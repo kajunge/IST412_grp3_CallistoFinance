@@ -6,10 +6,12 @@
 package Data;
 
 import java.util.ArrayList;
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 /**
  * @author Chris Lefebvre
@@ -31,6 +33,14 @@ public class LoanListTest {
     public static void tearDownClass() {
     }
 
+    @Before
+    public void setUp() throws Exception {
+    }
+
+    @After
+    public void tearDown() throws Exception {
+    }
+
     /**
      * Test of addLoan method, of class LoanList.
      */
@@ -38,11 +48,15 @@ public class LoanListTest {
     public void testAddLoan() {
         long loanID = 0L;
         long customerID = 0L;
-        long amountTotal = 0L;
+        long principalAmount = 0L;
+        long currentTotal = 0L;
+        long loanLength = 0L;
+        double annualRate = 0.0;
+        long compoundNum = 0L;        
         long singlePayment = 0L;
         String date = "";
         LoanList instance = new LoanList();
-        instance.addLoan(2L, 2L, 30000L, 2000L, "28-6-2020");
+        instance.addLoan(2L, 2L, 30000L, 30000L, 36L, 0.0, 1L, 0L, "28-6-2020");
         System.out.println("\n*********************************");       
         System.out.println("Testing Passed for testAddLoan()");
         System.out.println("\n*********************************");
@@ -55,11 +69,15 @@ public class LoanListTest {
     public void testEditLoan() {
         long loanID = 0L;
         long customerID = 0L;
-        long amountTotal = 0L;
+        long principalAmount = 0L;
+        long currentTotal = 0L;
+        long loanLength = 0L;
+        double annualRate = 0.0;
+        long compoundNum = 0L;        
         long singlePayment = 0L;
         String date = "";
         LoanList instance = new LoanList();
-        instance.editLoan(2L, 2L, 30000L, 2000L, "28-6-2020");
+        instance.editLoan(2L, 2L, 30000L, 20000L, 36L, 0.0, 1L, 10000L, "28-6-2020");
         System.out.println("\n*********************************");
         System.out.println("Testing Passed for testEditLoan()");
         System.out.println("\n*********************************");
@@ -120,7 +138,7 @@ public class LoanListTest {
     @Test
     public void testGetLoanArray() {
         LoanList instance = new LoanList();
-        instance.addLoan(2L, 2L, 30000L, 2000L, "28-6-2020");
+        instance.addLoan(2L, 2L, 30000L, 20000L, 36L, 0.0, 1L, 10000L, "28-6-2020");
         ArrayList<Loan> expResult = instance.getLoanArray();
         ArrayList<Loan> result = instance.getLoanArray();
         assertEquals(expResult, result);

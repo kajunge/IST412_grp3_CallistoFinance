@@ -5,10 +5,12 @@
  */
 package Register;
 
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 /**
  * @author Chris Lefebvre
@@ -28,6 +30,14 @@ public class RegisterCntlTest {
     
     @AfterClass
     public static void tearDownClass() {
+    }
+
+    @Before
+    public void setUp() throws Exception {
+    }
+
+    @After
+    public void tearDown() throws Exception {
     }
 
     /**
@@ -102,19 +112,33 @@ public class RegisterCntlTest {
         System.out.println("*********************************");
     }
 
+//    /**
+//     * Test of isValidUsername method, of class RegisterCntl.
+//     */
+//    @Test
+//    public void testIsValidUsername() {
+//        String username = "";
+//        RegisterCntl instance = new RegisterCntl();
+//        boolean expResult = false;
+//        boolean result = instance.isValidUsername(username);
+//        assertEquals(expResult, result);
+//        System.out.println("*********************************");
+//        System.out.println("Testing Passed for testIsValidUsername() " + result);
+//        System.out.println("*********************************");
+//    }
+
     /**
-     * Test of isValidUsername method, of class RegisterCntl.
+     * Test of createAccount method, of class RegisterCntl.
      */
     @Test
-    public void testIsValidUsername() {
-        String username = "";
+    public void testCreateAccount() {
+        System.out.println("createAccount");
+        String userEmail = "";
+        String password = "";
         RegisterCntl instance = new RegisterCntl();
-        boolean expResult = false;
-        boolean result = instance.isValidUsername(username);
-        assertEquals(expResult, result);
-        System.out.println("*********************************");
-        System.out.println("Testing Passed for testIsValidUsername() " + result);
-        System.out.println("*********************************");
+        instance.createAccount(userEmail, password);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
     
 }

@@ -41,10 +41,19 @@ public class LoginCntl {
      * @param userEmail A String representing customer's email
      * @param password A String representing the customers password
      * @return A boolean return depending on whether combination of user name and password are correct
+     * Maybe we should re add test username and passowrd as seperate entites
      */
-    public boolean authenticator(String userEmail, String password){
+    public boolean authenticator(String userEmail, String inputPassword){
+        boolean value = false;
+        String userPassword = "";
+        if(inputPassword.equals(userPassword)){
+            value = true;
+        }
+        else{
+            value = false;
+        }
         
-        return false;
+        return true;
     }
     
     public void forgottenPassword(String userEmail){

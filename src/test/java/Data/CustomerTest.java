@@ -6,10 +6,12 @@
 package Data;
 
 import java.io.Serializable;
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 /**
  * @Author Chris Lefebvre
@@ -31,6 +33,14 @@ public class CustomerTest implements Serializable{
     @AfterClass
     public static void tearDownClass() {
         
+    }
+
+    @Before
+    public void setUp() throws Exception {
+    }
+
+    @After
+    public void tearDown() throws Exception {
     }
     
 

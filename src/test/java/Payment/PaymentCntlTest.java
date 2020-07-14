@@ -5,10 +5,15 @@
  */
 package Payment;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 /**
  *
@@ -29,6 +34,14 @@ public class PaymentCntlTest {
     
     @AfterClass
     public static void tearDownClass() {
+    }
+
+    @Before
+    public void setUp() throws Exception {
+    }
+
+    @After
+    public void tearDown() throws Exception {
     }
 
     /**
@@ -53,8 +66,19 @@ public class PaymentCntlTest {
     @Test
     public void testIsLate() {
         PaymentCntl instance = new PaymentCntl();
-        boolean expResult = false;
-        boolean result = instance.isLate();
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date dueDate = new Date();
+        Date currentDate = new Date();
+                
+        try{
+            
+            dueDate = sdf.parse("2010-01-31");
+            currentDate = sdf.parse("2009-12-31");
+        }catch(ParseException e){}   
+        
+        boolean expResult = true;
+        boolean result = instance.isLate(dueDate, currentDate);
         assertEquals(expResult, result);
         System.out.println("*********************************");
         System.out.println("Testing Passed for testIsLate() " + result);
