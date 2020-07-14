@@ -2,6 +2,7 @@
 package Register;
 
 import Data.Customer;
+import Data.CustomerList;
 import java.util.ArrayList;
 
 /**
@@ -89,6 +90,7 @@ public class RegisterCntl {
      * @param password a String representing the customer password
      */
     public void createAccount(String userEmail, String password){
-        
+        CustomerList customerList = new CustomerList();
+        customerList.addCustomer(userEmail, password, "", "", "", "", 0L);
     }
 }

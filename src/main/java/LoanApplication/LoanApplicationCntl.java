@@ -54,10 +54,10 @@ public class LoanApplicationCntl {
             document.addPage(my_page);            
             
             //Saving the document
-            String pdfName = (String.valueOf(id) + lastName + firstName + ".pdf");
-            electronicSignature(pdfName);
+            String pdfName = (String.valueOf(id) + lastName + firstName);
+//            electronicSignature(pdfName);
             
-            document.save("src/main/resources/OutputFiles/" + pdfName);
+            document.save("src/main/resources/OutputFiles/" + pdfName + ".pdf");
             System.out.println("PDF created");
             
             

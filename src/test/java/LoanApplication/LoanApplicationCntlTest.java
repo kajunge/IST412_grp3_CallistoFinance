@@ -23,6 +23,7 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 
 /**
  * @author Chris Lefebvre
@@ -58,12 +59,13 @@ public class LoanApplicationCntlTest {
     @Test
     public void testPdfCreator() {
         long id = 0L;
-        String firstName = "";
-        String lastName = "";
-        long loanAmount = 0;
-        double interest = 0.0;
+        String firstName = "firstName";
+        String lastName = "lastName";
+        long loanAmount = 30000L;
+        double interest = 0.05;
         LoanApplicationCntl instance = new LoanApplicationCntl();
-        
+        String pdfName = (String.valueOf(id) + lastName + firstName);
+         
         PDDocument expResult = new PDDocument();
        // String expResult = "";
         try{                   
@@ -71,7 +73,7 @@ public class LoanApplicationCntlTest {
             expResult.addPage(my_page);            
             
             //Saving the document
-            expResult.save("src/main/resources/OutputFilesTest/my_doc.pdf");
+            expResult.save("src/main/resources/OutputFilesTest/" + pdfName + ".pdf");
             System.out.println("PDF created");
 
             //Closing the document
@@ -91,6 +93,7 @@ public class LoanApplicationCntlTest {
      * Test of electronicSignature method, of class LoanApplicationCntl.
      */
     @Test
+    @Ignore
     public void testElectronicSignature() {
         //System.out.println("electronicSignature");
         String pdfName = "src/main/resources/OutputFilesTest/my_doc.pdf";

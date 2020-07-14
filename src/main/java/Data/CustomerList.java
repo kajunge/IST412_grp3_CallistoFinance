@@ -37,8 +37,8 @@ public class CustomerList {
      * @param phoneNumber - a String representing the customer's phone number in the customer profile
      * @param loanID - a String representing the customer's loan id in the customer profile
      */
-    public void addCustomer(String email, String password, long customerId, String firstName, String lastName, String address, String phoneNumber, long loanID){
-        Customer c1 = new Customer ("IST412Team3@gmail.com", "password", 1, "Chris", "Lefebvre", "123 Main Street", "123-456-7889", 1);
+    public void addCustomer(String email, String password, String firstName, String lastName, String address, String phoneNumber, long loanID){
+        Customer c1 = new Customer ("IST412Team3@gmail.com", "password", customerArray.size() + 1, "Chris", "Lefebvre", "123 Main Street", "123-456-7889", 1);
         customerArray.add(c1);
         
         this.writeCustomerFile();

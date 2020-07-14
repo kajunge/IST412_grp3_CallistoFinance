@@ -58,7 +58,7 @@ public class CustomerListTest {
         String phoneNumber = "";
         long loanID = 1L;
         CustomerList instance = new CustomerList();
-        instance.addCustomer("kam6564@psu.edu", "password", 2, "Kristina ", "Mantha", "123 Main Street", "123-456-7880", 2);
+        instance.addCustomer("kam6564@psu.edu", "password", "Kristina ", "Mantha", "123 Main Street", "123-456-7880", 2);
         System.out.println("*********************************");
         System.out.println("Testing Passed for testAddCustomer()");
         System.out.println("*********************************");
@@ -142,7 +142,7 @@ public class CustomerListTest {
     @Test
     public void testGetCustomerArray() {    
         CustomerList instance = new CustomerList();
-        instance.addCustomer("kam6564@psu.edu", "password", 2, "Kristina", "Mantha", "123 Main Street", "123-456-7880", 2);
+        instance.addCustomer("kam6564@psu.edu", "password", "Kristina", "Mantha", "123 Main Street", "123-456-7880", 2);
         ArrayList<Customer> expResult = instance.getCustomerArray();
         ArrayList<Customer> result = instance.getCustomerArray();
         assertEquals(expResult, result);

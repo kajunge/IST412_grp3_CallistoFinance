@@ -129,7 +129,7 @@ public class LoanTest implements Serializable{
     @Test
     public void testGetSinglePayment() {
         Loan instance = new Loan(2L, 2L, 30000L, 20000L, 36L, 0.0, 1L, 10000L, "28-6-2020");
-        long expResult = 2000L;
+        long expResult = 10000L;
         long result = instance.getSinglePayment();
         assertEquals(expResult, result);
         System.out.println("*********************************");

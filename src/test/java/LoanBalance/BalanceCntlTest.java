@@ -84,14 +84,14 @@ public class BalanceCntlTest {
     @Test
     public void testCalculateNextDue() {
         System.out.println("calculateNextDue");
-        double currentAmount = 0.0;
-        double currentInterest = 0.0;
+        double currentAmount = 30000;
+        double currentInterest = 0.05;
         BalanceCntl instance = new BalanceCntl();
-        double expResult = 0.0;
+        double expResult = 1500;
         double result = instance.calculateNextDue(currentAmount, currentInterest);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
 }

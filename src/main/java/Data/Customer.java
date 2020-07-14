@@ -18,7 +18,7 @@ public class Customer implements Serializable{
     private String lastName;
     private String address;
     private String phoneNumber;
-    private long loanID;
+    private long loanID; //FIX_ME we may want to remove loanID since users may have multiple loans
 
     /**
      * This is the constructor for the Customer class

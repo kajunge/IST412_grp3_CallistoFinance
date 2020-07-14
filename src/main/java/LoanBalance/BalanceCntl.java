@@ -59,7 +59,7 @@ public class BalanceCntl {
      */
     public double calculateNextDue(double currentAmount, double currentInterest){
         double nextDue = 0.0;
-        
+        nextDue = currentAmount * currentInterest;
         return nextDue;
     }
 

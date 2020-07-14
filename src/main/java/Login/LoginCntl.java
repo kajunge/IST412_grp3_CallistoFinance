@@ -45,21 +45,21 @@ public class LoginCntl {
      */
     public boolean authenticator(String userEmail, String inputPassword){
         boolean value = false;
-        String userPassword = "";
-        if(inputPassword.equals(userPassword)){
+        String storedUserPassword = "";
+        if(inputPassword.equals(storedUserPassword)){
             value = true;
         }
         else{
             value = false;
         }
         
-        return true;
+        return value;
     }
     
     public void forgottenPassword(String userEmail){
-        
+        //JUnit Test is not yet created, will change once registration email system is set up(they use same basic techniques)
     }
     public void forgottenEmail(String securityQuestionResponse, int ssNum){
-        
+        //JUnit Test is not yet created, will change once registration email system is set up(they use same basic techniques)
     }
 }
