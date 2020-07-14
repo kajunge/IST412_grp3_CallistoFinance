@@ -12,7 +12,11 @@ public class Loan implements Serializable{
 
     private long loanID;
     private long customerID;
-    private long amountTotal;
+    private long principalAmount;
+    private long currentTotal;
+    private long loanLength;
+    private double annualRate;
+    private long compoundNum;
     private long singlePayment;
     private String date;    //change to a proper date field once implementation is started
     
@@ -20,14 +24,23 @@ public class Loan implements Serializable{
      * The loan constructor
      * @param loanID - a long representing the id in a loan profile
      * @param customerID - a long representing the customer id in a loan profile
-     * @param amountTotal - a long representing the amount remaining in the current loan
+     * @param princiapAmount - a long representing the initial amount when the loan was first given
+     * @param currentTotal - a long representing the current amount remaining to pay in the loan
+     * @param loanLength - a double representing the time (in months) given to pay off the loan (at min payments) (field type may change as progress is made)
+     * @param annualRate - a long representing the interest added per year
+     * @param compoundNum - a long representing the number of times the interest is compounded (per unit length in balanceCNtl) (this may change)
      * @param singlePayment - a long representing the amount of a single payment in the current loan
      * @param date - the date that the loan is started/payment is made
      */
-    protected Loan(long loanID, long customerID, long amountTotal, long singlePayment, String date){
+    protected Loan(long loanID, long customerID, long principalAmount, long currentTotal,
+            long loanLength, double annualRate, long compoundNum, long singlePayment, String date){
     this.loanID = loanID;
     this.customerID = customerID;
-    this.amountTotal = amountTotal;
+    this.principalAmount = principalAmount;
+    this.currentTotal = currentTotal;
+    this.loanLength = loanLength;
+    this.annualRate = annualRate;
+    this.compoundNum = compoundNum;
     this.singlePayment = singlePayment;
     this.date = date;
     
@@ -64,21 +77,7 @@ public class Loan implements Serializable{
     public void setCustomerID(long customerID) {
         this.customerID = customerID;
     }
-    /**
-     * Returns the total amount of the customer loan
-     * @return A long representing the loan amount
-     */
-    public long getAmountTotal() {
-        return amountTotal;
-    }
 
-    /**
-     * Sets the total loan amount
-     * @param amountTotal A long representing the total amount.
-     */
-    public void setAmountTotal(long amountTotal) {
-        this.amountTotal = amountTotal;
-    }
 
     /**
      * returns the value of a single payment
@@ -112,9 +111,73 @@ public class Loan implements Serializable{
         this.date = date;
     }
 
-   
+    /**
+     * @return the principalAmount
+     */
+    public long getPrincipalAmount() {
+        return principalAmount;
+    }
 
-    
+    /**
+     * @param principalAmount the principalAmount to set
+     */
+    public void setPrincipalAmount(long principalAmount) {
+        this.principalAmount = principalAmount;
+    }
 
-    
+    /**
+     * @return the currentTotal
+     */
+    public long getCurrentTotal() {
+        return currentTotal;
+    }
+
+    /**
+     * @param currentTotal the currentTotal to set
+     */
+    public void setCurrentTotal(long currentTotal) {
+        this.currentTotal = currentTotal;
+    }
+
+    /**
+     * @return the loanLength
+     */
+    public long getLoanLength() {
+        return loanLength;
+    }
+
+    /**
+     * @param loanLength the loanLength to set
+     */
+    public void setLoanLength(long loanLength) {
+        this.loanLength = loanLength;
+    }
+
+    /**
+     * @return the annualRate
+     */
+    public double getAnnualRate() {
+        return annualRate;
+    }
+
+    /**
+     * @param annualRate the annualRate to set
+     */
+    public void setAnnualRate(double annualRate) {
+        this.annualRate = annualRate;
+    }
+
+    /**
+     * @return the compoundNum
+     */
+    public long getCompoundNum() {
+        return compoundNum;
+    }
+
+    /**
+     * @param compoundNum the compoundNum to set
+     */
+    public void setCompoundNum(long compoundNum) {
+        this.compoundNum = compoundNum;
+    }
 }

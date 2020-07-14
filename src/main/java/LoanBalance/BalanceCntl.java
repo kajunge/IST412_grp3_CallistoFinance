@@ -49,5 +49,18 @@ public class BalanceCntl {
         payment_information = "Payment: " + payment + ", Date: " + date;
         return payment_information;
     }
+    
+    
+    /**
+     * 
+     * @param currentAmount representing the current amount remaining in the loan
+     * @param currentInterest representing the interest associated with the loan
+     * @return returns a double representing the payment to pay for that month
+     */
+    public double calculateNextDue(double currentAmount, double currentInterest){
+        double nextDue = 0.0;
+        
+        return nextDue;
+    }
 
 }
