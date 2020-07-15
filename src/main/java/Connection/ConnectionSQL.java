@@ -1,12 +1,25 @@
 
 package Connection;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author kajunge
  */
 public class ConnectionSQL {
-    public static void main(String [] args){
+    
+    public static Connection connectDB(){
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection("jdbc:derby://localhost:1527/mFinance_Customers","nbuser","nbuser");
+            return conn;
+        } catch (SQLException ex) {
+            Logger.getLogger(ConnectionSQL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    /*public static void main(String [] args){
         try{
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             Connection conn = DriverManager.getConnection("jdbc:sqlserver://localhost\\SQLEXPRESS;databaseName=mFinance_Customers;user=root;password=password");
@@ -19,5 +32,5 @@ public class ConnectionSQL {
         catch(Exception e){
             System.out.println(e);
         }
-    }
+    }*/
 }
