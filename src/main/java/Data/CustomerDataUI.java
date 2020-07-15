@@ -32,7 +32,6 @@ public class CustomerDataUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(248, 248, 255));
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(235, 236, 240), 6, true));
