@@ -2,6 +2,8 @@
 package EditCustomerInfo;
 
 import java.awt.Color;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 /**
@@ -44,10 +46,10 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
         emailTextField = new javax.swing.JTextField();
         addressTextField = new javax.swing.JTextField();
         phoneNumberTextField = new javax.swing.JTextField();
+        phoneNumberTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(598, 407));
 
         jPanel1.setBackground(new java.awt.Color(248, 248, 255));
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(235, 236, 240), 6, true));
@@ -74,7 +76,7 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -115,14 +117,14 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(registerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
+                .addContainerGap(18, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(registerButton))
@@ -226,6 +228,22 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
             }
         });
 
+        phoneNumberTextField1.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
+        phoneNumberTextField1.setForeground(new java.awt.Color(204, 204, 204));
+        phoneNumberTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                phoneNumberTextField1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                phoneNumberTextField1FocusLost(evt);
+            }
+        });
+        phoneNumberTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                phoneNumberTextField1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -238,10 +256,6 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
                         .addGap(48, 48, 48)
                         .addComponent(firstNameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(31, 31, 31)
-                        .addComponent(phoneNumberTextField))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48)
                         .addComponent(lastNameTextField))
@@ -252,7 +266,13 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48)
-                        .addComponent(addressTextField)))
+                        .addComponent(addressTextField))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(31, 31, 31)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(phoneNumberTextField1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(phoneNumberTextField))))
                 .addGap(22, 22, 22))
         );
         jPanel4Layout.setVerticalGroup(
@@ -278,7 +298,9 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(phoneNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phoneNumberTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -291,7 +313,7 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(136, 136, 136)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(135, Short.MAX_VALUE))
+                .addContainerGap(141, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -315,7 +337,7 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE)
         );
 
         pack();
@@ -345,6 +367,15 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_lastNameTextFieldFocusLost
 
+    private void lastNameTextFieldError() {                                            
+
+        Pattern pattern = Pattern.compile("{0-9}*");
+        Matcher matcher = pattern.matcher(lastNameTextField.getText());
+        if (!matcher.matches()) {
+//            lastNameTextField.setText("enter your username");
+            lastNameTextField.setBackground(Color.red);
+        }
+    } 
     private void lastNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_lastNameTextFieldActionPerformed
@@ -400,6 +431,18 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
         JOptionPane.showMessageDialog(null, "Your details were theoretically updated.", "Callisto Finance", 1);
     }//GEN-LAST:event_registerButtonActionPerformed
+
+    private void phoneNumberTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneNumberTextField1FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_phoneNumberTextField1FocusGained
+
+    private void phoneNumberTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneNumberTextField1FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_phoneNumberTextField1FocusLost
+
+    private void phoneNumberTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneNumberTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_phoneNumberTextField1ActionPerformed
 
     private int xMouse, yMouse;
     /**
@@ -472,6 +515,7 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField lastNameTextField;
     private javax.swing.JTextField phoneNumberTextField;
+    private javax.swing.JTextField phoneNumberTextField1;
     private javax.swing.JButton registerButton;
     // End of variables declaration//GEN-END:variables
 }
