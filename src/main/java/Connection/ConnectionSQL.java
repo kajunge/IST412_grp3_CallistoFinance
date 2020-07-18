@@ -10,13 +10,17 @@ import java.util.logging.Logger;
 public class ConnectionSQL {
     
     public static Connection connectDB(){
-        Connection conn = null;
+        
+      /*  Connection conn = null;
+        
         try {
-            conn = DriverManager.getConnection("jdbc:derby://localhost:1527/mFinance_Customers","nbuser","nbuser");
+            Class.forName("org.apache.derby.jdbc.EmbeddedDriver");  
+            //conn = DriverManager.getConnection("jdbc:derby://localhost:1527/mFinance_Customers","nbuser","nbuser");
+            conn = DriverManager.getConnection("jdbc:derby:user;create=true","nbuser","nbuser");
             return conn;
-        } catch (SQLException ex) {
-            Logger.getLogger(ConnectionSQL.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } catch (SQLException | ClassNotFoundException e ) {
+            System.err.println(e);
+        } */
         return null;
     }
     /*public static void main(String [] args){
