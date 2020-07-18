@@ -1,16 +1,24 @@
 package Login;
 
 import Connection.ConnectionSQL;
+import Data.Customer;
 import Data.CustomerDataUI;
 import Navigation.NavigationUI;
+import Data.CustomerList;
 import Register.RegisterUI;
+import com.mysql.cj.MysqlConnection;
 import java.awt.Color;
 import java.awt.event.WindowEvent;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import javax.swing.JOptionPane;
 import java.sql.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 /**
  * This is the Login GUI.
@@ -19,16 +27,15 @@ import java.util.regex.Pattern;
  */
 public class LoginUI extends javax.swing.JFrame {
 
-    Connection conn = ConnectionSQL.connectDB();
-    PreparedStatement ps = null;
-    ResultSet rs = null;
-
+    // Connection conn = ConnectionSQL.connectDB();
+    //  Statement stmt = null;
+    //   ResultSet rs = null;
     /**
      * Creates new form LoginUI
      */
     public LoginUI() {
         initComponents();
-        ConnectionSQL.connectDB();
+        // ConnectionSQL.connectDB();
         this.setLocationRelativeTo(null);
 
     }
@@ -387,6 +394,10 @@ public class LoginUI extends javax.swing.JFrame {
 //            JOptionPane.showMessageDialog(null, "Invalid Username or Password", "Login Error", 2);
 //        }
 
+//==============================================================================
+//Chris added
+//==============================================================================
+
         String usernameOutput = "";
         String passwordOutput = "";
         
@@ -424,7 +435,69 @@ public class LoginUI extends javax.swing.JFrame {
                 }  
         }
         
-        
+//==============================================================================
+//End of HEAD(?) section
+//==============================================================================
+
+        /* try {
+            String loginSQL = "SELECT * FROM APP.LOGINTABLE WHERE USERNAME ='"+usernameTextField.getText()+"' AND PASSWORD ='"+passwordTextField.getText().toString()+"'";
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(loginSQL);
+
+            if (rs.next()) {
+                new CustomerDataUI().setVisible(true);
+                dispose();
+            } else {
+
+                JOptionPane.showMessageDialog(null, "Invalid Username or Password", "Login Error", 2);
+            }
+
+        } catch (SQLException ex) {
+            System.err.println(ex);
+        }*/
+ /*try {
+        Connection conn = DriverManager.getConnection("jdbc:derby://localhost:1527/mFinance_Customers", "nbuser", "nbuser");
+        Statement st = conn.createStatement();
+        ResultSet rs = st.executeQuery(sql);
+        if (rs.next()) {
+        JOptionPane.showMessageDialog(this, "Login was Successful");
+        } else {
+        JOptionPane.showMessageDialog(this, "Login was Unuccessful");
+        }
+        } catch (Exception e) {
+        }*/
+ /*String cust = usernameTextField.getText().trim();
+        String pass = passwordTextField.getText();
+        if (cust.equalsIgnoreCase("Admin")
+        && pass.equals("Administrator")) {
+        new CustomerDataUI().setVisible(true);
+        dispose();
+        } else {
+        JOptionPane.showMessageDialog(null, "Invalid Username or Password", "Login Error", 2);
+        }*/
+ /*try {
+            Connection conn = DriverManager.getConnection("jdbc:derby://localhost:1527/mFinance_Customers", "nbuser", "nbuser");
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(this, "Login was Successful");
+            } else {
+                JOptionPane.showMessageDialog(this, "Login was Unuccessful");
+
+            }
+        } catch (Exception e) {
+
+        }*/
+//        String cust = usernameTextField.getText().trim();
+//        String pass = passwordTextField.getText();
+//
+//        if (cust.equalsIgnoreCase("Admin")
+//                && pass.equals("Administrator")) {
+//            new CustomerDataUI().setVisible(true);
+//            dispose();
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Invalid Username or Password", "Login Error", 2);
+//        }
     }//GEN-LAST:event_loginButtonActionPerformed
 
     /**
@@ -511,6 +584,32 @@ public class LoginUI extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+
+        Customer customer = new Customer();
+
+        customer.setCustomerId(1234);
+        customer.setFirstName("Kristina");
+        customer.setLastName("Mantha");
+        customer.setEmail("kam564@psu.edu");
+        customer.setAddress("313 Nittany Lane");
+        customer.setPhoneNumber("352-123-5555");
+        customer.setPassword("MyPa$$w0rd");
+        customer.setLoanID(555512);
+
+        try {
+
+            FileOutputStream fileOut = new FileOutputStream("src/main/resources/SerFiles/Customer.ser");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(customer);
+            out.close();
+            fileOut.close();
+            System.out.println("***********************************************************");
+            System.out.println("Serialized data is saved in /resources/SerFiles/Customer.ser");
+            System.out.println("***********************************************************");
+
+        } catch (IOException i) {
+            i.printStackTrace();
+        }
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
