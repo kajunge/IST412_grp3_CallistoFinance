@@ -44,6 +44,7 @@ public class CustomerList {
         this.writeCustomerFile();
         this.readCustomerFile();
         //System.out.println("Testing: AddCustomer");
+       
     }
 
      /**
