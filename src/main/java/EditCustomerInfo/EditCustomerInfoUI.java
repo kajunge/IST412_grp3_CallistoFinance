@@ -46,7 +46,7 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
         emailTextField = new javax.swing.JTextField();
         addressTextField = new javax.swing.JTextField();
         phoneNumberTextField = new javax.swing.JTextField();
-        phoneNumberTextField1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -61,8 +61,9 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
         jPanel2.setPreferredSize(new java.awt.Dimension(586, 106));
 
         jLabel1.setFont(new java.awt.Font("Papyrus", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Update Customer Information");
+        jLabel1.setText("Customer Profile");
         jLabel1.setMaximumSize(new java.awt.Dimension(188, 39));
         jLabel1.setMinimumSize(new java.awt.Dimension(188, 39));
         jLabel1.setPreferredSize(new java.awt.Dimension(188, 39));
@@ -134,18 +135,23 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(248, 248, 255));
 
         jLabel3.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("First Name:");
 
         jLabel4.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Last Name:");
 
         jLabel5.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Email:");
 
         jLabel6.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Address:");
 
         jLabel7.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Phone Number:");
 
         lastNameTextField.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
@@ -228,21 +234,8 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
             }
         });
 
-        phoneNumberTextField1.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
-        phoneNumberTextField1.setForeground(new java.awt.Color(204, 204, 204));
-        phoneNumberTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                phoneNumberTextField1FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                phoneNumberTextField1FocusLost(evt);
-            }
-        });
-        phoneNumberTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                phoneNumberTextField1ActionPerformed(evt);
-            }
-        });
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Format: 123-456-7890");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -270,10 +263,10 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addGap(31, 31, 31)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(phoneNumberTextField1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(phoneNumberTextField))))
-                .addGap(22, 22, 22))
+                        .addComponent(phoneNumberTextField)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -297,10 +290,9 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(phoneNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(phoneNumberTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                    .addComponent(phoneNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -308,12 +300,12 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 585, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 589, Short.MAX_VALUE)
                 .addGap(1, 1, 1))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(136, 136, 136)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addContainerGap(5, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -343,6 +335,113 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void phoneNumberTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneNumberTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_phoneNumberTextFieldActionPerformed
+
+    private void phoneNumberTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneNumberTextFieldFocusLost
+        if (phoneNumberTextField.getText().trim().equals("")
+            || phoneNumberTextField.getText().trim().toLowerCase().equals("enter your phone number")) {
+            //phoneNumberTextField.setText("enter your phone number");
+            phoneNumberTextField.setForeground(Color.lightGray);
+        }
+    }//GEN-LAST:event_phoneNumberTextFieldFocusLost
+
+    private void phoneNumberTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneNumberTextFieldFocusGained
+        //        if (!lastNameTextField.getText().trim().toLowerCase().equals("")) {
+            //            lastNameTextField.setText("");
+            phoneNumberTextField.setForeground(Color.black);
+            //        }
+    }//GEN-LAST:event_phoneNumberTextFieldFocusGained
+
+    private void addressTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addressTextFieldActionPerformed
+
+    private void addressTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addressTextFieldFocusLost
+        if (addressTextField.getText().trim().equals("")
+            || addressTextField.getText().trim().toLowerCase().equals("enter your address")) {
+            // addressTextField.setText("enter your address");
+            addressTextField.setForeground(Color.lightGray);
+        }
+    }//GEN-LAST:event_addressTextFieldFocusLost
+
+    private void addressTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addressTextFieldFocusGained
+        //        if (!lastNameTextField.getText().trim().toLowerCase().equals("")) {
+            //            lastNameTextField.setText("");
+            addressTextField.setForeground(Color.black);
+            //        }
+    }//GEN-LAST:event_addressTextFieldFocusGained
+
+    private void emailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailTextFieldActionPerformed
+
+    private void emailTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailTextFieldFocusLost
+        if (emailTextField.getText().trim().equals("")
+            || emailTextField.getText().trim().toLowerCase().equals("enter your email")) {
+            // emailTextField.setText("enter your email");
+            emailTextField.setForeground(Color.lightGray);
+        }
+    }//GEN-LAST:event_emailTextFieldFocusLost
+
+    private void emailTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailTextFieldFocusGained
+        //        if (!lastNameTextField.getText().trim().toLowerCase().equals("")) {
+            //            lastNameTextField.setText("");
+            emailTextField.setForeground(Color.black);
+            //        }
+    }//GEN-LAST:event_emailTextFieldFocusGained
+
+    private void firstNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_firstNameTextFieldActionPerformed
+
+    private void firstNameTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_firstNameTextFieldFocusLost
+        if (firstNameTextField.getText().trim().equals("")
+            || firstNameTextField.getText().trim().toLowerCase().equals("enter your first name")) {
+            //firstNameTextField.setText("enter your first name");
+            firstNameTextField.setForeground(Color.lightGray);
+        }
+    }//GEN-LAST:event_firstNameTextFieldFocusLost
+
+    private void firstNameTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_firstNameTextFieldFocusGained
+        //        if (!lastNameTextField.getText().trim().toLowerCase().equals("")) {
+            //            lastNameTextField.setText("");
+            firstNameTextField.setForeground(Color.black);
+            //        }
+    }//GEN-LAST:event_firstNameTextFieldFocusGained
+
+    private void lastNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lastNameTextFieldActionPerformed
+
+    private void lastNameTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lastNameTextFieldFocusLost
+
+        if (lastNameTextField.getText().trim().equals("")
+            || lastNameTextField.getText().trim().toLowerCase().equals("enter your last name")) {
+            //lastNameTextField.setText("enter your last name");
+            lastNameTextField.setForeground(Color.lightGray);
+        }
+    }//GEN-LAST:event_lastNameTextFieldFocusLost
+
+    private void lastNameTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lastNameTextFieldFocusGained
+        //        if (!lastNameTextField.getText().trim().toLowerCase().equals("")) {
+            //            lastNameTextField.setText("");
+            lastNameTextField.setForeground(Color.black);
+            //        }
+    }//GEN-LAST:event_lastNameTextFieldFocusGained
+
+    private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
+
+        firstNameTextFieldError();
+        lastNameTextFieldError();
+        emailTextFieldError();
+        addressTextFieldError();
+        phoneNumberTextFieldError();
+
+        JOptionPane.showMessageDialog(null, "Your details were theoretically updated.", "Callisto Finance", 1);
+    }//GEN-LAST:event_registerButtonActionPerformed
+
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitButtonActionPerformed
@@ -351,99 +450,94 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitButtonMouseClicked
 
-    private void lastNameTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lastNameTextFieldFocusGained
-        if (lastNameTextField.getText().trim().toLowerCase().equals("enter your username")) {
-            lastNameTextField.setText("");
+    private void lastNameTextFieldError() {    
+        
+        String input = lastNameTextField.getText().toString();       
+        Pattern pattern = Pattern.compile("[^a-zA-Z ]", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(input);        
+        boolean value = matcher.find();
+        
+        if (value == true) {
+            lastNameTextField.setBackground(Color.red);
+            lastNameTextField.setForeground(Color.white);
+        }
+        else{
+            lastNameTextField.setBackground(Color.white);
             lastNameTextField.setForeground(Color.black);
         }
-    }//GEN-LAST:event_lastNameTextFieldFocusGained
-
-    private void lastNameTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lastNameTextFieldFocusLost
-
-        if (lastNameTextField.getText().trim().equals("")
-            || lastNameTextField.getText().trim().toLowerCase().equals("enter your username")) {
-            lastNameTextField.setText("enter your username");
-            lastNameTextField.setForeground(Color.lightGray);
+    } 
+    
+    private void firstNameTextFieldError() {    
+        
+        String input = firstNameTextField.getText().toString();       
+        Pattern pattern = Pattern.compile("[^a-zA-Z ]", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(input);        
+        boolean value = matcher.find();
+        
+        if (value == true) {
+            firstNameTextField.setBackground(Color.red);
+            firstNameTextField.setForeground(Color.white);
         }
-    }//GEN-LAST:event_lastNameTextFieldFocusLost
-
-    private void lastNameTextFieldError() {                                            
-
-        Pattern pattern = Pattern.compile("{0-9}*");
-        Matcher matcher = pattern.matcher(lastNameTextField.getText());
-        if (!matcher.matches()) {
-//            lastNameTextField.setText("enter your username");
-            lastNameTextField.setBackground(Color.red);
+        else{
+            firstNameTextField.setBackground(Color.white);
+            firstNameTextField.setForeground(Color.black);
         }
     } 
-    private void lastNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lastNameTextFieldActionPerformed
-
-    private void firstNameTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_firstNameTextFieldFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_firstNameTextFieldFocusGained
-
-    private void firstNameTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_firstNameTextFieldFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_firstNameTextFieldFocusLost
-
-    private void firstNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_firstNameTextFieldActionPerformed
-
-    private void emailTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailTextFieldFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailTextFieldFocusGained
-
-    private void emailTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailTextFieldFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailTextFieldFocusLost
-
-    private void emailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailTextFieldActionPerformed
-
-    private void addressTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addressTextFieldFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addressTextFieldFocusGained
-
-    private void addressTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addressTextFieldFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addressTextFieldFocusLost
-
-    private void addressTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addressTextFieldActionPerformed
-
-    private void phoneNumberTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneNumberTextFieldFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_phoneNumberTextFieldFocusGained
-
-    private void phoneNumberTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneNumberTextFieldFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_phoneNumberTextFieldFocusLost
-
-    private void phoneNumberTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneNumberTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_phoneNumberTextFieldActionPerformed
-
-    private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
-        JOptionPane.showMessageDialog(null, "Your details were theoretically updated.", "Callisto Finance", 1);
-    }//GEN-LAST:event_registerButtonActionPerformed
-
-    private void phoneNumberTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneNumberTextField1FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_phoneNumberTextField1FocusGained
-
-    private void phoneNumberTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneNumberTextField1FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_phoneNumberTextField1FocusLost
-
-    private void phoneNumberTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneNumberTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_phoneNumberTextField1ActionPerformed
-
+    
+    private void emailTextFieldError() {    
+        
+        String input = emailTextField.getText().toString();       
+        Pattern pattern = Pattern.compile("^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$");
+        Matcher matcher = pattern.matcher(input);        
+        boolean value = matcher.matches();
+        
+        if (value == false && !input.equals("")) {
+            emailTextField.setBackground(Color.red);
+            emailTextField.setForeground(Color.white);
+        }
+        else{
+            emailTextField.setBackground(Color.white);
+            emailTextField.setForeground(Color.black);
+        }
+    } 
+    
+     private void addressTextFieldError() {    
+        
+        String input = addressTextField.getText().toString();       
+        Pattern pattern = Pattern.compile("[^a-zA-Z0-9 ]", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(input);        
+        boolean value = matcher.find();
+        
+        if (value == true) {
+            addressTextField.setBackground(Color.red);
+            addressTextField.setForeground(Color.white);
+        }
+        else{
+            addressTextField.setBackground(Color.white);
+            addressTextField.setForeground(Color.black);
+        }
+    } 
+     
+      private void phoneNumberTextFieldError() {    
+        
+        String input = phoneNumberTextField.getText().trim();       
+        Pattern pattern = Pattern.compile("\\d{3}[-\\.\\s]\\d{3}[-\\.\\s]\\d{4}");
+        Matcher matcher = pattern.matcher(input);        
+        boolean value = matcher.matches();
+        
+        System.out.println(input + " is " + value);
+        
+        if (value == false) {
+            
+            phoneNumberTextField.setBackground(Color.red);
+            phoneNumberTextField.setForeground(Color.white);
+        }
+        else{
+            phoneNumberTextField.setBackground(Color.white);
+            phoneNumberTextField.setForeground(Color.black);
+        }
+    } 
+    
     private int xMouse, yMouse;
     /**
      * A method that gets the X and Y location of the mouse click on jLabel1.
@@ -497,13 +591,13 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField addressTextField;
     private javax.swing.JTextField emailTextField;
     private javax.swing.JButton exitButton;
     private javax.swing.JTextField firstNameTextField;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -515,7 +609,6 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField lastNameTextField;
     private javax.swing.JTextField phoneNumberTextField;
-    private javax.swing.JTextField phoneNumberTextField1;
     private javax.swing.JButton registerButton;
     // End of variables declaration//GEN-END:variables
 }

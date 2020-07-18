@@ -214,18 +214,15 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="profileButtonActionPerformed"/>
           </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="profileButton.setBackground(Color.RED);"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="paymentBalanceButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Loan Balance/Payment: Use Case 2 &amp; 4"/>
+            <Property name="text" type="java.lang.String" value="Loan Balance/Payment: Use Case 2 &amp; 4 (Not in use)"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="loanApplicationButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Loan Application: Use Case 1"/>
+            <Property name="text" type="java.lang.String" value="Loan Application: Use Case 1 (Not in use)"/>
           </Properties>
         </Component>
       </SubComponents>

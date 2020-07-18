@@ -2,6 +2,7 @@ package Navigation;
 
 import Connection.ConnectionSQL;
 import Data.CustomerDataUI;
+import EditCustomerInfo.EditCustomerInfoUI;
 import Register.RegisterUI;
 import java.awt.Color;
 import java.awt.event.WindowEvent;
@@ -131,16 +132,15 @@ public class NavigationUI extends javax.swing.JFrame {
         );
 
         profileButton.setText("Profile: Use Case 3");
-        profileButton.setBackground(Color.RED);
         profileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 profileButtonActionPerformed(evt);
             }
         });
 
-        paymentBalanceButton.setText("Loan Balance/Payment: Use Case 2 & 4");
+        paymentBalanceButton.setText("Loan Balance/Payment: Use Case 2 & 4 (Not in use)");
 
-        loanApplicationButton.setText("Loan Application: Use Case 1");
+        loanApplicationButton.setText("Loan Application: Use Case 1 (Not in use)");
 
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
         MainPanel.setLayout(MainPanelLayout);
@@ -233,7 +233,8 @@ public class NavigationUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseDragged
 
     private void profileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileButtonActionPerformed
-        // TODO add your handling code here:
+        new EditCustomerInfoUI().setVisible(true);
+        dispose();
     }//GEN-LAST:event_profileButtonActionPerformed
 
     /**
