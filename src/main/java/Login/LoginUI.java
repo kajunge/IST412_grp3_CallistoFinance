@@ -2,12 +2,15 @@ package Login;
 
 import Connection.ConnectionSQL;
 import Data.CustomerDataUI;
+import Navigation.NavigationUI;
 import Register.RegisterUI;
 import java.awt.Color;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 import java.sql.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * This is the Login GUI.
@@ -91,11 +94,11 @@ public class LoginUI extends javax.swing.JFrame {
         );
 
         jLabel2.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
-        jLabel2.setText("Username:");
+        jLabel2.setText("Email");
 
         usernameTextField.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
         usernameTextField.setForeground(new java.awt.Color(204, 204, 204));
-        usernameTextField.setText("enter your username");
+        usernameTextField.setText("enter your email");
         usernameTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 usernameTextFieldFocusGained(evt);
@@ -341,6 +344,24 @@ public class LoginUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_passwordTextFieldFocusLost
 
+    private boolean usernameTextFieldError() {    
+        
+        String input = usernameTextField.getText().toString();       
+        Pattern pattern = Pattern.compile("^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$");
+        Matcher matcher = pattern.matcher(input);        
+        boolean value = matcher.matches();
+        
+        if (value == false && !input.equals("")) {
+            usernameTextField.setBackground(Color.red);
+            usernameTextField.setForeground(Color.white);
+        }
+        else{
+            usernameTextField.setBackground(Color.white);
+            usernameTextField.setForeground(Color.black);
+        }
+        return value;
+    }
+    
     /**
      * A method to launch the Customer Details GUI if username/password match.
      *
@@ -348,34 +369,62 @@ public class LoginUI extends javax.swing.JFrame {
      */
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
 
-        String login = "SELECT * FROM customers WHERE username=? AND password=?";
-        try {
-            ps = conn.prepareStatement(login);
-            ps.setString(1, usernameTextField.getText());
-            ps.setString(2, passwordTextField.getText());
-            rs = ps.executeQuery();
+//        String login = "SELECT * FROM customers WHERE username=? AND password=?";
+//        try {
+//            ps = conn.prepareStatement(login);
+//            ps.setString(1, usernameTextField.getText());
+//            ps.setString(2, passwordTextField.getText());
+//            rs = ps.executeQuery();
+//
+//            if (rs.next()) {
+//                new NavigationUI().setVisible(true);
+//                dispose();
+//            } else {
+//                JOptionPane.showMessageDialog(null, "Invalid Username or Password", "Login Error", 2);
+//            }
+//
+//        } catch (SQLException ex) {
+//            JOptionPane.showMessageDialog(null, "Invalid Username or Password", "Login Error", 2);
+//        }
 
-            if (rs.next()) {
-                new CustomerDataUI().setVisible(true);
-                dispose();
-            } else {
-                JOptionPane.showMessageDialog(null, "Invalid Username or Password", "Login Error", 2);
+        String usernameOutput = "";
+        String passwordOutput = "";
+        
+        boolean tempValue = false;
+        //if(authenticator = flase){
+        //
+        //}
+        
+        if(usernameTextFieldError() == false){
+            usernameOutput = "Your email must include an @ and a domain name (.com, .net, .edu, etc.). \n";
+            tempValue = true;
+        }
+        if(usernameTextField.getText().isEmpty()){
+            usernameOutput = "Please enter your email you registered with. \n";
+            usernameTextField.setBackground(Color.red);
+            usernameTextField.setForeground(Color.white);
+            tempValue = true;
+        }  
+            if(tempValue == true){
+                JOptionPane.showMessageDialog(null, usernameOutput, "Login Error", 2);
             }
 
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Invalid Username or Password", "Login Error", 2);
+            if(tempValue == false){
+                String cust = usernameTextField.getText().trim();
+                String pass = passwordTextField.getText();
+              if (cust.equalsIgnoreCase("Admin@Callisto.com")
+                    && pass.equals("Administrator")) {
+                    //new NavigationUI().setVisible(true);
+                    //dispose();
+                    JOptionPane.showMessageDialog(null, "Authentication Passed", "Good Pass", 2);
+            } else {//Invalid Username or Password
+                    JOptionPane.showMessageDialog(null, "Invalid Username or Password", "Login Error", 2);
+                    usernameTextField.setBackground(Color.red);
+                    usernameTextField.setForeground(Color.white);
+                }  
         }
-
-        /*String cust = usernameTextField.getText().trim();
-        String pass = passwordTextField.getText();
-
-        if (cust.equalsIgnoreCase("Admin")
-                && pass.equals("Administrator")) {
-            new CustomerDataUI().setVisible(true);
-            dispose();
-        } else {
-            JOptionPane.showMessageDialog(null, "Invalid Username or Password", "Login Error", 2);
-        }*/
+        
+        
     }//GEN-LAST:event_loginButtonActionPerformed
 
     /**
@@ -446,6 +495,21 @@ public class LoginUI extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(LoginUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
