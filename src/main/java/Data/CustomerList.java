@@ -23,7 +23,9 @@ public class CustomerList {
      *Constructor for the CustomerList array
      */
     public CustomerList(){
-        customerArray = new ArrayList<Customer>();
+        
+        addCustomer("kam564@psu.edu",  "MyPa$$w0rd", "Kristina", "Mantha", "313 Nittany Lane", "352-123-5555",  555512L);
+        
     }
     
     /**
@@ -38,7 +40,9 @@ public class CustomerList {
      * @param loanID - a String representing the customer's loan id in the customer profile
      */
     public void addCustomer(String email, String password, String firstName, String lastName, String address, String phoneNumber, long loanID){
-        Customer c1 = new Customer ("IST412Team3@gmail.com", "password", customerArray.size() + 1, "Chris", "Lefebvre", "123 Main Street", "123-456-7889", 1);
+        customerArray = new ArrayList<Customer>();
+        this.readCustomerFile();
+        Customer c1 = new Customer (email, password, customerArray.size() + 1, firstName, lastName, address, phoneNumber, 0L);
         customerArray.add(c1);
         
         this.writeCustomerFile();

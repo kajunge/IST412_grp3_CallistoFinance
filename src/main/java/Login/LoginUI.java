@@ -22,7 +22,7 @@ import java.util.logging.Logger;
 
 /**
  * This is the Login GUI.
- *
+ * @author Chris Lefebvre
  * @author kristinamantha
  */
 public class LoginUI extends javax.swing.JFrame {
@@ -30,11 +30,16 @@ public class LoginUI extends javax.swing.JFrame {
     // Connection conn = ConnectionSQL.connectDB();
     //  Statement stmt = null;
     //   ResultSet rs = null;
+    LoginCntl loginCntl;
     /**
      * Creates new form LoginUI
      */
     public LoginUI() {
         initComponents();
+//=============================================================================
+//CustomerList must be moved to loginCntl() at a later time
+        LoginCntl loginCntl = new LoginCntl();
+//=============================================================================
         // ConnectionSQL.connectDB();
         this.setLocationRelativeTo(null);
 
@@ -421,10 +426,9 @@ public class LoginUI extends javax.swing.JFrame {
             }
 
             if(tempValue == false){
-                String cust = usernameTextField.getText().trim();
+                String email = usernameTextField.getText().trim();
                 String pass = passwordTextField.getText();
-              if (cust.equalsIgnoreCase("Admin@Callisto.com")
-                    && pass.equals("Administrator")) {
+              if (loginCntl.authenticator(email, pass)) {
                     //new NavigationUI().setVisible(true);
                     //dispose();
                     JOptionPane.showMessageDialog(null, "Authentication Passed", "Good Pass", 2);
@@ -585,31 +589,31 @@ public class LoginUI extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
 
-        Customer customer = new Customer();
-
-        customer.setCustomerId(1234);
-        customer.setFirstName("Kristina");
-        customer.setLastName("Mantha");
-        customer.setEmail("kam564@psu.edu");
-        customer.setAddress("313 Nittany Lane");
-        customer.setPhoneNumber("352-123-5555");
-        customer.setPassword("MyPa$$w0rd");
-        customer.setLoanID(555512);
-
-        try {
-
-            FileOutputStream fileOut = new FileOutputStream("src/main/resources/SerFiles/Customer.ser");
-            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(customer);
-            out.close();
-            fileOut.close();
-            System.out.println("***********************************************************");
-            System.out.println("Serialized data is saved in /resources/SerFiles/Customer.ser");
-            System.out.println("***********************************************************");
-
-        } catch (IOException i) {
-            i.printStackTrace();
-        }
+//        Customer customer = new Customer();
+//
+//        customer.setCustomerId(1234);
+//        customer.setFirstName("Kristina");
+//        customer.setLastName("Mantha");
+//        customer.setEmail("kam564@psu.edu");
+//        customer.setAddress("313 Nittany Lane");
+//        customer.setPhoneNumber("352-123-5555");
+//        customer.setPassword("MyPa$$w0rd");
+//        customer.setLoanID(555512);
+//
+//        try {
+//
+//            FileOutputStream fileOut = new FileOutputStream("src/main/resources/SerFiles/Customer.ser");
+//            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+//            out.writeObject(customer);
+//            out.close();
+//            fileOut.close();
+//            System.out.println("***********************************************************");
+//            System.out.println("Serialized data is saved in /resources/SerFiles/Customer.ser");
+//            System.out.println("***********************************************************");
+//
+//        } catch (IOException i) {
+//            i.printStackTrace();
+//        }
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
