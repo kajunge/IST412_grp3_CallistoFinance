@@ -433,13 +433,74 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
 
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
 
+        String fNameOutput = "";
+        String lNameOutput = "";
+        String emailOutput = "";
+        String addressOutput = "";
+        String phoneOutput = "";
+        String noErrorOutput = "Your details were theoretically updated.";
+        
+        
         firstNameTextFieldError();
         lastNameTextFieldError();
         emailTextFieldError();
-        addressTextFieldError();
-        phoneNumberTextFieldError();
+//        addressTextFieldError();
+//        phoneNumberTextFieldError();
+        if(firstNameTextFieldError() == true){
+            fNameOutput = "Your first name may not include any special characters. (Exceptions include - and '). \n";
+            noErrorOutput = "";
+        }
+        if(firstNameTextField.getText().isEmpty()){
+            fNameOutput = "Please fill in your first name. \n";
+            noErrorOutput = "";
+            firstNameTextField.setBackground(Color.red);
+            firstNameTextField.setForeground(Color.white);
+        }
+        if(lastNameTextFieldError() == true){
+            lNameOutput = "Your last name may not include any special characters. (Exceptions include - and '). \n";
+            noErrorOutput = "";
+        }
+        if(lastNameTextField.getText().isEmpty()){
+            lNameOutput = "Please fill in your last name. \n";
+            noErrorOutput = "";
+            lastNameTextField.setBackground(Color.red);
+            lastNameTextField.setForeground(Color.white);
+        }
+        if(emailTextFieldError() == false){
+            emailOutput = "Your email must include an @ and a domain name (.com, .net, .edu, etc.). \n";
+            noErrorOutput = "";
+        }
+        if(emailTextField.getText().isEmpty()){
+            emailOutput = "Please fill in your email. \n";
+            noErrorOutput = "";
+            emailTextField.setBackground(Color.red);
+            emailTextField.setForeground(Color.white);
+        }
+        if(addressTextFieldError() == true){
+            addressOutput = "Your address cannot contain any special characters. \n";
+            noErrorOutput = "";
+        }
+        if(addressTextField.getText().isEmpty()){
+            addressOutput = "Please fill in your address. \n";
+            noErrorOutput = "";
+            addressTextField.setBackground(Color.red);
+            addressTextField.setForeground(Color.white);
+        }
+        
+        if(phoneNumberTextFieldError() == false && !phoneNumberTextField.getText().isEmpty()){
+            phoneOutput = "Your phone number must be in the following format 123-456-7890. \n";
+            noErrorOutput = "";
+        }
+        if(phoneNumberTextField.getText().isEmpty()){
+            phoneOutput = "Please fill in your phone number. \n";
+            noErrorOutput = "";
+        }
+        else{            
+        }
+        
+        JOptionPane.showMessageDialog(null, fNameOutput + lNameOutput + emailOutput + addressOutput + phoneOutput + noErrorOutput, "Callisto Finance", 1);
 
-        JOptionPane.showMessageDialog(null, "Your details were theoretically updated.", "Callisto Finance", 1);
+        
     }//GEN-LAST:event_registerButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
@@ -450,10 +511,10 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitButtonMouseClicked
 
-    private void lastNameTextFieldError() {    
+    private boolean lastNameTextFieldError() {    
         
         String input = lastNameTextField.getText().toString();       
-        Pattern pattern = Pattern.compile("[^a-zA-Z ]", Pattern.CASE_INSENSITIVE);
+        Pattern pattern = Pattern.compile("[^a-zA-Z|^'-]", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(input);        
         boolean value = matcher.find();
         
@@ -465,12 +526,13 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
             lastNameTextField.setBackground(Color.white);
             lastNameTextField.setForeground(Color.black);
         }
+        return value;
     } 
     
-    private void firstNameTextFieldError() {    
+    private boolean firstNameTextFieldError() {    
         
         String input = firstNameTextField.getText().toString();       
-        Pattern pattern = Pattern.compile("[^a-zA-Z ]", Pattern.CASE_INSENSITIVE);
+        Pattern pattern = Pattern.compile("[^a-zA-Z|^'-]", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(input);        
         boolean value = matcher.find();
         
@@ -482,9 +544,10 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
             firstNameTextField.setBackground(Color.white);
             firstNameTextField.setForeground(Color.black);
         }
+        return value;
     } 
     
-    private void emailTextFieldError() {    
+    private boolean emailTextFieldError() {    
         
         String input = emailTextField.getText().toString();       
         Pattern pattern = Pattern.compile("^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$");
@@ -499,15 +562,16 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
             emailTextField.setBackground(Color.white);
             emailTextField.setForeground(Color.black);
         }
+        return value;
     } 
     
-     private void addressTextFieldError() {    
+     private boolean addressTextFieldError() {    
         
         String input = addressTextField.getText().toString();       
         Pattern pattern = Pattern.compile("[^a-zA-Z0-9 ]", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(input);        
-        boolean value = matcher.find();
-        
+        boolean value = matcher.find();       
+                  
         if (value == true) {
             addressTextField.setBackground(Color.red);
             addressTextField.setForeground(Color.white);
@@ -516,17 +580,16 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
             addressTextField.setBackground(Color.white);
             addressTextField.setForeground(Color.black);
         }
+        return value;
     } 
      
-      private void phoneNumberTextFieldError() {    
+      private boolean phoneNumberTextFieldError() {    
         
         String input = phoneNumberTextField.getText().trim();       
         Pattern pattern = Pattern.compile("\\d{3}[-\\.\\s]\\d{3}[-\\.\\s]\\d{4}");
         Matcher matcher = pattern.matcher(input);        
         boolean value = matcher.matches();
-        
-        System.out.println(input + " is " + value);
-        
+
         if (value == false) {
             
             phoneNumberTextField.setBackground(Color.red);
@@ -536,6 +599,8 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
             phoneNumberTextField.setBackground(Color.white);
             phoneNumberTextField.setForeground(Color.black);
         }
+        return value;
+        
     } 
     
     private int xMouse, yMouse;
