@@ -1,6 +1,8 @@
 
 package Login;
 
+import Data.CustomerList;
+
 /**
  * This is the Loan Controller Class. It contains methods that allow a user
  * to login to the Callisto mFinance app.
@@ -9,11 +11,15 @@ package Login;
  * @author Scott Crowthers
  */
 public class LoginCntl {
+    
+    CustomerList customerList;
 
     /**
      * This is the initial constructor
      */
     public LoginCntl(){
+        
+        CustomerList customerList = new CustomerList();
         
     }
     /**
@@ -43,17 +49,33 @@ public class LoginCntl {
      * @return A boolean return depending on whether combination of user name and password are correct
      * Maybe we should re add test username and passowrd as seperate entites
      */
-    public boolean authenticator(String userEmail, String inputPassword){
-        boolean value = false;
-        String storedUserPassword = "";
-        if(inputPassword.equals(storedUserPassword)){
-            value = true;
+//    public boolean authenticator(String userEmail, String inputPassword){
+//        boolean value = false;
+//        String storedUserPassword = "";
+//        if(inputPassword.equals(storedUserPassword)){
+//            value = true;
+//        }
+//        else{
+//            value = false;
+//        }       
+//        
+//        return value;
+//    }
+    
+    public boolean authenticator(String userEmail, String inputPassword) {
+
+        for (int i = 0; i < customerList.getCustomerArray().size(); i++) {                       
+            if (userEmail.equals(customerList.getCustomerArray().get(i).getEmail())) {
+                int p = i;
+
+                if (inputPassword.equals(customerList.getCustomerArray().get(p).getPassword())) {
+                    return true;
+                }
+            } else {
+                return false;
+            }
         }
-        else{
-            value = false;
-        }
-        
-        return value;
+        return false;
     }
     
     public void forgottenPassword(String userEmail){
