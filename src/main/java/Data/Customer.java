@@ -44,12 +44,19 @@ public class Customer implements Serializable{
         this.loanID = loanID;
     }
 
+    public Customer() {
+
+    }
+
+    public String toString(){
+      return  "Customer [Customer ID: " + customerId + ", Name: " + firstName + " " + lastName + ","
+              + " Email: " + email + ", Phone: " + phoneNumber + ", Address: " + address + ", Loan ID: " + loanID + "]";
+    }
     /**
      * Returns an email address for the customer
      * @return A String representing the email address for the customer
      */
     public String getEmail() {
-        System.out.println("testing for getEmail method");
         return email;
     }
 

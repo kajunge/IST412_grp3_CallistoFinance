@@ -16,22 +16,19 @@ import java.util.ArrayList;
 public class CustomerList {
     
     private ArrayList<Customer> customerArray;
-    private static CustomerList instance;
     
     private String customerFile = "src/main/resources/SerFiles/Customer.ser";
     
     /**
      *Constructor for the CustomerList array
      */
-    private CustomerList(){
-        customerArray = new ArrayList<Customer>();
-    }
-    
-    public static CustomerList getInstance(){
-        if(instance == null){
-            instance = new CustomerList();
-        }
-        return instance;
+    public CustomerList(){
+        customerArray = new ArrayList();
+//        readCustomerFile();
+        Customer c1 = new Customer("kam564@psu.edu",  "MyPa$$w0rd", 1, "Kristina", "Mantha", "313 Nittany Lane", "352-123-5555",  555512L);
+        customerArray.add(c1);//FIX_ME right now the above (or below) instance is repeatedly being added to the ser file. Needs to be cleared
+        //addCustomer("kam564@psu.edu",  "MyPa$$w0rd", "Kristina", "Mantha", "313 Nittany Lane", "352-123-5555",  555512L);
+        
     }
     
     /**
@@ -46,7 +43,10 @@ public class CustomerList {
      * @param loanID - a String representing the customer's loan id in the customer profile
      */
     public void addCustomer(String email, String password, String firstName, String lastName, String address, String phoneNumber, long loanID){
-        Customer c1 = new Customer ("IST412Team3@gmail.com", "password", customerArray.size() + 1, "Chris", "Lefebvre", "123 Main Street", "123-456-7889", 1);
+        getCustomerArray();
+
+        this.readCustomerFile();
+        Customer c1 = new Customer (email, password, customerArray.size() + 1, firstName, lastName, address, phoneNumber, 0L);
         customerArray.add(c1);
         
         this.writeCustomerFile();
@@ -68,13 +68,13 @@ public class CustomerList {
     public void editCustomer(String email, String password, long customerId, String firstName, String lastName, String address, String phoneNumber, long loanID){
         for(int i = 0; i < customerArray.size(); i++){
             if(customerArray.get(i).getCustomerId() == 1){
-                customerArray.get(i).setEmail("IST412NotTeam3@Gmail.com");
-                customerArray.get(i).setPassword("NotPassword");
-                customerArray.get(i).setFirstName("Kristina");
-                customerArray.get(i).setLastName("Mantha");
-                customerArray.get(i).setAddress("987 Second St");
-                customerArray.get(i).setPhoneNumber("987-654-3210");
-                customerArray.get(i).setLoanID(0);
+                customerArray.get(i).setEmail(email);
+                customerArray.get(i).setPassword(password);
+                customerArray.get(i).setFirstName(firstName);
+                customerArray.get(i).setLastName(lastName);
+                customerArray.get(i).setAddress(address);
+                customerArray.get(i).setPhoneNumber(phoneNumber);
+                customerArray.get(i).setLoanID(loanID);
             }
             else{
                 //edit fail message
