@@ -15,14 +15,22 @@ import java.util.ArrayList;
 public class LoanList {
     
     private ArrayList<Loan> loanArray;
+    private static LoanList instance;
     
     private String loanFile = "src/main/resources/SerFiles/Loan.ser";
     /**
      *Constructor for LoanList
      */
-    public LoanList(){
+    private LoanList(){
         loanArray = new ArrayList<Loan>();
     }
+    
+    public static LoanList getInstance() {
+        if(instance == null){
+            instance = new LoanList();
+        }
+        return instance;
+    } 
     
     /**
      * Creates a loan profile based on the inputs data and adds it to the loanArray

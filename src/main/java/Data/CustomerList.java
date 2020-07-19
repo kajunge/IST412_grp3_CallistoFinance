@@ -16,14 +16,22 @@ import java.util.ArrayList;
 public class CustomerList {
     
     private ArrayList<Customer> customerArray;
+    private static CustomerList instance;
     
     private String customerFile = "src/main/resources/SerFiles/Customer.ser";
     
     /**
      *Constructor for the CustomerList array
      */
-    public CustomerList(){
+    private CustomerList(){
         customerArray = new ArrayList<Customer>();
+    }
+    
+    public static CustomerList getInstance(){
+        if(instance == null){
+            instance = new CustomerList();
+        }
+        return instance;
     }
     
     /**
