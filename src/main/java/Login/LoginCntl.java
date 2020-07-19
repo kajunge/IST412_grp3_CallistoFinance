@@ -19,7 +19,7 @@ public class LoginCntl {
      */
     public LoginCntl(){
         
-        CustomerList customerList = new CustomerList();
+        customerList = new CustomerList();
         
     }
     /**
@@ -63,6 +63,9 @@ public class LoginCntl {
 //    }
     
     public boolean authenticator(String userEmail, String inputPassword) {
+        
+        System.out.println("LoginCntl: Expected Email: " + customerList.getCustomerArray().get(0).getEmail() + "Expected pass: " + customerList.getCustomerArray().get(0).getPassword());
+              
 
         for (int i = 0; i < customerList.getCustomerArray().size(); i++) {                       
             if (userEmail.equals(customerList.getCustomerArray().get(i).getEmail())) {

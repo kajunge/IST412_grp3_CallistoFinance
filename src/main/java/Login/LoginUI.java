@@ -428,7 +428,13 @@ public class LoginUI extends javax.swing.JFrame {
             if(tempValue == false){
                 String email = usernameTextField.getText().trim();
                 String pass = passwordTextField.getText();
-              if (loginCntl.authenticator(email, pass)) {
+                
+                System.out.println("Input Email: " + email + " & pass: " + pass);
+                System.out.println("LoginUI: Expected Email: " + loginCntl.customerList.getCustomerArray().get(0).getEmail() + "Expected pass: " + loginCntl.customerList.getCustomerArray().get(0).getPassword());
+              
+                
+                
+                if (loginCntl.authenticator(email, pass)) {
                     //new NavigationUI().setVisible(true);
                     //dispose();
                     JOptionPane.showMessageDialog(null, "Authentication Passed", "Good Pass", 2);
