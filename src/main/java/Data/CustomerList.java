@@ -24,7 +24,7 @@ public class CustomerList {
      */
     public CustomerList(){
         
-        addCustomer("kam564@psu.edu",  "MyPa$$w0rd", "Kristina", "Mantha", "313 Nittany Lane", "352-123-5555",  555512L);
+        addCustomer("kam6564@psu.edu",  "MyPa$$w0rd", "Kristina", "Mantha", "313 Nittany Lane", "352-123-5555",  555512L);
         
     }
     

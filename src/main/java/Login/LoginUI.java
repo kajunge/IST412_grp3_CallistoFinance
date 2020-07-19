@@ -292,7 +292,7 @@ public class LoginUI extends javax.swing.JFrame {
      * @param evt
      */
     private void usernameTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTextFieldFocusGained
-        if (usernameTextField.getText().trim().toLowerCase().equals("enter your username")) {
+        if (usernameTextField.getText().trim().toLowerCase().equals("enter your email")) {
             usernameTextField.setText("");
             usernameTextField.setForeground(Color.black);
         }
@@ -308,8 +308,8 @@ public class LoginUI extends javax.swing.JFrame {
     private void usernameTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTextFieldFocusLost
 
         if (usernameTextField.getText().trim().equals("")
-                || usernameTextField.getText().trim().toLowerCase().equals("enter your username")) {
-            usernameTextField.setText("enter your username");
+                || usernameTextField.getText().trim().toLowerCase().equals("enter your email")) {
+            usernameTextField.setText("enter your email");
             usernameTextField.setForeground(Color.lightGray);
         }
 
@@ -429,8 +429,8 @@ public class LoginUI extends javax.swing.JFrame {
                 String email = usernameTextField.getText().trim();
                 String pass = passwordTextField.getText();
               if (loginCntl.authenticator(email, pass)) {
-                    //new NavigationUI().setVisible(true);
-                    //dispose();
+                    new NavigationUI().setVisible(true);
+                    dispose();
                     JOptionPane.showMessageDialog(null, "Authentication Passed", "Good Pass", 2);
             } else {//Invalid Username or Password
                     JOptionPane.showMessageDialog(null, "Invalid Username or Password", "Login Error", 2);
