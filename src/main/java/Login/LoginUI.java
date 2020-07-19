@@ -111,7 +111,8 @@ public class LoginUI extends javax.swing.JFrame {
 
         usernameTextField.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
         usernameTextField.setForeground(new java.awt.Color(0, 0, 0));
-        usernameTextField.setText("kam564@psu.edu");
+        usernameTextField.setText("kam6564@psu.edu");
+        usernameTextField.setToolTipText("");
         usernameTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 usernameTextFieldFocusGained(evt);
@@ -293,7 +294,7 @@ public class LoginUI extends javax.swing.JFrame {
      * @param evt
      */
     private void usernameTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTextFieldFocusGained
-        if (usernameTextField.getText().trim().toLowerCase().equals("enter your username")) {
+        if (usernameTextField.getText().trim().toLowerCase().equals("kam6564@psu.edu")) {
             usernameTextField.setText("");
             usernameTextField.setForeground(Color.black);
         }
@@ -309,9 +310,9 @@ public class LoginUI extends javax.swing.JFrame {
     private void usernameTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTextFieldFocusLost
 
         if (usernameTextField.getText().trim().equals("")
-                || usernameTextField.getText().trim().toLowerCase().equals("enter your username")) {
-            usernameTextField.setText("enter your username");
-            usernameTextField.setForeground(Color.lightGray);
+                || usernameTextField.getText().trim().toLowerCase().equals("kam6564@psu.edu")) {
+            usernameTextField.setText("kam6564@psu.edu");
+            usernameTextField.setForeground(Color.black);
         }
 
     }//GEN-LAST:event_usernameTextFieldFocusLost
@@ -333,7 +334,7 @@ public class LoginUI extends javax.swing.JFrame {
 
         String pass = String.valueOf(passwordTextField.getPassword());
 
-        if (pass.trim().toLowerCase().equals("password")) {
+        if (pass.trim().toLowerCase().equals("MyPa$$w0rd")) {
             passwordTextField.setText("");
             passwordTextField.setForeground(Color.black);
         }
@@ -350,9 +351,9 @@ public class LoginUI extends javax.swing.JFrame {
         String pass = String.valueOf(passwordTextField.getPassword());
 
         if (pass.trim().equals("")
-                || pass.trim().toLowerCase().equals("password")) {
-            passwordTextField.setText("password");
-            passwordTextField.setForeground(Color.lightGray);
+                || pass.trim().toLowerCase().equals("MyPa$$w0rd")) {
+            passwordTextField.setText("MyPa$$w0rd");
+            passwordTextField.setForeground(Color.black);
         }
 
     }//GEN-LAST:event_passwordTextFieldFocusLost
@@ -596,7 +597,7 @@ public class LoginUI extends javax.swing.JFrame {
 //        customer.setCustomerId(1234);
 //        customer.setFirstName("Kristina");
 //        customer.setLastName("Mantha");
-//        customer.setEmail("kam564@psu.edu");
+//        customer.setEmail("kam6564@psu.edu");
 //        customer.setAddress("313 Nittany Lane");
 //        customer.setPhoneNumber("352-123-5555");
 //        customer.setPassword("MyPa$$w0rd");
