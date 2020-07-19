@@ -1,5 +1,6 @@
 package EditCustomerInfo;
 
+import Data.Customer;
 import Navigation.NavigationUI;
 import java.awt.Color;
 import java.util.regex.Matcher;
@@ -7,17 +8,27 @@ import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * @author Chris Lefebvre
  * @author kajunge
  */
 public class EditCustomerInfoUI extends javax.swing.JFrame {
 
+    Customer currentUser;
     /**
      * Creates new form EditCustomerInfoUI
      */
-    public EditCustomerInfoUI() {
+    public EditCustomerInfoUI(Customer currentUser) {
+        this.currentUser = currentUser;
+        System.out.println("editCustomerInfoUI email: " + currentUser.getEmail());        
+        
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        emailTextField.setText(currentUser.getEmail());
+        firstNameTextField.setText(currentUser.getFirstName());
+        lastNameTextField.setText(currentUser.getLastName());
+        addressTextField.setText(currentUser.getAddress());
+        phoneNumberTextField.setText(currentUser.getPhoneNumber());
     }
 
     /**
@@ -412,7 +423,7 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
     private void phoneNumberTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneNumberTextFieldFocusLost
         if (phoneNumberTextField.getText().trim().equals("")
             || phoneNumberTextField.getText().trim().toLowerCase().equals("enter your phone number")) {
-            //phoneNumberTextField.setText("enter your phone number");
+            //phoneNumberTextField.setText(currentUser.getPhoneNumber());
             phoneNumberTextField.setForeground(Color.lightGray);
         }
     }//GEN-LAST:event_phoneNumberTextFieldFocusLost
@@ -598,7 +609,7 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
     }//GEN-LAST:event_updateEmailButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        new NavigationUI().setVisible(true);
+        new NavigationUI(currentUser).setVisible(true);
         dispose();
     }//GEN-LAST:event_backButtonActionPerformed
 
@@ -828,11 +839,11 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new EditCustomerInfoUI().setVisible(true);
-            }
-        });
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new EditCustomerInfoUI().setVisible(true);
+//            }
+//        });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField addressTextField;

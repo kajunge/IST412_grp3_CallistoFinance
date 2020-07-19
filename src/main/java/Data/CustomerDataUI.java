@@ -9,10 +9,12 @@ import EditCustomerInfo.EditCustomerInfoUI;
  */
 public class CustomerDataUI extends javax.swing.JFrame {
 
+    Customer currentUser;
     /**
      * Creates new form CustomerDataUI
      */
-    public CustomerDataUI() {
+    public CustomerDataUI(Customer currentUser) {
+        this.currentUser = currentUser;
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -169,7 +171,7 @@ public class CustomerDataUI extends javax.swing.JFrame {
     }//GEN-LAST:event_updateButtonMouseClicked
 
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
-        new EditCustomerInfoUI().setVisible(true);
+        new EditCustomerInfoUI(currentUser).setVisible(true);
         dispose();
     }//GEN-LAST:event_updateButtonActionPerformed
 
@@ -201,11 +203,11 @@ public class CustomerDataUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CustomerDataUI().setVisible(true);
-            }
-        });
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new CustomerDataUI().setVisible(true);
+//            }
+//        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

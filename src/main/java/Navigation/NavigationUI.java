@@ -1,6 +1,7 @@
 package Navigation;
 
 import Connection.ConnectionSQL;
+import Data.Customer;
 import Data.CustomerDataUI;
 import EditCustomerInfo.EditCustomerInfoUI;
 import Register.RegisterUI;
@@ -20,11 +21,14 @@ public class NavigationUI extends javax.swing.JFrame {
     Connection conn = ConnectionSQL.connectDB();
     PreparedStatement ps = null;
     ResultSet rs = null;
+    
+    private Customer currentUser;
 
     /**
      * Creates new form LoginUI
      */
-    public NavigationUI() {
+    public NavigationUI(Customer currentUser) {
+        this.currentUser = currentUser;
         initComponents();
         ConnectionSQL.connectDB();
         this.setLocationRelativeTo(null);
@@ -233,7 +237,7 @@ public class NavigationUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseDragged
 
     private void profileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileButtonActionPerformed
-        new EditCustomerInfoUI().setVisible(true);
+        new EditCustomerInfoUI(currentUser).setVisible(true);
         dispose();
     }//GEN-LAST:event_profileButtonActionPerformed
 
@@ -266,11 +270,11 @@ public class NavigationUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new NavigationUI().setVisible(true);
-            }
-        });
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new NavigationUI().setVisible(true);
+//            }
+//        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -284,4 +288,11 @@ public class NavigationUI extends javax.swing.JFrame {
     private javax.swing.JButton paymentBalanceButton;
     private javax.swing.JButton profileButton;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the currentUser
+     */
+    public Customer getCurrentUser() {
+        return currentUser;
+    }
 }

@@ -1,4 +1,3 @@
-
 package Data;
 
 import java.io.FileInputStream;
@@ -19,6 +18,8 @@ public class CustomerList {
     
     private String customerFile = "src/main/resources/SerFiles/Customer.ser";
     
+    private Customer currentUser;
+    
     /**
      *Constructor for the CustomerList array
      */
@@ -29,6 +30,28 @@ public class CustomerList {
         customerArray.add(c1);//FIX_ME right now the above (or below) instance is repeatedly being added to the ser file. Needs to be cleared
         //addCustomer("kam564@psu.edu",  "MyPa$$w0rd", "Kristina", "Mantha", "313 Nittany Lane", "352-123-5555",  555512L);
         
+    }
+    
+    public Customer setupCurrentUser(String userEmail, String inputPassword){
+        
+        for (int i = 0; i < getCustomerArray().size(); i++) {                       
+            if (userEmail.equals(getCustomerArray().get(i).getEmail())) {
+                int p = i;
+
+                if (inputPassword.equals(getCustomerArray().get(p).getPassword())) {
+                    currentUser = new Customer(getCustomerArray().get(p).getEmail(),
+                    getCustomerArray().get(p).getPassword(),
+                    getCustomerArray().get(p).getCustomerId(),
+                    getCustomerArray().get(p).getFirstName(),
+                    getCustomerArray().get(p).getLastName(),
+                    getCustomerArray().get(p).getAddress(),
+                    getCustomerArray().get(p).getPhoneNumber(),
+                    getCustomerArray().get(p).getLoanID());
+                }
+            } else {
+            }       
+        }
+        return currentUser;
     }
     
     /**
@@ -170,6 +193,13 @@ public class CustomerList {
      */
     public void setCustomerArray(ArrayList<Customer> customerArray) {
         this.customerArray = customerArray;
+    }
+
+    /**
+     * @param currentUser the currentUser to set
+     */
+    public void setCurrentUser(Customer currentUser) {
+        this.currentUser = currentUser;
     }
 
 
