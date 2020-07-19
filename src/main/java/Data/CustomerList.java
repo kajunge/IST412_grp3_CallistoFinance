@@ -1,3 +1,4 @@
+
 package Data;
 
 import java.io.FileInputStream;
@@ -18,41 +19,16 @@ public class CustomerList {
     
     private String customerFile = "src/main/resources/SerFiles/Customer.ser";
     
-    private Customer currentUser;
-    
     /**
      *Constructor for the CustomerList array
      */
     public CustomerList(){
         customerArray = new ArrayList();
-        readCustomerFile();
-//        Customer c1 = new Customer("kam564@psu.edu",  "MyPa$$w0rd", 1, "Kristina", "Mantha", "313 Nittany Lane", "352-123-5555",  555512L);
-//        customerArray.add(c1);//FIX_ME right now the above (or below) instance is repeatedly being added to the ser file. Needs to be cleared
-//        writeCustomerFile();
-        //addCustomer("kam564@psu.edu",  "MyPa$$w0rd", "Kristina", "Mantha", "313 Nittany Lane", "352-123-5555",  555512L);
+//        readCustomerFile();
+        Customer c1 = new Customer("kam6564@psu.edu",  "MyPa$$w0rd", 1, "Kristina", "Mantha", "313 Nittany Lane", "352-123-5555",  555512L);
+        customerArray.add(c1);//FIX_ME right now the above (or below) instance is repeatedly being added to the ser file. Needs to be cleared
+        //addCustomer("kam6564@psu.edu",  "MyPa$$w0rd", "Kristina", "Mantha", "313 Nittany Lane", "352-123-5555",  555512L);
         
-    }
-    
-    public Customer setupCurrentUser(String userEmail, String inputPassword){
-        
-        for (int i = 0; i < getCustomerArray().size(); i++) {                       
-            if (userEmail.equals(getCustomerArray().get(i).getEmail())) {
-                int p = i;
-
-                if (inputPassword.equals(getCustomerArray().get(p).getPassword())) {
-                    currentUser = new Customer(getCustomerArray().get(p).getEmail(),
-                    getCustomerArray().get(p).getPassword(),
-                    getCustomerArray().get(p).getCustomerId(),
-                    getCustomerArray().get(p).getFirstName(),
-                    getCustomerArray().get(p).getLastName(),
-                    getCustomerArray().get(p).getAddress(),
-                    getCustomerArray().get(p).getPhoneNumber(),
-                    getCustomerArray().get(p).getLoanID());
-                }
-            } else {
-            }       
-        }
-        return currentUser;
     }
     
     /**
@@ -91,7 +67,7 @@ public class CustomerList {
      */
     public void editCustomer(String email, String password, long customerId, String firstName, String lastName, String address, String phoneNumber, long loanID){
         for(int i = 0; i < customerArray.size(); i++){
-            if(customerArray.get(i).getCustomerId() == customerId){
+            if(customerArray.get(i).getCustomerId() == 1){
                 customerArray.get(i).setEmail(email);
                 customerArray.get(i).setPassword(password);
                 customerArray.get(i).setFirstName(firstName);
@@ -194,13 +170,6 @@ public class CustomerList {
      */
     public void setCustomerArray(ArrayList<Customer> customerArray) {
         this.customerArray = customerArray;
-    }
-
-    /**
-     * @param currentUser the currentUser to set
-     */
-    public void setCurrentUser(Customer currentUser) {
-        this.currentUser = currentUser;
     }
 
 

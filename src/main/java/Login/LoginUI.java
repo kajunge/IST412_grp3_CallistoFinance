@@ -110,8 +110,9 @@ public class LoginUI extends javax.swing.JFrame {
         jLabel2.setText("Email");
 
         usernameTextField.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
-        usernameTextField.setForeground(new java.awt.Color(0, 0, 0));
-        usernameTextField.setText("kam564@psu.edu");
+        usernameTextField.setForeground(new java.awt.Color(204, 204, 204));
+        usernameTextField.setText("enter email");
+        usernameTextField.setToolTipText("");
         usernameTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 usernameTextFieldFocusGained(evt);
@@ -130,8 +131,8 @@ public class LoginUI extends javax.swing.JFrame {
         jLabel3.setText("Password:");
 
         passwordTextField.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
-        passwordTextField.setForeground(new java.awt.Color(0, 0, 0));
-        passwordTextField.setText("MyPa$$w0rd");
+        passwordTextField.setForeground(new java.awt.Color(204, 204, 204));
+        passwordTextField.setText("password");
         passwordTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 passwordTextFieldFocusGained(evt);
@@ -293,7 +294,7 @@ public class LoginUI extends javax.swing.JFrame {
      * @param evt
      */
     private void usernameTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTextFieldFocusGained
-        if (usernameTextField.getText().trim().toLowerCase().equals("enter your username")) {
+        if (usernameTextField.getText().trim().toLowerCase().equals("enter email")) {
             usernameTextField.setText("");
             usernameTextField.setForeground(Color.black);
         }
@@ -309,8 +310,8 @@ public class LoginUI extends javax.swing.JFrame {
     private void usernameTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTextFieldFocusLost
 
         if (usernameTextField.getText().trim().equals("")
-                || usernameTextField.getText().trim().toLowerCase().equals("enter your username")) {
-            usernameTextField.setText("enter your username");
+                || usernameTextField.getText().trim().toLowerCase().equals("enter email")) {
+            usernameTextField.setText("enter email");
             usernameTextField.setForeground(Color.lightGray);
         }
 
@@ -430,8 +431,8 @@ public class LoginUI extends javax.swing.JFrame {
                 String email = usernameTextField.getText();
                 String pass = passwordTextField.getText();
                 
-                if (loginCntl.authenticator(email, pass)) {                    
-                    new NavigationUI(loginCntl.customerList.setupCurrentUser(email, pass)).setVisible(true);
+                if (loginCntl.authenticator(email, pass)) {
+                    new NavigationUI().setVisible(true);
                     dispose();
 //                    JOptionPane.showMessageDialog(null, "Authentication Passed", "Good Pass", 2);
             } else {//Invalid Username or Password
@@ -596,7 +597,7 @@ public class LoginUI extends javax.swing.JFrame {
 //        customer.setCustomerId(1234);
 //        customer.setFirstName("Kristina");
 //        customer.setLastName("Mantha");
-//        customer.setEmail("kam564@psu.edu");
+//        customer.setEmail("kam6564@psu.edu");
 //        customer.setAddress("313 Nittany Lane");
 //        customer.setPhoneNumber("352-123-5555");
 //        customer.setPassword("MyPa$$w0rd");
