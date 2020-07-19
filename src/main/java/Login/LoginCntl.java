@@ -20,7 +20,6 @@ public class LoginCntl {
     public LoginCntl(){
         
         customerList = new CustomerList();
-        
     }
     /**
      * A method to verify if the inputted email is associated with a user account
@@ -63,22 +62,22 @@ public class LoginCntl {
 //    }
     
     public boolean authenticator(String userEmail, String inputPassword) {
-        
-        System.out.println("LoginCntl: Expected Email: " + customerList.getCustomerArray().get(0).getEmail() + "Expected pass: " + customerList.getCustomerArray().get(0).getPassword());
-              
-
+           
+        boolean value = false;
         for (int i = 0; i < customerList.getCustomerArray().size(); i++) {                       
             if (userEmail.equals(customerList.getCustomerArray().get(i).getEmail())) {
                 int p = i;
 
                 if (inputPassword.equals(customerList.getCustomerArray().get(p).getPassword())) {
-                    return true;
+                    value = true;
                 }
             } else {
-                return false;
+                value = false;
             }
         }
-        return false;
+        System.out.println("authentictor value: " + value);
+        return value;
+        
     }
     
     public void forgottenPassword(String userEmail){

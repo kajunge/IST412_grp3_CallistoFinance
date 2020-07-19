@@ -38,7 +38,8 @@ public class LoginUI extends javax.swing.JFrame {
         initComponents();
 //=============================================================================
 //CustomerList must be moved to loginCntl() at a later time
-        LoginCntl loginCntl = new LoginCntl();
+        CustomerList customerList = new CustomerList();
+        loginCntl = new LoginCntl();
 //=============================================================================
         // ConnectionSQL.connectDB();
         this.setLocationRelativeTo(null);
@@ -109,8 +110,8 @@ public class LoginUI extends javax.swing.JFrame {
         jLabel2.setText("Email");
 
         usernameTextField.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
-        usernameTextField.setForeground(new java.awt.Color(204, 204, 204));
-        usernameTextField.setText("enter your email");
+        usernameTextField.setForeground(new java.awt.Color(0, 0, 0));
+        usernameTextField.setText("kam564@psu.edu");
         usernameTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 usernameTextFieldFocusGained(evt);
@@ -129,8 +130,8 @@ public class LoginUI extends javax.swing.JFrame {
         jLabel3.setText("Password:");
 
         passwordTextField.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
-        passwordTextField.setForeground(new java.awt.Color(204, 204, 204));
-        passwordTextField.setText("password");
+        passwordTextField.setForeground(new java.awt.Color(0, 0, 0));
+        passwordTextField.setText("MyPa$$w0rd");
         passwordTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 passwordTextFieldFocusGained(evt);
@@ -426,18 +427,13 @@ public class LoginUI extends javax.swing.JFrame {
             }
 
             if(tempValue == false){
-                String email = usernameTextField.getText().trim();
+                String email = usernameTextField.getText();
                 String pass = passwordTextField.getText();
                 
-                System.out.println("Input Email: " + email + " & pass: " + pass);
-                System.out.println("LoginUI: Expected Email: " + loginCntl.customerList.getCustomerArray().get(0).getEmail() + "Expected pass: " + loginCntl.customerList.getCustomerArray().get(0).getPassword());
-              
-                
-                
                 if (loginCntl.authenticator(email, pass)) {
-                    //new NavigationUI().setVisible(true);
-                    //dispose();
-                    JOptionPane.showMessageDialog(null, "Authentication Passed", "Good Pass", 2);
+                    new NavigationUI().setVisible(true);
+                    dispose();
+//                    JOptionPane.showMessageDialog(null, "Authentication Passed", "Good Pass", 2);
             } else {//Invalid Username or Password
                     JOptionPane.showMessageDialog(null, "Invalid Username or Password", "Login Error", 2);
                     usernameTextField.setBackground(Color.red);

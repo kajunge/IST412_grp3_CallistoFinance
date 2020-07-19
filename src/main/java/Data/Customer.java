@@ -57,7 +57,6 @@ public class Customer implements Serializable{
      * @return A String representing the email address for the customer
      */
     public String getEmail() {
-        System.out.println("testing for getEmail method");
         return email;
     }
 
