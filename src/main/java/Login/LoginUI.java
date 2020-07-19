@@ -110,8 +110,8 @@ public class LoginUI extends javax.swing.JFrame {
         jLabel2.setText("Email");
 
         usernameTextField.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
-        usernameTextField.setForeground(new java.awt.Color(0, 0, 0));
-        usernameTextField.setText("kam6564@psu.edu");
+        usernameTextField.setForeground(new java.awt.Color(204, 204, 204));
+        usernameTextField.setText("enter email");
         usernameTextField.setToolTipText("");
         usernameTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -131,8 +131,8 @@ public class LoginUI extends javax.swing.JFrame {
         jLabel3.setText("Password:");
 
         passwordTextField.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
-        passwordTextField.setForeground(new java.awt.Color(0, 0, 0));
-        passwordTextField.setText("MyPa$$w0rd");
+        passwordTextField.setForeground(new java.awt.Color(204, 204, 204));
+        passwordTextField.setText("password");
         passwordTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 passwordTextFieldFocusGained(evt);
@@ -294,7 +294,7 @@ public class LoginUI extends javax.swing.JFrame {
      * @param evt
      */
     private void usernameTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTextFieldFocusGained
-        if (usernameTextField.getText().trim().toLowerCase().equals("kam6564@psu.edu")) {
+        if (usernameTextField.getText().trim().toLowerCase().equals("enter email")) {
             usernameTextField.setText("");
             usernameTextField.setForeground(Color.black);
         }
@@ -310,9 +310,9 @@ public class LoginUI extends javax.swing.JFrame {
     private void usernameTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTextFieldFocusLost
 
         if (usernameTextField.getText().trim().equals("")
-                || usernameTextField.getText().trim().toLowerCase().equals("kam6564@psu.edu")) {
-            usernameTextField.setText("kam6564@psu.edu");
-            usernameTextField.setForeground(Color.black);
+                || usernameTextField.getText().trim().toLowerCase().equals("enter email")) {
+            usernameTextField.setText("enter email");
+            usernameTextField.setForeground(Color.lightGray);
         }
 
     }//GEN-LAST:event_usernameTextFieldFocusLost
@@ -334,7 +334,7 @@ public class LoginUI extends javax.swing.JFrame {
 
         String pass = String.valueOf(passwordTextField.getPassword());
 
-        if (pass.trim().toLowerCase().equals("MyPa$$w0rd")) {
+        if (pass.trim().toLowerCase().equals("password")) {
             passwordTextField.setText("");
             passwordTextField.setForeground(Color.black);
         }
@@ -351,9 +351,9 @@ public class LoginUI extends javax.swing.JFrame {
         String pass = String.valueOf(passwordTextField.getPassword());
 
         if (pass.trim().equals("")
-                || pass.trim().toLowerCase().equals("MyPa$$w0rd")) {
-            passwordTextField.setText("MyPa$$w0rd");
-            passwordTextField.setForeground(Color.black);
+                || pass.trim().toLowerCase().equals("password")) {
+            passwordTextField.setText("password");
+            passwordTextField.setForeground(Color.lightGray);
         }
 
     }//GEN-LAST:event_passwordTextFieldFocusLost
