@@ -26,7 +26,7 @@ public class CustomerList {
         customerArray = new ArrayList();
 //        readCustomerFile();
         Customer c1 = new Customer("kam564@psu.edu",  "MyPa$$w0rd", 1, "Kristina", "Mantha", "313 Nittany Lane", "352-123-5555",  555512L);
-        customerArray.add(c1);
+        customerArray.add(c1);//FIX_ME right now the above (or below) instance is repeatedly being added to the ser file. Needs to be cleared
         //addCustomer("kam564@psu.edu",  "MyPa$$w0rd", "Kristina", "Mantha", "313 Nittany Lane", "352-123-5555",  555512L);
         
     }
