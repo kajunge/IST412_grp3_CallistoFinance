@@ -19,18 +19,45 @@ public class CustomerList {
     
     private String customerFile = "src/main/resources/SerFiles/Customer.ser";
     
+    private Customer currentUser;
+    
     /**
      *Constructor for the CustomerList array
+     * 
+     * 7.19.20 10:28 am
+     * To Reset Ser file Comment out line 31(readCustomerFile();) and uncomment the three next lines (Customer c1, customerArray, writeCustomerFile())
+     * Once the program has been run immediately close it then uncomment/comment the respective lines to run as normal
      */
     public CustomerList(){
         customerArray = new ArrayList();
-//        readCustomerFile();
-        Customer c1 = new Customer("kam6564@psu.edu",  "MyPa$$w0rd", 1, "Kristina", "Mantha", "313 Nittany Lane", "352-123-5555",  555512L);
-        customerArray.add(c1);//FIX_ME right now the above (or below) instance is repeatedly being added to the ser file. Needs to be cleared
-        //addCustomer("kam6564@psu.edu",  "MyPa$$w0rd", "Kristina", "Mantha", "313 Nittany Lane", "352-123-5555",  555512L);
+        readCustomerFile();
+//        Customer c1 = new Customer("kam6564@psu.edu",  "MyPa$$w0rd", 1, "Kristina", "Mantha", "313 Nittany Lane", "352-123-5555",  555512L);
+//        customerArray.add(c1);//FIX_ME right now the above (or below) instance is repeatedly being added to the ser file. Needs to be cleared
+//        writeCustomerFile();
+//        //addCustomer("kam6564@psu.edu",  "MyPa$$w0rd", "Kristina", "Mantha", "313 Nittany Lane", "352-123-5555",  555512L);
         
     }
-    
+    public Customer setupCurrentUser(String userEmail, String inputPassword){
+        
+        for (int i = 0; i < getCustomerArray().size(); i++) {                       
+            if (userEmail.equals(getCustomerArray().get(i).getEmail())) {
+                int p = i;
+
+                if (inputPassword.equals(getCustomerArray().get(p).getPassword())) {
+                    currentUser = new Customer(getCustomerArray().get(p).getEmail(),
+                    getCustomerArray().get(p).getPassword(),
+                    getCustomerArray().get(p).getCustomerId(),
+                    getCustomerArray().get(p).getFirstName(),
+                    getCustomerArray().get(p).getLastName(),
+                    getCustomerArray().get(p).getAddress(),
+                    getCustomerArray().get(p).getPhoneNumber(),
+                    getCustomerArray().get(p).getLoanID());
+                }
+            } else {
+            }       
+        }
+        return currentUser;
+    }
     /**
      *  Creates a customer profile based on the inputted data and adds it to the ArrayList
      * @param email - a String representing the email in a customer profile
@@ -173,4 +200,10 @@ public class CustomerList {
     }
 
 
+    /**
+     * @param currentUser the currentUser to set
+     */
+    public void setCurrentUser(Customer currentUser) {
+        this.currentUser = currentUser;
+    }
 }

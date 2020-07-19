@@ -432,7 +432,7 @@ public class LoginUI extends javax.swing.JFrame {
                 String pass = passwordTextField.getText();
                 
                 if (loginCntl.authenticator(email, pass)) {
-                    new NavigationUI().setVisible(true);
+                    new NavigationUI(loginCntl.customerList.setupCurrentUser(email, pass)).setVisible(true);
                     dispose();
 //                    JOptionPane.showMessageDialog(null, "Authentication Passed", "Good Pass", 2);
             } else {//Invalid Username or Password
