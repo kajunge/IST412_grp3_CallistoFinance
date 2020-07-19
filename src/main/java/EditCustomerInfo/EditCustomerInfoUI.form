@@ -232,7 +232,7 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="0" pref="53" max="32767" attributes="0"/>
-                              <Component id="registerButton" min="-2" max="-2" attributes="0"/>
+                              <Component id="updatePersonInfoButton" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -323,7 +323,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="registerButton" min="-2" max="-2" attributes="0"/>
+                      <Component id="updatePersonInfoButton" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -467,7 +467,7 @@
                 <Property name="text" type="java.lang.String" value="Format: 123-456-7890"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="registerButton">
+            <Component class="javax.swing.JButton" name="updatePersonInfoButton">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Serif" size="14" style="0"/>
@@ -478,7 +478,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="registerButtonActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updatePersonInfoButtonActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="passwordJLabel">

@@ -1,6 +1,7 @@
 package EditCustomerInfo;
 
 import Data.Customer;
+import Data.CustomerList;
 import Navigation.NavigationUI;
 import java.awt.Color;
 import java.util.regex.Matcher;
@@ -14,6 +15,7 @@ import javax.swing.JOptionPane;
 public class EditCustomerInfoUI extends javax.swing.JFrame {
 
     Customer currentUser;
+    CustomerList customerList;
     /**
      * Creates new form EditCustomerInfoUI
      */
@@ -23,6 +25,8 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
         
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        customerList = new CustomerList();
         
         emailTextField.setText(currentUser.getEmail());
         firstNameTextField.setText(currentUser.getFirstName());
@@ -57,7 +61,7 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
         addressTextField = new javax.swing.JTextField();
         phoneNumberTextField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        registerButton = new javax.swing.JButton();
+        updatePersonInfoButton = new javax.swing.JButton();
         passwordJLabel = new javax.swing.JLabel();
         passwordInput1TextField = new javax.swing.JTextField();
         passwordInput2TextField = new javax.swing.JTextField();
@@ -243,12 +247,12 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Format: 123-456-7890");
 
-        registerButton.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        registerButton.setText("Update Personal Information");
-        registerButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        registerButton.addActionListener(new java.awt.event.ActionListener() {
+        updatePersonInfoButton.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        updatePersonInfoButton.setText("Update Personal Information");
+        updatePersonInfoButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        updatePersonInfoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                registerButtonActionPerformed(evt);
+                updatePersonInfoButtonActionPerformed(evt);
             }
         });
 
@@ -289,7 +293,7 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(0, 53, Short.MAX_VALUE)
-                        .addComponent(registerButton))
+                        .addComponent(updatePersonInfoButton))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
@@ -357,7 +361,7 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(registerButton))
+                .addComponent(updatePersonInfoButton))
         );
 
         backButton.setText("Return to Navigation");
@@ -512,13 +516,13 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
             //        }
     }//GEN-LAST:event_lastNameTextFieldFocusGained
 
-    private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
+    private void updatePersonInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePersonInfoButtonActionPerformed
 
         String fNameOutput = "";
         String lNameOutput = "";        
         String addressOutput = "";
         String phoneOutput = "";
-        String noErrorOutput = "Your details were theoretically updated.";
+        String noErrorOutput = "Your details have been updated.";
 
 //        firstNameTextFieldError();
 //        lastNameTextFieldError();
@@ -566,13 +570,31 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
             phoneOutput = "Please fill in your phone number. \n";
             noErrorOutput = "";
         }
-        else{            
+        else{  
+            
+            customerList.editCustomer(currentUser.getEmail(), 
+                                        currentUser.getPassword(), 
+                                        currentUser.getCustomerId(), 
+                                        firstNameTextField.getText(), 
+                                        lastNameTextField.getText(), 
+                                        addressTextField.getText(), 
+                                        phoneNumberTextField.getText(), 
+                                        currentUser.getLoanID());
+            
+            currentUser = new Customer(currentUser.getEmail(), 
+                                        currentUser.getPassword(), 
+                                        currentUser.getCustomerId(), 
+                                        firstNameTextField.getText(), 
+                                        lastNameTextField.getText(), 
+                                        addressTextField.getText(), 
+                                        phoneNumberTextField.getText(), 
+                                        currentUser.getLoanID());
         }
         
         JOptionPane.showMessageDialog(null, fNameOutput + lNameOutput + addressOutput + phoneOutput + noErrorOutput, "Callisto Finance", 1);
 
         
-    }//GEN-LAST:event_registerButtonActionPerformed
+    }//GEN-LAST:event_updatePersonInfoButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         System.exit(0);
@@ -589,7 +611,7 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
     private void updateEmailButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateEmailButtonActionPerformed
         
         String emailOutput = "";
-        String noErrorOutput = "Your email was theoretically updated.";
+        String noErrorOutput = "Your email has been updated.";
         
         
         if(emailTextFieldError() == false){
@@ -602,7 +624,25 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
             emailTextField.setBackground(Color.red);
             emailTextField.setForeground(Color.white);
         }
-        else{            
+        else{ 
+            
+            customerList.editCustomer(emailTextField.getText(), 
+                                        currentUser.getPassword(), 
+                                        currentUser.getCustomerId(), 
+                                        currentUser.getFirstName(), 
+                                        currentUser.getLastName(), 
+                                        currentUser.getAddress(), 
+                                        currentUser.getPhoneNumber(), 
+                                        currentUser.getLoanID());
+            
+            currentUser = new Customer(emailTextField.getText(), 
+                                        currentUser.getPassword(), 
+                                        currentUser.getCustomerId(), 
+                                        currentUser.getFirstName(), 
+                                        currentUser.getLastName(), 
+                                        currentUser.getAddress(), 
+                                        currentUser.getPhoneNumber(), 
+                                        currentUser.getLoanID());            
         }
         
         JOptionPane.showMessageDialog(null, emailOutput + noErrorOutput, "Callisto Finance", 1);
@@ -617,15 +657,19 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
 
         String passwordOutput = "";
         String passwordOutput2 = "";
-        String noErrorOutput = "Your details were theoretically updated.";
-        
-        if(passwordInput1TextFieldError() == true){
+        String noErrorOutput = "Your password has been updated.";
+        System.out.println("password1 Error value: " + passwordInput1TextFieldError());
+        System.out.println("password2 Error value: " + passwordInput2TextFieldError());
+        boolean value = true;
+        if(passwordInput1TextFieldError() == false){
             passwordOutput = "Your password must be at least 8-20 characters long and contain at least 1 uppercase and lowercase letter, special character, and number. \n";
             noErrorOutput = "";
+            value = false;
         }
-        if(passwordInput2TextFieldError() == true){
+        if(passwordInput2TextFieldError() == false){
             passwordOutput = "Your password must contain at least 1 capital letter, special character, and number. \n";
             noErrorOutput = "";
+            value = false;
         }
         if(passwordInput1TextField.getText().isEmpty()||passwordInput2TextField.getText().isEmpty()){
             passwordOutput = "Please enter your new password in all fields. \n";
@@ -634,6 +678,7 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
             passwordInput1TextField.setForeground(Color.white);
             passwordInput2TextField.setBackground(Color.red);
             passwordInput2TextField.setForeground(Color.white);
+            value = false;
         }
         
         if(!passwordInput1TextField.getText().equals(passwordInput2TextField.getText())){
@@ -643,8 +688,27 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
             passwordInput1TextField.setForeground(Color.white);
             passwordInput2TextField.setBackground(Color.red);
             passwordInput2TextField.setForeground(Color.white);
+            value = false;
         }
-        else{            
+        if(value == true){   
+            
+            customerList.editCustomer(currentUser.getEmail(), 
+                                        passwordInput1TextField.getText(), 
+                                        currentUser.getCustomerId(), 
+                                        currentUser.getFirstName(), 
+                                        currentUser.getLastName(), 
+                                        currentUser.getAddress(), 
+                                        currentUser.getPhoneNumber(), 
+                                        currentUser.getLoanID());
+            
+            currentUser = new Customer(currentUser.getEmail(), 
+                                        passwordInput1TextField.getText(), 
+                                        currentUser.getCustomerId(), 
+                                        currentUser.getFirstName(), 
+                                        currentUser.getLastName(), 
+                                        currentUser.getAddress(), 
+                                        currentUser.getPhoneNumber(), 
+                                        currentUser.getLoanID());            
         }
         
         JOptionPane.showMessageDialog(null, passwordOutput + passwordOutput2 + noErrorOutput, "Callisto Finance", 1);   
@@ -661,40 +725,42 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
     private boolean passwordInput1TextFieldError() {    
         
         String input = passwordInput1TextField.getText().toString();       
-        Pattern pattern = Pattern.compile("^(?=.*[0-9])\"\n" +
-                        " + \"(?=.*[a-z])(?=.*[A-Z])\"\n" +
-                        " + \"(?=.*[@#$%^&+=])\"\n" +
-                        " + \"(?=\\\\S+$).{8,20}$");
+        Pattern pattern = Pattern.compile("^(?=.*[0-9])" 
+                        + "(?=.*[a-z])(?=.*[A-Z])" 
+                        +"(?=.*[@#$%^&+=])"
+                        + "(?=\\S+$).{8,20}$");
         Matcher matcher = pattern.matcher(input);        
-        boolean value = matcher.find();
+        boolean value = matcher.matches();
         
         if (value == true) {
-            passwordInput1TextField.setBackground(Color.red);
-            passwordInput1TextField.setForeground(Color.white);
-        }
-        else{
             passwordInput1TextField.setBackground(Color.white);
             passwordInput1TextField.setForeground(Color.black);
+        }
+        else{
+            passwordInput1TextField.setBackground(Color.red);
+            passwordInput1TextField.setForeground(Color.white);
+            
         }
         return value;
     }
     private boolean passwordInput2TextFieldError() {    
         
         String input = passwordInput2TextField.getText().toString();       
-        Pattern pattern = Pattern.compile("^(?=.*[0-9])\"\n" +
-                        " + \"(?=.*[a-z])(?=.*[A-Z])\"\n" +
-                        " + \"(?=.*[@#$%^&+=])\"\n" +
-                        " + \"(?=\\\\S+$).{8,20}$");
+        Pattern pattern = Pattern.compile("^(?=.*[0-9])" 
+                        + "(?=.*[a-z])(?=.*[A-Z])" 
+                        +"(?=.*[@#$%^&+=])"
+                        + "(?=\\S+$).{8,20}$");
         Matcher matcher = pattern.matcher(input);        
         boolean value = matcher.find();
         
         if (value == true) {
-            passwordInput2TextField.setBackground(Color.red);
-            passwordInput2TextField.setForeground(Color.white);
-        }
-        else{
             passwordInput2TextField.setBackground(Color.white);
             passwordInput2TextField.setForeground(Color.black);
+        }
+        else{
+            passwordInput2TextField.setBackground(Color.red);
+            passwordInput2TextField.setForeground(Color.white);
+            
         }
         return value;
     } 
@@ -867,8 +933,8 @@ public class EditCustomerInfoUI extends javax.swing.JFrame {
     private javax.swing.JTextField passwordInput2TextField;
     private javax.swing.JLabel passwordJLabel;
     private javax.swing.JTextField phoneNumberTextField;
-    private javax.swing.JButton registerButton;
     private javax.swing.JButton updateEmailButton;
     private javax.swing.JButton updatePasswordButton;
+    private javax.swing.JButton updatePersonInfoButton;
     // End of variables declaration//GEN-END:variables
 }

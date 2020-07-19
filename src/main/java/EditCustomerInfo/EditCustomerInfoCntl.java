@@ -30,6 +30,14 @@ public class EditCustomerInfoCntl {
         return customer;
     }
     
+    
+    public Customer updateCustomer(){
+        Customer updatedCustomer = new Customer();
+        
+        return updatedCustomer;
+    }
+    
+    
     /**
      *updates the email in a user profile
      * @param email - a string representing the email in a customer profile

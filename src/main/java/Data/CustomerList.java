@@ -25,9 +25,10 @@ public class CustomerList {
      */
     public CustomerList(){
         customerArray = new ArrayList();
-//        readCustomerFile();
-        Customer c1 = new Customer("kam564@psu.edu",  "MyPa$$w0rd", 1, "Kristina", "Mantha", "313 Nittany Lane", "352-123-5555",  555512L);
-        customerArray.add(c1);//FIX_ME right now the above (or below) instance is repeatedly being added to the ser file. Needs to be cleared
+        readCustomerFile();
+//        Customer c1 = new Customer("kam564@psu.edu",  "MyPa$$w0rd", 1, "Kristina", "Mantha", "313 Nittany Lane", "352-123-5555",  555512L);
+//        customerArray.add(c1);//FIX_ME right now the above (or below) instance is repeatedly being added to the ser file. Needs to be cleared
+//        writeCustomerFile();
         //addCustomer("kam564@psu.edu",  "MyPa$$w0rd", "Kristina", "Mantha", "313 Nittany Lane", "352-123-5555",  555512L);
         
     }
@@ -90,7 +91,7 @@ public class CustomerList {
      */
     public void editCustomer(String email, String password, long customerId, String firstName, String lastName, String address, String phoneNumber, long loanID){
         for(int i = 0; i < customerArray.size(); i++){
-            if(customerArray.get(i).getCustomerId() == 1){
+            if(customerArray.get(i).getCustomerId() == customerId){
                 customerArray.get(i).setEmail(email);
                 customerArray.get(i).setPassword(password);
                 customerArray.get(i).setFirstName(firstName);
