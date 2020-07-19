@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class CustomerList {
     
     private ArrayList<Customer> customerArray;
+    private static CustomerList instance;
     
     private String customerFile = "src/main/resources/SerFiles/Customer.ser";
     
@@ -28,7 +29,7 @@ public class CustomerList {
      * To Reset Ser file Comment out line 31(readCustomerFile();) and uncomment the three next lines (Customer c1, customerArray, writeCustomerFile())
      * Once the program has been run immediately close it then uncomment/comment the respective lines to run as normal
      */
-    public CustomerList(){
+    private CustomerList(){
         customerArray = new ArrayList();
         readCustomerFile();
 //        Customer c1 = new Customer("kam6564@psu.edu",  "MyPa$$w0rd", 1, "Kristina", "Mantha", "313 Nittany Lane", "352-123-5555",  555512L);
@@ -36,6 +37,13 @@ public class CustomerList {
 //        writeCustomerFile();
 //        //addCustomer("kam6564@psu.edu",  "MyPa$$w0rd", "Kristina", "Mantha", "313 Nittany Lane", "352-123-5555",  555512L);
         
+    }
+    
+    public static CustomerList getInstance(){
+        if(instance == null){
+            instance = new CustomerList();
+        }
+        return instance;
     }
     public Customer setupCurrentUser(String userEmail, String inputPassword){
         
